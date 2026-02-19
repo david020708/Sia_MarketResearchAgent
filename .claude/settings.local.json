@@ -1,0 +1,26 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "WebFetch(domain:www.china-briefing.com)",
+      "WebFetch(domain:www.blackrock.com)",
+      "WebFetch(domain:www.euromonitor.com)",
+      "WebFetch(domain:en.wikipedia.org)",
+      "WebFetch(domain:www.bain.com)",
+      "WebFetch(domain:www.gartner.co.uk)",
+      "WebFetch(domain:www.idc.com)",
+      "WebFetch(domain:www.forrester.com)",
+      "WebFetch(domain:www.mckinsey.com)",
+      "WebFetch(domain:www.bcg.com)",
+      "WebFetch(domain:slideworks.io)",
+      "WebFetch(domain:www.globenewswire.com)",
+      "WebFetch(domain:www.abfjournal.com)",
+      "WebFetch(domain:www.forbes.com)",
+      "WebFetch(domain:www.marketplacepulse.com)",
+      "WebFetch(domain:www.bevindustry.com)",
+      "WebFetch(domain:optif.ai)",
+      "WebFetch(domain:focus.cbbc.org)",
+      "WebFetch(domain:netlify.apollo.io)"
+    ]
+  }
+}
