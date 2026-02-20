@@ -1,0 +1,17 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Research output directories (project-specific research results)
+# Add your project folder names here to exclude them from git
+Education-recording/
+
+# Exclude any directory that looks like a research project output
+# (directories with these subfolders are research outputs, not source files)
+*/market-sizing/
+*/macro-environment/
+*/customer-segmentation/
+*/competitive-landscape/
+*/technology-landscape/
+*/distribution-gtm/

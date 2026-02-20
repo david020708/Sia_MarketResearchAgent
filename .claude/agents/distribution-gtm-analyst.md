@@ -1,7 +1,7 @@
 ---
 name: distribution-gtm-analyst
 description: "Use this agent when a distribution channel and go-to-market strategy analysis is required — specifically when a user or orchestrating agent needs a rigorous, sourced map of how products reach customers in a specific industry, including channel architecture, channel economics, go-to-market motion analysis, partner ecosystem mapping, omnichannel strategy assessment, and route-to-market optimization. This agent produces a folder of deliverables: one master distribution and GTM report and one deep-dive channel profile per key channel type. It should only be invoked for distribution and GTM intelligence tasks, not for market sizing, macro environment, customer segmentation, or competitive landscape unless they explicitly require a distribution channel output. The agent will create the output folder itself.\n\n<example>\nContext: The user is building a market research pipeline and needs to understand how products reach customers.\nuser: \"I need a full distribution channel analysis for the enterprise cybersecurity software market in North America\"\nassistant: \"I'll launch the distribution-gtm-analyst agent to map all distribution channels, analyze channel economics, and produce a complete distribution and GTM intelligence folder.\"\n</example>"
-model: opus
+model: sonnet
 color: blue
 ---
 
