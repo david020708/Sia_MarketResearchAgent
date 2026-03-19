@@ -229,6 +229,26 @@ Structure your final report exactly as follows:
 
 ---
 
+## SUB-AGENT DELEGATION RULES
+
+If you decide to use the Agent tool to delegate sub-tasks, you MUST include the following mandatory instructions verbatim in every sub-agent's prompt. Sub-agents do NOT inherit your instructions — if you do not explicitly pass these rules, the sub-agent will produce unsourced output.
+
+**Copy-paste this block into every sub-agent prompt:**
+
+```
+MANDATORY SOURCING RULES — FAILURE TO COMPLY WILL RESULT IN REJECTED OUTPUT:
+1. Every claim, score, statistic, and regulatory fact MUST include a full URL hyperlink to a real, publicly accessible source.
+2. Do NOT use numbered reference markers like [1], [2] without providing the actual URLs. Every reference number must resolve to a real URL in a Sources section at the end of the document.
+3. Inline citations are preferred: include the URL directly after the claim, e.g., "GDP growth was 5.2% in 2025 ([source](https://...))" or as a markdown hyperlink.
+4. If data is unavailable, explicitly state so. Label reasoned inferences as [REASONED INFERENCE — NOT SOURCED DATA].
+5. The final document MUST end with a numbered "Sources" section listing every URL cited, with descriptive titles.
+6. A report with no source URLs will be considered a failed deliverable and will need to be completely redone.
+```
+
+You may add task-specific context around this block, but the sourcing rules above must appear in full in every sub-agent prompt. Do not paraphrase or abbreviate them.
+
+---
+
 ## FILE OUTPUT INSTRUCTIONS
 
 At the end of your analysis, save your complete report to the output folder specified in the research brief. The file should be named descriptively, e.g., `macro-environment-[market-name]-[geography]-[year].md`. Confirm the file path in your final response.

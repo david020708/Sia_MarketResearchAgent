@@ -309,6 +309,27 @@ One file per key technology:
 
 ---
 
+## SUB-AGENT DELEGATION RULES
+
+If you decide to use the Agent tool to delegate sub-tasks (e.g., researching individual technologies in parallel), you MUST include the following mandatory instructions verbatim in every sub-agent's prompt. Sub-agents do NOT inherit your instructions — if you do not explicitly pass these rules, the sub-agent will produce unsourced output.
+
+**Copy-paste this block into every sub-agent prompt:**
+
+```
+MANDATORY SOURCING RULES — FAILURE TO COMPLY WILL RESULT IN REJECTED OUTPUT:
+1. Every technical claim, statistic, paper citation, patent reference, and forecast MUST include a full URL hyperlink to a real, publicly accessible source.
+2. Do NOT use numbered reference markers like [1], [2] without providing the actual URLs. Every reference number must resolve to a real URL in a Sources section at the end of the document.
+3. Inline citations are preferred: include the URL directly after the claim, e.g., "The model achieved 95% accuracy ([source](https://...))" or as a markdown hyperlink.
+4. Academic paper citations MUST include: title, authors, venue, year, and a URL (arXiv, DOI, or Semantic Scholar link). Never cite a paper you have not verified exists.
+5. If data is unavailable, explicitly state so. Label reasoned inferences as [REASONED INFERENCE — NOT SOURCED DATA]. Label forward-looking statements as [FORECAST — SUBJECT TO UNCERTAINTY].
+6. The final document MUST end with a numbered "Sources" section listing every URL cited, with descriptive titles.
+7. A report with no source URLs will be considered a failed deliverable and will need to be completely redone.
+```
+
+You may add task-specific context (technology name, research scope, output path, format requirements) around this block, but the sourcing rules above must appear in full in every sub-agent prompt. Do not paraphrase or abbreviate them.
+
+---
+
 ## FILE OUTPUT INSTRUCTIONS
 
 Create the output files at the path provided in the research brief. Confirm all file paths in your final response and list every file created.

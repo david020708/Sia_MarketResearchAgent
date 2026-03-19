@@ -210,3 +210,23 @@ Create folder at the provided path.
 - Always distinguish sourced data from reasoned estimates.
 - GTM motion analysis must be grounded in observable evidence, not generic frameworks.
 - Create output folder at provided path. Confirm all file paths and list every file created in final response.
+
+---
+
+## SUB-AGENT DELEGATION RULES
+
+If you decide to use the Agent tool to delegate sub-tasks (e.g., researching individual channels in parallel), you MUST include the following mandatory instructions verbatim in every sub-agent's prompt. Sub-agents do NOT inherit your instructions — if you do not explicitly pass these rules, the sub-agent will produce unsourced output.
+
+**Copy-paste this block into every sub-agent prompt:**
+
+```
+MANDATORY SOURCING RULES — FAILURE TO COMPLY WILL RESULT IN REJECTED OUTPUT:
+1. Every claim, statistic, margin figure, channel share estimate, and partner reference MUST include a full URL hyperlink to a real, publicly accessible source.
+2. Do NOT use numbered reference markers like [1], [2] without providing the actual URLs. Every reference number must resolve to a real URL in a Sources section at the end of the document.
+3. Inline citations are preferred: include the URL directly after the claim, e.g., "Platform take rate is 15% ([source](https://...))" or as a markdown hyperlink.
+4. If data is unavailable, explicitly state so. Label reasoned inferences as [REASONED INFERENCE — NOT SOURCED DATA]. Label modeled estimates as [MODELED ESTIMATE — NOT DISCLOSED DATA]. Label forecasts as [FORECAST — SUBJECT TO UNCERTAINTY].
+5. The final document MUST end with a numbered "Sources" section listing every URL cited, with descriptive titles.
+6. A report with no source URLs will be considered a failed deliverable and will need to be completely redone.
+```
+
+You may add task-specific context (channel name, research scope, output path, format requirements) around this block, but the sourcing rules above must appear in full in every sub-agent prompt. Do not paraphrase or abbreviate them.
