@@ -1,6 +1,6 @@
-# Sia — 多智能体市场研究系统
+# Sia — AI 市场研究助手
 
-Sia 是一个基于 Claude Code 构建的多智能体协作系统，专为系统化、可溯源的市场研究而设计。系统采用「主编排者 + 六个专家」的星型架构，通过 **Agent Team** 功能并行执行全维度市场分析，输出结构化的研究报告。
+Sia 是一个基于 Claude Code 构建的市场研究系统，通过 **Skill 模块化架构** 执行全维度市场分析，输出结构化的研究报告。Sia 作为主编排器（通过 `CLAUDE.md` 定义），按需调用六个专业 Skill 模块，依次完成市场研究的各个维度。
 
 ## 系统架构
 
@@ -10,17 +10,15 @@ Sia 是一个基于 Claude Code 构建的多智能体协作系统，专为系统
                        └──────┬──────┘
                               │
                        ┌──────▼──────┐
-                       │  Sia 编排器  │  ← 主 Agent（通过 CLAUDE.md 定义）
-                       │  创建 Agent Team │
+                       │  Sia 编排器  │  ← 通过 CLAUDE.md 定义，打开项目即生效
+                       │  调用 Skill  │
                        └──────┬──────┘
-                              │  TeamCreate + 并行 Task
+                              │  Skill tool 依次调用
           ┌────────┬───────┬──┴────┬────────┬────────┐
           ▼        ▼       ▼       ▼        ▼        ▼
        市场规模  宏观环境  客户分群  竞争格局  技术创新  渠道/GTM
-       (Sub-Agent Team 成员，并行运行)
+       (.claude/skills/ 下的六个 Skill 模块)
 ```
-
-Sia 是主 Agent，通过 `CLAUDE.md` 定义，打开项目即生效。六个专家 Agent 定义在 `.claude/agents/`，由 Sia 通过 Agent Team 功能并行调度。
 
 ---
 
@@ -67,8 +65,6 @@ claude --version
 
 ## 快速开始
 
-### 启动 Sia（推荐方式）
-
 进入本项目目录，使用 `--dangerously-skip-permissions` 跳过所有权限确认弹窗：
 
 ```bash
@@ -77,11 +73,8 @@ claude --dangerously-skip-permissions
 ```
 
 > 本项目只做研究（网络访问、文件读写），不修改代码，跳过权限确认是安全的。
-> `.claude/settings.local.json` 已预配置全局工具权限，无需逐个确认。
 
-### 发起研究请求
-
-Claude Code 启动后，直接用自然语言描述研究需求：
+直接用自然语言描述研究需求：
 
 ```
 我想研究中国新能源汽车充电市场
@@ -91,55 +84,33 @@ Claude Code 启动后，直接用自然语言描述研究需求：
 帮我做一份东南亚 B2B SaaS 市场的完整研究报告
 ```
 
-Sia 会通过结构化提问确认研究范围，然后自动启动 Agent Team 并行执行所有分析。
+Sia 会通过结构化提问确认研究范围，然后依次调用各 Skill 模块执行分析。
 
 ---
 
-## Agent Team 工作原理
+## Skill 模块一览
 
-Sia 确认研究目标后，会执行以下步骤：
-
-### 1. 创建 Agent Team
-```
-TeamCreate(team_name: "项目名称", description: "研究任务描述")
-```
-这会在 `~/.claude/teams/` 下创建团队配置，所有成员共享一个任务列表。
-
-### 2. 创建任务清单
-为每个研究维度在团队任务列表里创建任务（`TaskCreate`），方便追踪进度。
-
-### 3. 并行启动所有专家 Agent
-**在单条消息里**同时发出所有 Task 调用——这是并行的关键：
-
-```
-Task(subagent_type: "market-size-estimator",        team_name: "项目名", mode: "bypassPermissions", ...)
-Task(subagent_type: "macro-environment-analyst",     team_name: "项目名", mode: "bypassPermissions", ...)
-Task(subagent_type: "customer-segmentation-analyst", team_name: "项目名", mode: "bypassPermissions", ...)
-Task(subagent_type: "competitive-landscape-analyst", team_name: "项目名", mode: "bypassPermissions", ...)
-Task(subagent_type: "technology-innovation-analyst", team_name: "项目名", mode: "bypassPermissions", ...)
-Task(subagent_type: "distribution-gtm-analyst",      team_name: "项目名", mode: "bypassPermissions", ...)
-```
-
-### 4. 监控与协调
-- 各 Agent 完成任务后自动发消息给 Sia
-- Sia 通过 `TaskList` 监控整体进度
-- 所有任务完成后，Sia 关闭团队并向用户汇报
-
-> **注意**：Agent 在两次操作之间会进入 idle 状态，这是正常现象，不代表出错。
+| Skill | 职责 | 输出目录 |
+|-------|------|----------|
+| `market-sizing` | TAM/SAM/SOM 三角测算 | `market-sizing/` |
+| `macro-environment` | 政治、经济、监管、进入壁垒 (PERB) 分析 | `macro-environment/` |
+| `customer-segmentation` | 客户分群、买家画像、JTBD 分析 | `customer-segmentation/` |
+| `competitive-landscape` | 竞争格局、公司深度画像、市场份额分析 | `competitive-landscape/` |
+| `technology-landscape` | 技术图谱、学术研究、专利分析、TRL 评估 | `technology-landscape/` |
+| `distribution-gtm` | 渠道策略、GTM 模式、合作伙伴生态 | `distribution-gtm/` |
 
 ---
 
-## 智能体一览
+## 工作流程
 
-| 智能体 | 职责 | 输出目录 |
-|--------|------|----------|
-| **Sia**（主 Agent） | 需求澄清、项目创建、Agent Team 调度、交付确认 | 项目根目录 |
-| **market-size-estimator** | TAM/SAM/SOM 三角测算 | `market-sizing/` |
-| **macro-environment-analyst** | 政治、经济、监管、进入壁垒 (PERB) 分析 | `macro-environment/` |
-| **customer-segmentation-analyst** | 客户分群、买家画像、JTBD 分析 | `customer-segmentation/` |
-| **competitive-landscape-analyst** | 竞争格局、公司深度画像、市场份额分析 | `competitive-landscape/` |
-| **technology-innovation-analyst** | 技术图谱、学术研究、专利分析、TRL 评估 | `technology-landscape/` |
-| **distribution-gtm-analyst** | 渠道策略、GTM 模式、合作伙伴生态 | `distribution-gtm/` |
+Sia 确认研究目标后，按以下阶段执行：
+
+1. **需求澄清** — 通过结构化提问确定市场定义、地理范围、研究视角、所需维度，生成研究简报供用户确认
+2. **项目初始化** — 创建项目文件夹及各维度子目录
+3. **执行研究** — 通过 `Skill` tool 依次调用选定的 Skill 模块，每个模块接收完整的研究简报
+4. **交付确认** — 汇总所有输出文件，标注数据缺口和低置信度区域，建议后续研究方向
+5. **行业瓶颈分析** — 综合所有研究维度，在聊天中直接输出分层的行业发展瓶颈分析（核心瓶颈 / 重要制约 / 次要障碍），识别真正制约行业发展的关键因素
+6. **Follow-up 研究回写** — 用户提出后续问题时，Sia 完成补充研究后会将新发现写回对应的报告文件，作为补充章节追加
 
 ---
 
@@ -153,33 +124,15 @@ Task(subagent_type: "distribution-gtm-analyst",      team_name: "项目名", mod
 ├── macro-environment/       # 宏观环境分析
 ├── customer-segmentation/   # 客户分群分析
 ├── competitive-landscape/   # 竞争格局分析
-│   ├── master-report.md     # 总览报告
-│   └── [公司名].md          # 各公司深度画像
 ├── technology-landscape/    # 技术创新分析
-│   ├── master-report.md     # 总览报告
-│   └── [技术名].md          # 各技术深度报告
 └── distribution-gtm/        # 渠道与GTM分析
-    ├── master-report.md     # 总览报告
-    └── [渠道名].md          # 各渠道深度报告
 ```
 
 ---
 
-## 各智能体详细说明
+## 各 Skill 模块详细说明
 
-### Sia（主编排器）
-
-Sia 通过 `CLAUDE.md` 定义为主 Agent，打开项目即生效，无需额外调用。
-
-工作流程分为五个阶段：
-
-1. **需求澄清** — 通过结构化提问确定研究范围，生成研究简报供用户确认
-2. **项目初始化** — 创建项目文件夹及各维度子目录
-3. **启动 Agent Team** — `TeamCreate` 建团队 → `TaskCreate` 建任务 → 单条消息并行 dispatch 所有专家 Agent
-4. **监控协调** — 等待各 Agent 消息，处理阻塞，追踪进度
-5. **交付确认** — 关闭团队，汇总输出，向用户报告
-
-### Market Size Estimator（市场规模测算）
+### Market Sizing（市场规模测算）
 
 采用三种方法进行交叉验证：
 
@@ -189,7 +142,7 @@ Sia 通过 `CLAUDE.md` 定义为主 Agent，打开项目即生效，无需额外
 
 输出包含 TAM/SAM/SOM（含乐观/基准/悲观区间）、CAGR 及驱动因素、置信度评估。
 
-### Macro Environment Analyst（宏观环境分析）
+### Macro Environment（宏观环境分析）
 
 执行 PERB 框架分析：
 
@@ -200,7 +153,7 @@ Sia 通过 `CLAUDE.md` 定义为主 Agent，打开项目即生效，无需额外
 
 输出包含环境评分卡（1-5 分制）、Top 3 风险与机会。
 
-### Customer Segmentation Analyst（客户分群分析）
+### Customer Segmentation（客户分群分析）
 
 支持 B2C 和 B2B 两种分群框架：
 
@@ -209,13 +162,13 @@ Sia 通过 `CLAUDE.md` 定义为主 Agent，打开项目即生效，无需额外
 
 输出包含分群地图（含规模）、买家画像（11 维结构）、JTBD 分析、优先级矩阵。
 
-### Competitive Landscape Analyst（竞争格局分析）
+### Competitive Landscape（竞争格局分析）
 
 竞争者分类覆盖：直接竞争者、间接竞争者、替代品、潜在进入者、新兴玩家。
 
-输出包含竞争定位图、波特五力分析、各公司 SWOT、威胁评估矩阵，以及每家公司的 13 节深度画像。
+输出包含竞争定位图、波特五力分析、各公司 SWOT、威胁评估矩阵，以及每家公司的深度画像。
 
-### Technology Innovation Analyst（技术创新分析）
+### Technology Landscape（技术创新分析）
 
 综合运用多种评估框架：
 
@@ -226,7 +179,7 @@ Sia 通过 `CLAUDE.md` 定义为主 Agent，打开项目即生效，无需额外
 
 覆盖学术论文检索（arXiv、Semantic Scholar 等）和专利分析（Google Patents、WIPO 等）。
 
-### Distribution & GTM Analyst（渠道与 GTM 分析）
+### Distribution & GTM（渠道与 GTM 分析）
 
 分析渠道架构（零级到三级）和 GTM 模式（现场销售、内部销售、PLG、渠道销售、平台/市场、社区驱动、ABM）。
 
@@ -238,7 +191,7 @@ Sia 通过 `CLAUDE.md` 定义为主 Agent，打开项目即生效，无需额外
 
 ### 数据溯源
 
-所有智能体遵循同一核心原则：每一个论断、统计数据和数据点都必须标注来源 URL。禁止编造或虚构数据。
+所有 Skill 模块遵循同一核心原则：每一个论断、统计数据和数据点都必须标注来源 URL。禁止编造或虚构数据。
 
 ### 不确定性标注
 
@@ -256,7 +209,7 @@ Sia 通过 `CLAUDE.md` 定义为主 Agent，打开项目即生效，无需额外
 
 ### 中国市场专项能力
 
-五个智能体内置中国市场研究模块，覆盖：
+多个 Skill 模块内置中国市场研究能力，覆盖：
 - 中国特色数据源（CNKI、天眼查、艾瑞咨询、QuestMobile 等）
 - 监管机构映射及官方门户
 - 官方数据与独立来源交叉比对
@@ -268,16 +221,17 @@ Sia 通过 `CLAUDE.md` 定义为主 Agent，打开项目即生效，无需额外
 
 ```
 MarketResearch/
-├── CLAUDE.md                            # Sia 主 Agent 提示词（打开项目即生效）
+├── CLAUDE.md                            # Sia 主编排器提示词（打开项目即生效）
+├── README.md                            # 本文件
 └── .claude/
-    ├── settings.local.json              # 权限配置（全局工具权限，无需逐个确认）
-    └── agents/
-        ├── market-size-estimator.md     # 市场规模 Sub-Agent
-        ├── macro-environment-analyst.md # 宏观环境 Sub-Agent
-        ├── customer-segmentation-analyst.md  # 客户分群 Sub-Agent
-        ├── competitive-landscape-analyst.md  # 竞争格局 Sub-Agent
-        ├── technology-innovation-analyst.md  # 技术创新 Sub-Agent
-        └── distribution-gtm-analyst.md       # 渠道/GTM Sub-Agent
+    ├── settings.local.json              # 权限配置
+    └── skills/
+        ├── market-sizing/SKILL.md       # 市场规模 Skill
+        ├── macro-environment/SKILL.md   # 宏观环境 Skill
+        ├── customer-segmentation/SKILL.md  # 客户分群 Skill
+        ├── competitive-landscape/SKILL.md  # 竞争格局 Skill
+        ├── technology-landscape/SKILL.md   # 技术创新 Skill
+        └── distribution-gtm/SKILL.md       # 渠道/GTM Skill
 ```
 
 ---
