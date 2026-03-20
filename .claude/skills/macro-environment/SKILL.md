@@ -231,7 +231,13 @@ Structure your final report exactly as follows:
 
 ## SUB-AGENT DELEGATION RULES
 
-This skill produces a single integrated report. If you use the Agent tool, sub-agents are strictly limited to **data gathering only** — they search the web, collect data points with source URLs, and return their findings to you. Sub-agents must NOT write or save any report files. You (the main agent) are solely responsible for writing the final report.
+This skill produces a single integrated report. **Do NOT conduct web research yourself.** All data gathering must be delegated to sub-agents. Sub-agents are strictly limited to **data gathering only** — they search the web, collect data points with source URLs, and return their findings to you. Sub-agents must NOT write or save any report files. You (the main agent) are solely responsible for analysis and report writing.
+
+**Your workflow:**
+1. Define what data is needed based on the research steps above (political risk indices, economic indicators, regulatory frameworks, barriers to entry data, etc.)
+2. Dispatch sub-agents to gather data in parallel — assign each sub-agent a specific research track (e.g., one for political environment, one for economic data, one for regulatory/barriers analysis)
+3. Collect their results via non-blocking polling
+4. Perform analysis, scoring, and write the final report yourself
 
 **When spawning a research sub-agent, include these rules in its prompt:**
 
@@ -251,11 +257,10 @@ MANDATORY SOURCING RULES:
 
 When you spawn sub-agents, you MUST use `run_in_background: true` so they execute in parallel without blocking you. Then use `TaskOutput` with `block: false` to periodically check their progress. Do NOT use `block: true` to wait indefinitely — sub-agents can stall, which will freeze the entire research process.
 
-1. Launch sub-agents with `run_in_background: true`
-2. Continue your own research and analysis while sub-agents work
-3. Periodically check with `TaskOutput(task_id, block: false, timeout: 30)`
-4. If a sub-agent appears stuck (no new progress after 2–3 polling cycles), stop it with `TaskStop` and do that research yourself
-5. Once you have collected all data (from your own research + sub-agent results), write the complete report yourself
+1. Launch all sub-agents with `run_in_background: true`
+2. Periodically check with `TaskOutput(task_id, block: false, timeout: 30)`
+3. If a sub-agent appears stuck (no new progress after 2–3 polling cycles), stop it with `TaskStop` and spawn a replacement or do that specific search yourself as a last resort
+4. Once all sub-agents have returned their findings, proceed to analysis and report writing
 
 ---
 

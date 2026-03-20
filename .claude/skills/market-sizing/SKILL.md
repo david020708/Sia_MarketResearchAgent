@@ -24,15 +24,15 @@ Before any research or calculation, define and confirm:
 
 If the scope is ambiguous, state your assumed scope clearly at the top of your report and proceed.
 
-### Step 2 — Conduct Deep Web Research
-Use your web search capabilities exhaustively. You must:
-- Search for industry reports (IBISWorld, Grand View Research, Statista, McKinsey, Deloitte, PwC, Bloomberg, etc.)
-- Search for government and regulatory data (census bureaus, trade ministries, WHO, World Bank, IMF, etc.)
-- Search for company filings, earnings calls, and investor presentations
-- Search for trade association publications and academic papers
-- Search for news articles with quantified market data
-- Collect ALL quantifiable data points you can find — there is no upper limit on research depth
-- Record the full URL for every source at the point of use
+### Step 2 — Delegate Data Gathering to Sub-Agents
+Do NOT conduct web research yourself. Instead, use the Agent tool to spawn sub-agents for data gathering. Divide the research into parallel tracks, for example:
+- Sub-agent 1: Search for industry reports and analyst estimates (IBISWorld, Grand View Research, Statista, McKinsey, Deloitte, PwC, Bloomberg, etc.)
+- Sub-agent 2: Search for government and regulatory data (census bureaus, trade ministries, WHO, World Bank, IMF, OECD, UNCTAD, etc.)
+- Sub-agent 3: Search for company filings, earnings calls, investor presentations, and trade association data
+
+You may adjust the number and focus of sub-agents based on the market being researched. Each sub-agent must collect ALL quantifiable data points it can find with full source URLs, and return them directly in its response — sub-agents do NOT write files.
+
+Once all sub-agents have returned their findings, proceed to Step 3 using the collected data.
 
 ### Step 3 — Apply All Three Methods and Triangulate
 
@@ -120,7 +120,9 @@ Structure your final report exactly as follows:
 
 ## SUB-AGENT DELEGATION RULES
 
-This skill produces a single integrated report. If you use the Agent tool, sub-agents are strictly limited to **data gathering only** — they search the web, collect data points with source URLs, and return their findings to you. Sub-agents must NOT write or save any report files. You (the main agent) are solely responsible for writing the final report.
+This skill produces a single integrated report. Sub-agents are strictly limited to **data gathering only** — they search the web, collect data points with source URLs, and return their findings to you. Sub-agents must NOT write or save any report files. You (the main agent) are solely responsible for analysis and report writing.
+
+**Do NOT conduct web research yourself.** All data gathering must be done by sub-agents. Your job is to: (1) define what data is needed, (2) dispatch sub-agents to find it, (3) collect their results, (4) perform analysis and triangulation, (5) write the final report.
 
 **When spawning a research sub-agent, include these rules in its prompt:**
 
@@ -140,11 +142,10 @@ MANDATORY SOURCING RULES:
 
 When you spawn sub-agents, you MUST use `run_in_background: true` so they execute in parallel without blocking you. Then use `TaskOutput` with `block: false` to periodically check their progress. Do NOT use `block: true` to wait indefinitely — sub-agents can stall, which will freeze the entire research process.
 
-1. Launch sub-agents with `run_in_background: true`
-2. Continue your own research and analysis while sub-agents work
-3. Periodically check with `TaskOutput(task_id, block: false, timeout: 30)`
-4. If a sub-agent appears stuck (no new progress after 2–3 polling cycles), stop it with `TaskStop` and do that research yourself
-5. Once you have collected all data (from your own research + sub-agent results), write the complete report yourself
+1. Launch all sub-agents with `run_in_background: true`
+2. Periodically check with `TaskOutput(task_id, block: false, timeout: 30)`
+3. If a sub-agent appears stuck (no new progress after 2–3 polling cycles), stop it with `TaskStop` and spawn a replacement or do that specific search yourself as a last resort
+4. Once all sub-agents have returned their findings, proceed to analysis and report writing
 
 ---
 
