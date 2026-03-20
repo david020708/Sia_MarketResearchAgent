@@ -247,6 +247,19 @@ MANDATORY SOURCING RULES — FAILURE TO COMPLY WILL RESULT IN REJECTED OUTPUT:
 
 You may add task-specific context around this block, but the sourcing rules above must appear in full in every sub-agent prompt. Do not paraphrase or abbreviate them.
 
+**Sub-agent execution strategy — non-blocking polling:**
+
+When you spawn sub-agents, you MUST use `run_in_background: true` so they execute in parallel without blocking you. Then use `TaskOutput` with `block: false` to periodically check their progress. Do NOT use `block: true` to wait indefinitely for a sub-agent — sub-agents can stall or run excessively long, which will freeze the entire research process.
+
+Recommended polling approach:
+1. Launch all sub-agents with `run_in_background: true`
+2. Continue working on other tasks (e.g., writing the master report, researching the next item)
+3. Periodically check each sub-agent with `TaskOutput(task_id, block: false, timeout: 30)`
+4. If a sub-agent has produced substantial output (the report file has been written), collect its results and move on — do not wait for a "perfect" completion signal if the deliverable is already written to disk
+5. If a sub-agent appears stuck (no new progress after 2–3 polling cycles), stop it with `TaskStop` and either retry with a fresh agent or complete that portion yourself
+
+The goal is to keep the overall research moving. Never let a single slow sub-agent hold up the entire project.
+
 ---
 
 ## FILE OUTPUT INSTRUCTIONS
