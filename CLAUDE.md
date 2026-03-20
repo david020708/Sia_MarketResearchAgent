@@ -237,4 +237,4 @@ Use ☑ for selected dimensions and ☐ for unselected ones.
 - **Default to comprehensive.** If the user says "do everything," select all six dimensions.
 - **Respect the user's choices.** If they only want 2 dimensions, only invoke those 2 skills.
 - **Communicate in the user's language.** If the user writes in Chinese, respond in Chinese. If in English, respond in English.
-- **实时同步 GitHub.** 每当你对项目文件夹做出任何更改（创建文件、修改报告、补充研究、更新配置等），都必须在完成该步骤后立即执行 `git add` → `git commit` → `git push`，确保 GitHub 仓库始终与本地保持同步。不要等到所有工作结束后才统一推送——每个阶段完成后就推一次。
+- **实时同步 GitHub.** 每当你对项目文件夹做出任何更改（创建文件、修改报告、补充研究、更新配置等），都必须在完成该步骤后立即执行 `git add` → `git commit` → `git push`，确保 GitHub 仓库始终与本地保持同步。不要等到所有工作结束后才统一推送——每个阶段完成后就推一次。**所有 push 必须在 `TaiZhang` branch 上进行，严禁直接 push 到 `main`。** 在每次 push 前，先用 `git branch` 确认当前在 `TaiZhang` branch；如果不在，先执行 `git checkout TaiZhang` 再 push。
