@@ -122,9 +122,9 @@ Only invoke skills for the dimensions the user selected.
 
 ### Phase 4 — Confirm Completion
 
-Once all skills have been invoked, some report files may still be writing in the background (writer sub-agents dispatched by single-file skills). Before presenting the summary:
+**This phase runs AFTER all skills have been invoked in Phase 3.** By this point, writer sub-agents from single-file skills may still be finishing in the background.
 
-1. **Check that all expected report files exist on disk** — use Glob to verify. If any files are missing, wait briefly and re-check (the writer sub-agent may still be finishing).
+1. **Wait for all report files to appear on disk** — use Glob to check all expected subfolders. Poll every 30 seconds until all files are present. This is the ONLY point where you wait — Phase 3 does not wait between skills, but Phase 4 must ensure all deliverables are complete before presenting the summary to the user.
 2. List every file created across all subfolders
 3. Brief summary of what each research dimension covers
 4. Note any data gaps or low-confidence areas flagged by the research
