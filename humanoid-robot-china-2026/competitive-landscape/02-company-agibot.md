@@ -121,99 +121,114 @@
 
 ## 7. 市场拓展
 
-**主要客户场景：**
-- 汽车制造：比亚迪、上汽等主要车厂（工业装配）
-- 商业服务：酒店、商场、企业园区（接待/导览）
-- 工业物流：仓储、搬运
-- 研究机构：高校、科研院所
+### 国内市场
 
-**国际扩张：**
-- 2026年1月CES正式进入美国市场，展示完整产品线
-- Dr. Yao Maoqing表示："从先进研发转向规模化实际部署"
+**主要客户场景：**
+- **汽车制造**：比亚迪等主要车厂（比亚迪同时为战略投资方），用于生产线自动化装配
+- **工业制造**：多家制造业企业，用于工厂自动化场景
+- **商业服务**：酒店、购物中心、企业园区的服务接待与导览应用
+
+### 国际市场
+
+- **2026年1月**：首次参加美国CES展会，在拉斯维加斯会议中心展示A2系列完整产品线及Genie Sim 3.0平台，正式开启美国市场布局 [[Ubergizmo](https://www.ubergizmo.com/2026/01/agibot-brings-its-humanoid-robot-lineup-and-genie-sim-3-0/)]
+- **韩国/亚太**：LG Electronics的战略入股为公司进入韩国及东南亚市场提供了潜在渠道支撑
 
 ---
 
 ## 8. 技术与知识产权
 
-### AI平台 — Genie Sim 3.0
+### Genie Sim 3.0 — AI仿真平台
 
-- 基于NVIDIA Isaac Sim构建
+基于NVIDIA Isaac Sim构建的具身智能仿真平台，核心特性包括：[[Ubergizmo](https://www.ubergizmo.com/2026/01/agibot-brings-its-humanoid-robot-lineup-and-genie-sim-3-0/)]
+
 - 开源仿真流水线
-- 10,000+小时合成数据，200+任务，100,000+仿真场景
-- 真实工业环境1:1数字孪生
-- 支持机器人在物理部署前进行虚拟训练
+- 合成数据规模：10,000+小时
+- 支持任务数量：200+项
+- 仿真场景数量：100,000+个
+- 支持真实工业环境的1:1数字孪生建模
 
-### AI模型 — GO-1（Genie Operator-1）
+### GO-1（Genie Operator-1）— 具身智能大模型
 
-- **框架**：ViLLA（Vision-Language-Latent-Action），超越传统VLA方法
+[[PRNewswire](https://www.prnewswire.com/news-releases/omdia-ranks-agibot-no1-worldwide-in-humanoid-robot-shipments-in-2025-302656788.html)]
+
+- **框架**：ViLLA（Vision-Language-Latent-Action）——对传统VLA架构的进化升级，通过预测潜在动作令牌弥合视觉语言输入与机器人动作之间的鸿沟
 - **基础模型**：InternVL-2B
-- **训练数据**：AgiBot World数据集——100万+轨迹，217个任务，5个应用领域
-- **性能**：相比SOTA提升32%成功率（46%→78%）
-- **核心创新**：预测潜在动作令牌，弥合图像-文本输入与机器人动作之间的鸿沟
+- **训练数据集**：AgiBot World Dataset — 100万+轨迹，217种任务，5个应用领域
+- **性能提升**：相较SOTA基线提升32%成功率（46%→78%）
 
-**技术优势：**
-- 所有机器人共享统一基础，技能可跨机型迁移
-- 减少训练时间，支持机群部署
+### AgiBot World 数据集
+
+智元机器人开源发布的大规模具身智能数据集，包含100万+条机器人操作轨迹，覆盖217种任务和5个应用领域，为行业提供重要的训练数据基础设施。
+
+### 知识产权
+
+[TRIANGULATED ESTIMATE — NOT DISCLOSED] 公司专利组合的具体数量和构成未公开披露。基于公司在具身智能、灵巧手、仿真平台等领域的技术积累，预计已形成一定规模的专利布局，具体数据需通过国家知识产权局数据库独立核实。
 
 ---
 
 ## 9. 竞争定位
 
-| 维度 | 智元机器人 | 宇树科技 | 优必选 |
-|------|-----------|---------|--------|
-| 2025年出货量 | 5,100+台 | ~4,200台 | ~1,000台 |
-| 全球市占率 | 39%（#1） | 32%（#2） | 7%（#3） |
-| 旗舰产品价格 | $10-19万 | G1 $1.35万 | 未披露 |
-| 核心差异化 | 量产第一+AI优先 | 性价比+开放生态 | 工业深度+上市 |
-| AI能力 | ViLLA+Genie Sim | 端到端AI（研发中） | 双环AI系统 |
+| 维度 | 智元机器人 | 宇树科技 | 优必选 | Figure AI（美） | Tesla Optimus（美） |
+|------|-----------|---------|--------|----------------|-------------------|
+| 2025年出货量 | 5,100+台（全球#1） | 未披露 | 未披露 | 极少量 | 极少量 |
+| 全球市占率 | ~39% | — | — | — | — |
+| 旗舰产品定价 | $100K–$190K | 较低（G1约$1.35万） | 未披露 | 未披露 | 未披露 |
+| AI平台 | Genie Sim 3.0 + GO-1（ViLLA） | 自研 | 自研 | 自研 | FSD迁移 |
+| 上市状态 | 筹备港股IPO | 私营 | 港股上市 | 私营 | 母公司上市 |
 
 **核心竞争优势：**
-1. **全球出货量第一**，Omdia权威认证
-2. **AI-first战略**：ViLLA框架、Genie Sim 3.0领先行业
-3. **创始人IP**：彭志辉"稚晖君"品牌效应强，吸引顶尖人才
-4. **顶级投资方背书**：腾讯、红杉、比亚迪、高瓴
+1. **规模领先**：2025年全球出货量第一，规模效应显著 [[PRNewswire](https://www.prnewswire.com/news-releases/omdia-ranks-agibot-no1-worldwide-in-humanoid-robot-shipments-in-2025-302656788.html)]
+2. **创始人IP**：彭志辉的个人技术品牌带来持续媒体曝光和人才吸引力
+3. **战略股东生态**：比亚迪（客户+投资方）、LG Electronics（国际渠道）、腾讯（AI能力）构成独特战略协同网络
+4. **开源策略**：AgiBot World数据集和Genie Sim开源，有助于构建开发者生态与数据飞轮
+5. **全栈能力**：从机器人本体到AI模型到仿真平台的垂直整合
 
-**主要风险：**
-- 产品价格高（$10-19万），市场渗透速度受限
-- 宇树科技以极低价格（G1 $1.35万）抢占研究/开发者市场
-- 收入未披露，财务透明度低
+**主要劣势：**
+- 定价偏高（$100K–$190K），制约大规模商业化速度
+- 财务透明度低，私营公司关键数据不公开
+- 地缘政治风险下美国市场准入存在不确定性
 
 ---
 
 ## 10. 战略方向
 
-1. **港交所IPO**：目标估值64亿美元，融资用于扩大产能和AI研发
-2. **美国市场进入**：CES 2026已完成首秀，推进北美商业化
-3. **AI模型开源**：Genie Sim 3.0开源策略吸引开发者生态
-4. **工业场景深化**：汽车制造为核心战场，向更多工业场景扩展
-5. **数据飞轮**：大规模部署积累真实世界数据，持续优化AI模型
+1. **港交所IPO**：目标估值约64亿美元，融资用于扩大产能和AI研发 [SINGLE-SOURCE — VERIFY INDEPENDENTLY] [[Humanoids Daily](https://www.humanoidsdaily.com/feed/the-great-valuation-chasm-a-2025-guide-to-the-humanoid-robotics-capital-race)]
+2. **美国市场进入**：CES 2026已完成首秀，推进北美商业化布局 [[Ubergizmo](https://www.ubergizmo.com/2026/01/agibot-brings-its-humanoid-robot-lineup-and-genie-sim-3-0/)]
+3. **平台化与开源**：Genie Sim 3.0及AgiBot World数据集开源，构建具身智能开发者生态，形成平台护城河
+4. **工业场景深化**：以汽车制造为核心战场（依托比亚迪等战略客户），向更多工业场景扩展
+5. **数据飞轮**：大规模部署积累真实世界数据，持续优化GO-1模型，形成规模与智能的正向循环
+6. **产品线延伸**：从全尺寸人形（A2）向小型化（X2）、工业专用（G2）、四足（D1）多形态延伸，覆盖更广泛应用场景
 
 ---
 
 ## 11. SWOT分析
 
 ### 优势（Strengths）
-- 全球出货量第一，Omdia权威认证 [PRNewswire](https://www.prnewswire.com/news-releases/omdia-ranks-agibot-no1-worldwide-in-humanoid-robot-shipments-in-2025-302656788.html)
-- ViLLA框架和Genie Sim 3.0技术领先
-- 创始人彭志辉品牌效应强，吸引顶尖人才
-- 顶级投资方（腾讯、红杉、比亚迪、高瓴）背书
+- 2025年全球人形机器人出货量第一（5,100+台，Omdia认证） [[PRNewswire](https://www.prnewswire.com/news-releases/omdia-ranks-agibot-no1-worldwide-in-humanoid-robot-shipments-in-2025-302656788.html)]
+- 创始人彭志辉具备强大技术品牌影响力与媒体号召力 [[SCMP](https://www.scmp.com/tech/tech-trends/article/3305986/meet-peng-zhihui-latest-young-robotics-star-catch-chinese-premiers-attention)]
+- 顶级战略投资方生态（腾讯、红杉、比亚迪、高瓴、LG）形成独特协同效应
+- 全栈技术能力：本体+AI模型（GO-1/ViLLA）+仿真平台（Genie Sim 3.0）垂直整合
+- 开源策略（AgiBot World数据集、Genie Sim）有助于构建开发者社区和数据飞轮
 
 ### 劣势（Weaknesses）
-- 产品价格高（$10-19万），限制市场渗透速度
-- 财务数据未披露，投资者透明度低
-- 成立仅3年，商业化经验相对有限
+- 产品定价较高（$100K–$190K），制约大规模商业化速度
+- 财务数据不透明，私营公司核心指标不公开
+- 管理团队信息披露有限，治理结构不明
+- 对创始人个人IP的高度依赖存在集中风险
 
 ### 机会（Opportunities）
-- 港交所IPO成功后资金充裕
-- 全球人形机器人市场高速增长（2030年预计$560亿）
-- 美国市场进入，国际化空间大
-- AI数据飞轮效应随部署规模扩大而增强
+- 中国制造业自动化需求持续增长，政策支持力度强
+- 全球人形机器人市场处于早期爆发阶段，先发优势窗口期存在
+- 港交所IPO成功将大幅提升国际资本和客户认知度
+- LG Electronics合作为东南亚、韩国市场提供渠道机会
+- 具身智能数据集开源策略可形成生态壁垒
 
 ### 威胁（Threats）
-- 宇树科技以极低价格抢占市场
-- 优必选已上市，资金实力更强
-- 比亚迪、腾讯等投资方可能自建机器人部门
-- 地缘政治风险影响美国市场拓展
+- 中美科技竞争加剧，美国市场准入面临政策不确定性
+- 国内竞争对手（宇树、优必选、傅利叶等）快速追赶
+- Tesla Optimus、Figure AI等美国竞争对手在AI能力上持续投入
+- 人形机器人技术成熟度仍处于早期，大规模商业化时间表存在不确定性
+- 比亚迪、腾讯等战略投资方可能自建机器人部门，形成潜在竞争
 
 ---
 
@@ -221,29 +236,52 @@
 
 **总体评级：中高**
 
-| 数据类型 | 可信度 | 说明 |
-|---------|--------|------|
-| 出货量/市占率 | 高 | Omdia权威报告，多家媒体交叉验证 |
-| 产品规格 | 高 | 官方发布及第三方评测 |
-| 融资/估值 | 中 | PitchBook数据，非官方披露 |
-| 营收数据 | 低 | 未披露，仅有三角估算 |
-| 创始人背景 | 高 | 多家权威媒体验证 |
-| IPO计划 | 中 | 媒体报道，未官方确认 |
+| 数据项 | 来源 | 可信度 | 说明 |
+|--------|------|--------|------|
+| 2025年全球出货量（5,100+台） | Omdia via PRNewswire | ★★★★☆ 高 | 第三方权威机构，多媒体交叉验证 |
+| 全球市场份额（约39%） | Omdia via CGTN | ★★★★☆ 高 | 同上 |
+| 创始人背景（华为天才少年、竞赛经历） | SCMP、36Kr、VNExpress | ★★★★★ 极高 | 多家权威媒体交叉验证 |
+| A2系列定价（$100K–$190K） | Robozaps | ★★★☆☆ 中 | 单一第三方评测来源 [SINGLE-SOURCE — VERIFY INDEPENDENTLY] |
+| 当前估值（约21亿美元） | PitchBook via The Wire China | ★★★☆☆ 中 | 单一来源，非官方披露 [SINGLE-SOURCE — VERIFY INDEPENDENTLY] |
+| IPO目标估值（约64亿美元） | Humanoids Daily | ★★☆☆☆ 低 | 单一来源，未经官方确认 [SINGLE-SOURCE — VERIFY INDEPENDENTLY] |
+| GO-1性能提升（32%，46%→78%） | PRNewswire | ★★★☆☆ 中 | 公司自述数据，需独立验证 |
+| 营收数据 | 未披露 | N/A | 三角估算，不代表实际财务数据 |
+| 管理团队构成 | 未披露 | N/A | 仅创始人信息可核实 |
 
 ---
 
 ## 13. 来源列表
 
-1. [PRNewswire — Omdia ranks AgiBot #1 worldwide 2025](https://www.prnewswire.com/news-releases/omdia-ranks-agibot-no1-worldwide-in-humanoid-robot-shipments-in-2025-302656788.html)
-2. [CGTN — China outpaces US in humanoid robot production](https://news.cgtn.com/news/2026-01-10/Report-China-outpaces-U-S-in-2025-humanoid-robot-production-1JOuTfsew1i/detail.html)
-3. [The Wire China — Peng Zhihui profile](https://www.thewirechina.com/whos_who/peng-zhihui-%E5%BD%AD%E5%BF%97%E8%BE%89/)
-4. [SCMP — Peng Zhihui meets Premier Li Qiang](https://www.scmp.com/tech/tech-trends/article/3305986/meet-peng-zhihui-latest-young-robotics-star-catch-chinese-premiers-attention)
-5. [VNExpress — Peng Zhihui background](https://e.vnexpress.net/news/tech/tech-news/peng-zhihui-mind-behind-agibot-rises-in-china-s-humanoid-robot-revolution-4873865.html)
-6. [Yahoo Finance — Former Huawei Genius Youth recruit](https://www.yahoo.com/tech/former-huawei-genius-youth-recruit-093000908.html)
-7. [36Kr — Top 10 Genius Youth who left Huawei](https://eu.36kr.com/en/p/3486330304175234)
-8. [Robozaps — AgiBot A2 review](https://blog.robozaps.com/b/agibot-a2-review)
-9. [Ubergizmo — AgiBot CES 2026](https://www.ubergizmo.com/2026/01/agibot-brings-its-humanoid-robot-lineup-and-genie-sim-3-0/)
-10. [Humanoids Daily — Valuation chasm 2025](https://www.humanoidsdaily.com/feed/the-great-valuation-chasm-a-2025-guide-to-the-humanoid-robotics-capital-race)
-11. [Robotics & Automation News — AgiBot #1 shipments](https://roboticsandautomationnews.com/2026/01/21/agibot-claims-top-spot-in-global-humanoid-robot-shipments-in-2025-with-more-than-5100-units-delivered/98223/)
-12. [Shanghai.gov.cn — AgiBot industrial innovation](https://english.shanghai.gov.cn/en-IndustrialInnovation-Scitechcenter/20260115/0c6f84020c38441a94768866bc60ab1e.html)
-13. [OpenAImpact — Omdia AgiBot #1](https://openaimpact.com/en/news/omdia-ranks-agibot-no-1-worldwide-in-humanoid-robot-shipments-in-2025/)
+1. PRNewswire / Omdia — "Omdia Ranks AgiBot No.1 Worldwide in Humanoid Robot Shipments in 2025"
+   https://www.prnewswire.com/news-releases/omdia-ranks-agibot-no1-worldwide-in-humanoid-robot-shipments-in-2025-302656788.html
+
+2. CGTN — "Report: China outpaces U.S. in 2025 humanoid robot production"
+   https://news.cgtn.com/news/2026-01-10/Report-China-outpaces-U-S-in-2025-humanoid-robot-production-1JOuTfsew1i/detail.html
+
+3. The Wire China — "Peng Zhihui (彭志辉)" profile
+   https://www.thewirechina.com/whos_who/peng-zhihui-%E5%BD%AD%E5%BF%97%E8%BE%89/
+
+4. South China Morning Post (SCMP) — "Meet Peng Zhihui, latest young robotics star to catch Chinese premier's attention"
+   https://www.scmp.com/tech/tech-trends/article/3305986/meet-peng-zhihui-latest-young-robotics-star-catch-chinese-premiers-attention
+
+5. VNExpress — "Peng Zhihui: mind behind AgiBot rises in China's humanoid robot revolution"
+   https://e.vnexpress.net/news/tech/tech-news/peng-zhihui-mind-behind-agibot-rises-in-china-s-humanoid-robot-revolution-4873865.html
+
+6. Yahoo Finance — "Former Huawei 'Genius Youth' recruit..."
+   https://www.yahoo.com/tech/former-huawei-genius-youth-recruit-093000908.html
+
+7. 36Kr (English) — "Top 10 Genius Youth who left Huawei"
+   https://eu.36kr.com/en/p/3486330304175234
+
+8. Robozaps — "AgiBot A2 Review"
+   https://blog.robozaps.com/b/agibot-a2-review
+
+9. Ubergizmo — "AgiBot Brings Its Humanoid Robot Lineup and Genie Sim 3.0" (CES 2026)
+   https://www.ubergizmo.com/2026/01/agibot-brings-its-humanoid-robot-lineup-and-genie-sim-3-0/
+
+10. Humanoids Daily — "The Great Valuation Chasm: A 2025 Guide to the Humanoid Robotics Capital Race"
+    https://www.humanoidsdaily.com/feed/the-great-valuation-chasm-a-2025-guide-to-the-humanoid-robotics-capital-race
+
+---
+
+*本报告基于截至2026年3月20日的公开可获取信息编制。所有标注为 [TRIANGULATED ESTIMATE — NOT DISCLOSED] 的数据为三角估算，不代表公司实际财务数据。所有标注为 [SINGLE-SOURCE — VERIFY INDEPENDENTLY] 的数据来自单一来源，建议独立核实后使用。*
