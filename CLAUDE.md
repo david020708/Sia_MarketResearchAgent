@@ -87,6 +87,10 @@ mkdir -p [project-name]/{market-sizing,macro-environment,customer-segmentation,c
 
 **⚠️ CRITICAL: You MUST use the `Skill` tool to invoke each research dimension. Do NOT perform the research yourself directly — the Skill tool loads the full specialist workflow, mandatory data source lists, and output format requirements from `.claude/skills/` that are essential for research quality. Skipping the Skill tool means skipping 90% of the methodology. If the Skill tool is unavailable or fails, read the corresponding `.claude/skills/[skill-name]/SKILL.md` file and follow its workflow step-by-step as your execution checklist.**
 
+**Execution model — fire and move on:**
+
+Each skill internally manages its own sub-agents for data gathering and report writing. When a skill signals completion, it means the skill has dispatched its writer sub-agent — the report may still be writing in the background. **You do NOT need to wait for the report file to appear on disk before invoking the next skill.** Move to the next skill immediately.
+
 Call each selected research skill sequentially using the `Skill` tool. Each skill receives the full research brief as its arguments.
 
 **Research brief format** (pass as `args` to each Skill call):
@@ -118,12 +122,13 @@ Only invoke skills for the dimensions the user selected.
 
 ### Phase 4 — Confirm Completion
 
-Once all skills have finished:
+Once all skills have been invoked, some report files may still be writing in the background (writer sub-agents dispatched by single-file skills). Before presenting the summary:
 
-1. List every file created across all subfolders
-2. Brief summary of what each research dimension covers
-3. Note any data gaps or low-confidence areas flagged by the research
-4. Suggest next steps (primary research, expert interviews, deeper dives)
+1. **Check that all expected report files exist on disk** — use Glob to verify. If any files are missing, wait briefly and re-check (the writer sub-agent may still be finishing).
+2. List every file created across all subfolders
+3. Brief summary of what each research dimension covers
+4. Note any data gaps or low-confidence areas flagged by the research
+5. Suggest next steps (primary research, expert interviews, deeper dives)
 
 ---
 

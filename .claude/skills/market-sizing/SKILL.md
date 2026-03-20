@@ -120,9 +120,11 @@ Structure your final report exactly as follows:
 
 ## SUB-AGENT DELEGATION RULES
 
-This skill produces a single integrated report. Sub-agents are strictly limited to **data gathering only** — they search the web, collect data points with source URLs, and return their findings to you. Sub-agents must NOT write or save any report files. You (the main agent) are solely responsible for analysis and report writing.
+**You are an orchestrator. You do NOT conduct web research or write reports yourself.** Your job is to coordinate sub-agents and keep the process moving efficiently.
 
-**Do NOT conduct web research yourself.** All data gathering must be done by sub-agents. Your job is to: (1) define what data is needed, (2) dispatch sub-agents to find it, (3) collect their results, (4) perform analysis and triangulation, (5) write the final report.
+### Phase A — Data Gathering
+
+Spawn research sub-agents to collect data in parallel. Each sub-agent handles a specific research track.
 
 **When spawning a research sub-agent, include these rules in its prompt:**
 
@@ -130,6 +132,7 @@ This skill produces a single integrated report. Sub-agents are strictly limited 
 YOUR ROLE: Research assistant — data gathering ONLY.
 You must search the web and return your findings as structured data with source URLs.
 Do NOT write or save any report files. Return all findings directly in your response.
+Keep your response concise: only return data points with URLs, not full paragraphs of analysis.
 
 MANDATORY SOURCING RULES:
 1. Every number, percentage, statistic, and claim MUST include a full URL hyperlink to a real, publicly accessible source.
@@ -138,14 +141,57 @@ MANDATORY SOURCING RULES:
 4. Do NOT fabricate or hallucinate any data. Only return what you actually found with verifiable URLs.
 ```
 
-**Sub-agent execution strategy — non-blocking polling:**
+**Execution:**
+1. Launch all research sub-agents with `run_in_background: true`
+2. Poll with `TaskOutput(task_id, block: false, timeout: 30)` periodically
+3. If a sub-agent is stuck after 2–3 polls, `TaskStop` it and spawn a replacement
+4. Once all research sub-agents have returned, proceed to Phase B
 
-When you spawn sub-agents, you MUST use `run_in_background: true` so they execute in parallel without blocking you. Then use `TaskOutput` with `block: false` to periodically check their progress. Do NOT use `block: true` to wait indefinitely — sub-agents can stall, which will freeze the entire research process.
+### Phase B — Report Writing (Delegated)
 
-1. Launch all sub-agents with `run_in_background: true`
-2. Periodically check with `TaskOutput(task_id, block: false, timeout: 30)`
-3. If a sub-agent appears stuck (no new progress after 2–3 polling cycles), stop it with `TaskStop` and spawn a replacement or do that specific search yourself as a last resort
-4. Once all sub-agents have returned their findings, proceed to analysis and report writing
+Once you have collected all research data, **do NOT write the report yourself**. Instead:
+
+1. **Compile a concise data package** — consolidate all sub-agent findings into a single structured summary. Strip out any noise, duplicates, or metadata. Keep only: data points, source URLs, and labels (e.g., [PROXY], [SINGLE-SOURCE]).
+2. **Spawn a writer sub-agent** with `run_in_background: true` and pass it:
+   - The compiled data package
+   - The OUTPUT FORMAT section from this skill (sections 1–9)
+   - The QUALITY STANDARDS section from this skill
+   - The output file path
+   - The sourcing rules block from Phase A
+3. **Do NOT wait for the writer sub-agent to finish.** Once you have dispatched the writer, your job for this skill is done. Signal completion immediately so the orchestrator (Sia) can move to the next skill.
+
+**Writer sub-agent prompt template:**
+
+```
+You are a report writer. Using ONLY the data provided below, write a complete market sizing report.
+
+OUTPUT FILE: [path]
+REPORT STRUCTURE:
+1. Scope Definition
+2. Methodology Summary
+3. Key Assumptions (numbered, each with source URL)
+4. Estimates — TAM / SAM / SOM with base/bear/bull ranges, all arithmetic shown
+5. Growth Forecast — CAGR with driver rationale, each sourced
+6. Confidence Level — High / Medium / Low with explanation
+7. Sanity Check — 1–2 reality anchors with source URLs
+8. Data Gaps
+9. Full Source List — every URL cited, numbered
+
+MANDATORY SOURCING RULES:
+1. Every number, percentage, statistic, and claim MUST include a full URL hyperlink from the data provided.
+2. Do NOT add any data that is not in the provided data package. If the data package lacks information for a section, note the gap explicitly.
+3. The report MUST end with a numbered "Sources" section listing every URL cited.
+4. A report with no source URLs will be rejected.
+
+QUALITY STANDARDS:
+- No word limit. Include every relevant data point from the data package.
+- Triangulation is mandatory — show all methods and reconcile.
+- Label all proxy estimates as [PROXY — REASONED ESTIMATE, NOT SOURCED DATA].
+- Present base/bear/bull ranges for all estimates.
+
+DATA PACKAGE:
+[paste compiled data here]
+```
 
 ---
 
