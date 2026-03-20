@@ -120,34 +120,31 @@ Structure your final report exactly as follows:
 
 ## SUB-AGENT DELEGATION RULES
 
-If you decide to use the Agent tool to delegate sub-tasks, you MUST include the following mandatory instructions verbatim in every sub-agent's prompt. Sub-agents do NOT inherit your instructions — if you do not explicitly pass these rules, the sub-agent will produce unsourced output.
+This skill produces a single integrated report. If you use the Agent tool, sub-agents are strictly limited to **data gathering only** — they search the web, collect data points with source URLs, and return their findings to you. Sub-agents must NOT write or save any report files. You (the main agent) are solely responsible for writing the final report.
 
-**Copy-paste this block into every sub-agent prompt:**
+**When spawning a research sub-agent, include these rules in its prompt:**
 
 ```
-MANDATORY SOURCING RULES — FAILURE TO COMPLY WILL RESULT IN REJECTED OUTPUT:
+YOUR ROLE: Research assistant — data gathering ONLY.
+You must search the web and return your findings as structured data with source URLs.
+Do NOT write or save any report files. Return all findings directly in your response.
+
+MANDATORY SOURCING RULES:
 1. Every number, percentage, statistic, and claim MUST include a full URL hyperlink to a real, publicly accessible source.
-2. Do NOT use numbered reference markers like [1], [2] without providing the actual URLs. Every reference number must resolve to a real URL in a Sources section at the end of the document.
-3. Inline citations are preferred: include the URL directly after the claim, e.g., "Market size reached $50B in 2025 ([source](https://...))" or as a markdown hyperlink.
-4. If data is unavailable, explicitly state so. Label proxy estimates as [PROXY — REASONED ESTIMATE, NOT SOURCED DATA].
-5. The final document MUST end with a numbered "Sources" section listing every URL cited, with descriptive titles.
-6. A report with no source URLs will be considered a failed deliverable and will need to be completely redone.
+2. Format every finding as: [data point] — [source title](URL)
+3. If data is unavailable, say so explicitly. Label proxy estimates as [PROXY — REASONED ESTIMATE, NOT SOURCED DATA].
+4. Do NOT fabricate or hallucinate any data. Only return what you actually found with verifiable URLs.
 ```
-
-You may add task-specific context around this block, but the sourcing rules above must appear in full in every sub-agent prompt. Do not paraphrase or abbreviate them.
 
 **Sub-agent execution strategy — non-blocking polling:**
 
-When you spawn sub-agents, you MUST use `run_in_background: true` so they execute in parallel without blocking you. Then use `TaskOutput` with `block: false` to periodically check their progress. Do NOT use `block: true` to wait indefinitely for a sub-agent — sub-agents can stall or run excessively long, which will freeze the entire research process.
+When you spawn sub-agents, you MUST use `run_in_background: true` so they execute in parallel without blocking you. Then use `TaskOutput` with `block: false` to periodically check their progress. Do NOT use `block: true` to wait indefinitely — sub-agents can stall, which will freeze the entire research process.
 
-Recommended polling approach:
-1. Launch all sub-agents with `run_in_background: true`
-2. Continue working on other tasks (e.g., writing the master report, researching the next item)
-3. Periodically check each sub-agent with `TaskOutput(task_id, block: false, timeout: 30)`
-4. If a sub-agent has produced substantial output (the report file has been written), collect its results and move on — do not wait for a "perfect" completion signal if the deliverable is already written to disk
-5. If a sub-agent appears stuck (no new progress after 2–3 polling cycles), stop it with `TaskStop` and either retry with a fresh agent or complete that portion yourself
-
-The goal is to keep the overall research moving. Never let a single slow sub-agent hold up the entire project.
+1. Launch sub-agents with `run_in_background: true`
+2. Continue your own research and analysis while sub-agents work
+3. Periodically check with `TaskOutput(task_id, block: false, timeout: 30)`
+4. If a sub-agent appears stuck (no new progress after 2–3 polling cycles), stop it with `TaskStop` and do that research yourself
+5. Once you have collected all data (from your own research + sub-agent results), write the complete report yourself
 
 ---
 
