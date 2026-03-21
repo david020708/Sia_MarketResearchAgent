@@ -17,7 +17,7 @@
 
 **Additional Players Mapped**: Stryker, DePuy Synthes (J&J MedTech), Hyalex Orthopaedics, Hy2Care, Orthocell, LifeNet Health
 
----
+
 
 ## 2. Competitive Set Table
 
