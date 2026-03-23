@@ -25,6 +25,33 @@ Before any research, define and confirm:
 
 If the scope is ambiguous, state your assumed scope clearly at the top of your report and proceed.
 
+### Step 2 — Launch All Agents in Parallel
+
+You must launch ALL agents (data gathering + write-up) at the same time using `run_in_background: true`. Do NOT wait for data gathering to complete before launching the write-up agent.
+
+**Launch these data gathering agents in parallel:**
+
+- **Agent 1 — Political Environment Data**: Search World Governance Indicators, Corruption Perceptions Index, Heritage Foundation Index, Freedom House, EIU Country Risk, Eurasia Group, Control Risks
+- **Agent 2 — Economic Environment Data**: Search World Bank DataBank, IMF WEO, OECD.Stat, UNCTAD, WITS, Oxford Economics, Capital Economics
+- **Agent 3 — Regulatory & Barriers Data**: Search government portals, WTO Trade Policy Reviews, USTR reports, law firm publications, trade associations
+
+**Each data gathering agent must:**
+- Collect ALL relevant data points with full source URLs
+- Return findings directly in its response (do NOT write files)
+- Use the mandatory sourcing rules (see below)
+
+**Simultaneously launch the write-up agent:**
+
+- **Write-up Agent**: Responsible for monitoring data gathering progress, collecting findings, and writing the final report when sufficient data is available
+
+The write-up agent will poll the data gathering agents periodically and autonomously decide when to begin writing.
+
+### Step 3 — Monitor Agent Progress
+
+After launching all agents, your only job is to monitor their progress. Do NOT conduct any research yourself. Wait for the write-up agent to complete the report.
+
+The write-up agent will handle all subsequent steps internally.
+
 ---
 
 ### Step 2 — Political Environment Research
@@ -229,78 +256,141 @@ Structure your final report exactly as follows:
 
 ---
 
-## SUB-AGENT DELEGATION RULES
+## AGENT PROMPT TEMPLATES
 
-**You are an orchestrator. You do NOT conduct web research or write reports yourself.** Your job is to coordinate sub-agents and keep the process moving efficiently.
+You must launch all agents in parallel using `run_in_background: true`. Use these exact prompt templates:
 
-### Phase A — Data Gathering
+---
 
-Spawn research sub-agents to collect data in parallel. Assign each sub-agent a specific research track (e.g., one for political environment data, one for economic indicators, one for regulatory/barriers analysis).
-
-**When spawning a research sub-agent, include these rules in its prompt:**
+### DATA GATHERING AGENT PROMPT TEMPLATE
 
 ```
-YOUR ROLE: Research assistant — data gathering ONLY.
-You must search the web and return your findings as structured data with source URLs.
-Do NOT write or save any report files. Return all findings directly in your response.
-Keep your response concise: only return data points with URLs, not full paragraphs of analysis.
+YOUR ROLE: Macro environment data researcher
+
+RESEARCH FOCUS: [Specify: Political Environment / Economic Environment / Regulatory & Barriers]
+
+DATA SOURCES TO SEARCH:
+[List specific sources based on agent type:
+- Agent 1 (Political): World Governance Indicators, Corruption Perceptions Index, Heritage Foundation Index, Freedom House, EIU Country Risk, Eurasia Group, Control Risks, Five-Year Plans (China), US-China Business Council, EU Chamber China
+- Agent 2 (Economic): World Bank DataBank, IMF WEO, OECD.Stat, UNCTAD, WITS, Atlas of Economic Complexity, Oxford Economics, NBS (China), PBOC, MOFCOM, Caixin, Rhodium Group
+- Agent 3 (Regulatory): Government portals, WTO Trade Policy Reviews, USTR reports, law firm publications (JD Supra, Mondaq), trade associations, SAMR, NDRC, MOFCOM, MIIT, CAC (China), China Briefing, AmCham, EU Chamber]
+
+MARKET SCOPE:
+- Geography: [geography]
+- Sector: [sector]
+- Perspective: [entrant perspective]
+
+YOUR TASK:
+Search the specified data sources and collect ALL relevant data points for your focus area, including:
+- Political: stability scores, corruption indices, policy signals, bilateral relations, sanctions exposure
+- Economic: GDP, growth rates, inflation, FX, FDI, trade data, labor costs, infrastructure quality
+- Regulatory: licensing requirements, foreign ownership restrictions, sector regulations, enforcement track record, barriers to entry
 
 MANDATORY SOURCING RULES:
-1. Every claim, score, statistic, and regulatory fact MUST include a full URL hyperlink to a real, publicly accessible source.
-2. Format every finding as: [data point] — [source title](URL)
-3. If data is unavailable, say so explicitly. Label reasoned inferences as [REASONED INFERENCE — NOT SOURCED DATA].
-4. Do NOT fabricate or hallucinate any data. Only return what you actually found with verifiable URLs.
+1. Every claim, score, statistic, regulatory fact MUST include a full URL hyperlink to the source
+2. Format: [data point] — [source title](URL)
+3. If data unavailable, state explicitly. Label inferences as [REASONED INFERENCE — NOT SOURCED DATA]
+4. Do NOT fabricate data. Only return what you actually found with verifiable URLs
+5. Return findings directly in your response. Do NOT write files.
+
+Keep your response structured and concise: data points with URLs only.
 ```
 
-**Execution:**
-1. Launch all research sub-agents with `run_in_background: true`
-2. Poll with `TaskOutput(task_id, block: false, timeout: 30)` periodically
-3. If a sub-agent is stuck after 2–3 polls, `TaskStop` it and spawn a replacement
-4. Once all research sub-agents have returned, proceed to Phase B
+---
 
-### Phase B — Report Writing (Delegated)
-
-Once you have collected all research data, **do NOT write the report yourself**. Instead:
-
-1. **Compile a concise data package** — consolidate all sub-agent findings into a single structured summary. Strip out noise, duplicates, and metadata. Keep only: data points, source URLs, and labels.
-2. **Spawn a writer sub-agent** with `run_in_background: true` and pass it:
-   - The compiled data package
-   - The OUTPUT FORMAT section from this skill (sections 1–8)
-   - The QUALITY STANDARDS section from this skill
-   - The output file path
-   - The sourcing rules block from Phase A
-3. **Do NOT wait for the writer sub-agent to finish.** Once you have dispatched the writer, your job for this skill is done. Signal completion immediately so the orchestrator (Sia) can move to the next skill.
-
-**Writer sub-agent prompt template:**
+### WRITE-UP AGENT PROMPT TEMPLATE (Part 1)
 
 ```
-You are a report writer. Using ONLY the data provided below, write a complete macro environment (PERB) analysis report.
+YOUR ROLE: Macro environment (PERB) report writer
 
-OUTPUT FILE: [path]
-REPORT STRUCTURE:
-1. Scope Definition
+OUTPUT FILE: [absolute path to output file]
+
+MARKET SCOPE:
+- Geography: [geography]
+- Sector: [sector]
+- Perspective: [entrant perspective]
+
+YOUR TASK:
+1. Monitor the 3 data gathering agents running in parallel with you
+2. Periodically check their progress using TaskOutput(task_id, block: false, timeout: 30)
+3. When you judge sufficient data has been collected, gather all findings
+4. Write a complete PERB analysis report using the collected data
+
+REPORT STRUCTURE (OUTPUT FORMAT):
+1. Scope Definition — market, geography, sector, entrant perspective, dimensions covered
 2. Political Environment — stability assessment, key risks, bilateral relations, score (1–5), sources
 3. Economic Environment — macro indicators, growth outlook, FX/currency risk, FDI context, score (1–5), sources
-4. Regulatory Environment — regulatory bodies, key laws, licensing requirements, enforcement assessment, score (1–5), sources
-5. Barriers to Entry — structural barriers by type, tariff/non-tariff barriers, SOE/incumbent advantages, score (1–5), sources
+4. Regulatory Environment — relevant regulatory bodies, key laws and restrictions, licensing requirements, enforcement assessment, score (1–5), sources
+5. Barriers to Entry — structural barriers mapped by type, tariff/non-tariff barriers, SOE/incumbent advantages, score (1–5), sources
 6. Market Environment Scorecard — weighted composite score, overall rating, top 3 risks, top 3 opportunities
 7. Confidence Assessment — confidence level per dimension, data gaps, key assumptions
-8. Full Source List — every URL cited, numbered
+8. Full Source List — every URL cited in the report, numbered
+
+ANALYSIS GUIDELINES:
+
+**Political Environment:**
+- Government stability, regime type, policy continuity risk
+- Election cycles and leadership transition risk
+- Geopolitical tensions and bilateral relations
+- Corruption levels and rule of law quality
+- Expropriation, nationalization, forced partnership risk
+- Sanctions exposure
+- Score 1–5 (5=highly favorable, 1=high risk)
+
+**Economic Environment:**
+- GDP size, growth rate, trajectory
+- Inflation, interest rates, currency stability/convertibility
+- Trade openness, FDI inflows/outflows
+- Consumer purchasing power, income distribution
+- Labor costs, productivity, availability
+- Infrastructure quality
+- Score 1–5 (5=highly favorable, 1=high risk)
+
+**Regulatory Environment:**
+- Licensing and permit requirements
+- Foreign ownership restrictions
+- Sector-specific regulations
+- Data localization, privacy, cybersecurity laws
+- Antitrust and competition law
+- IP protection and enforcement
+- Labor law, tax structure
+- Approval timelines and bureaucratic complexity
+- Score 1–5 (5=highly favorable, 1=high risk)
+
+**Barriers to Entry:**
+- Capital requirements
+- Economies of scale advantages
+- Regulatory and licensing barriers
+- IP and patent landscape
+- Distribution network access
+- Brand loyalty and switching costs
+- Government policy barriers (local content, SOE advantages)
+- Tariff and non-tariff trade barriers
+- Score 1–5 (5=low barriers, 1=high barriers)
+
+**Market Environment Scorecard:**
+- Apply industry-relevant weighting to each dimension
+- Calculate weighted composite score
+- Assign overall rating: Favorable / Neutral / Challenging / High-Risk
+- Identify top 3 risks and top 3 opportunities
 
 MANDATORY SOURCING RULES:
-1. Every claim, score, statistic, and regulatory fact MUST include a full URL hyperlink from the data provided.
-2. Do NOT add any data that is not in the provided data package. If the data package lacks information for a section, note the gap explicitly.
-3. The report MUST end with a numbered "Sources" section listing every URL cited.
-4. A report with no source URLs will be rejected.
+1. Every claim, score, statistic, regulatory fact MUST include a full URL hyperlink
+2. Do NOT add data not found by the data gathering agents
+3. If data is missing for a section, note the gap explicitly
+4. The report MUST end with a numbered "Sources" section listing every URL cited
+5. Label inferences as [REASONED INFERENCE — NOT SOURCED DATA]
+6. A report with no source URLs will be rejected
 
 QUALITY STANDARDS:
-- No word limit. Include every relevant data point from the data package.
-- Cross-reference official government data with independent sources where both are available in the data package.
-- Distinguish between formal rules and practical enforcement reality.
-- Label all reasoned inferences as [REASONED INFERENCE — NOT SOURCED DATA].
+- No word limit. Include every relevant data point found
+- Cross-reference official government data with independent sources
+- Distinguish between formal rules and practical enforcement reality
+- For China: note where party policy, SOE dynamics, or geopolitical exposure create risks not captured in formal regulatory text
+- Assign confidence level (High/Medium/Low) per dimension with explanation
+- Communicate uncertainty: data gaps, key assumptions, rapidly changing conditions
 
-DATA PACKAGE:
-[paste compiled data here]
+When you complete the report, signal completion.
 ```
 
 ---

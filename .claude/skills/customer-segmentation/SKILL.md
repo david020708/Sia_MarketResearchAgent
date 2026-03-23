@@ -26,6 +26,33 @@ Before any research, define and confirm:
 
 If the scope is ambiguous, state your assumed scope clearly at the top of your report and proceed.
 
+### Step 2 — Launch All Agents in Parallel
+
+You must launch ALL agents (data gathering + write-up) at the same time using `run_in_background: true`. Do NOT wait for data gathering to complete before launching the write-up agent.
+
+**Launch these data gathering agents in parallel:**
+
+- **Agent 1 — Demographic & Psychographic Data**: Search GWI, YouGov Profiles, Kantar TGI, Euromonitor, Mintel, Statista, Pew Research, Census data
+- **Agent 2 — Behavioral & Purchase Data**: Search consumer panels, G2/TrustRadius (B2B), ZoomInfo, Bombora, LinkedIn Audience Insights
+- **Agent 3 — China-Specific Data** (if applicable): Search iResearch, QuestMobile, CNNIC, CBNData, Nielsen China, Kantar China, Analysys, EqualOcean
+
+**Each data gathering agent must:**
+- Collect ALL relevant data points with full source URLs
+- Return findings directly in its response (do NOT write files)
+- Use the mandatory sourcing rules (see below)
+
+**Simultaneously launch the write-up agent:**
+
+- **Write-up Agent**: Responsible for monitoring data gathering progress, collecting findings, and writing the final report when sufficient data is available
+
+The write-up agent will poll the data gathering agents periodically and autonomously decide when to begin writing.
+
+### Step 3 — Monitor Agent Progress
+
+After launching all agents, your only job is to monitor their progress. Do NOT conduct any research yourself. Wait for the write-up agent to complete the report.
+
+The write-up agent will handle all subsequent steps internally.
+
 ---
 
 ### Step 2 — Choose the Segmentation Framework
@@ -254,79 +281,166 @@ Structure your final report exactly as follows:
 
 ---
 
-## SUB-AGENT DELEGATION RULES
+## AGENT PROMPT TEMPLATES
 
-**You are an orchestrator. You do NOT conduct web research or write reports yourself.** Your job is to coordinate sub-agents and keep the process moving efficiently.
+You must launch all agents in parallel using `run_in_background: true`. Use these exact prompt templates:
 
-### Phase A — Data Gathering
+---
 
-Spawn research sub-agents to collect data in parallel. Assign each sub-agent a specific research track (e.g., one for demographic/psychographic data, one for behavioral/purchase data, one for China-specific sources).
-
-**When spawning a research sub-agent, include these rules in its prompt:**
+### DATA GATHERING AGENT PROMPT TEMPLATE
 
 ```
-YOUR ROLE: Research assistant — data gathering ONLY.
-You must search the web and return your findings as structured data with source URLs.
-Do NOT write or save any report files. Return all findings directly in your response.
-Keep your response concise: only return data points with URLs, not full paragraphs of analysis.
+YOUR ROLE: Customer segmentation data researcher
+
+RESEARCH FOCUS: [Specify: Demographic & Psychographic / Behavioral & Purchase / China-Specific]
+
+DATA SOURCES TO SEARCH:
+[List specific sources based on agent type:
+- Agent 1 (Demo/Psycho): GWI, YouGov Profiles, Kantar TGI, Euromonitor Passport, Mintel, Statista, Pew Research, U.S. Census, BLS Consumer Expenditure Survey, Forrester, Gartner
+- Agent 2 (Behavioral): Consumer panels, G2, TrustRadius, ZoomInfo, LinkedIn Audience Insights, Bombora, Dun & Bradstreet, social listening tools
+- Agent 3 (China): iResearch, QuestMobile, CNNIC, CBNData, Nielsen China, Kantar Worldpanel China, Ipsos China, Analysys, EqualOcean]
+
+MARKET SCOPE:
+- Market: [market/product category]
+- Geography: [geography]
+- B2B/B2C: [classification]
+
+YOUR TASK:
+Search the specified data sources and collect ALL relevant data points for customer segmentation, including:
+- Demographics: age, gender, income, education, occupation, household size, life stage
+- Psychographics: values, attitudes, interests, lifestyle, personality
+- Behavioral: purchase history, usage rate, brand loyalty, channel preference, benefits sought
+- Firmographics (B2B): company size, industry, geography, growth stage
+- Technographics (B2B): technology stack, digital maturity
+- China-specific: tier-city data, generational cohorts, platform usage patterns
 
 MANDATORY SOURCING RULES:
-1. Every claim, statistic, demographic figure, and behavioral insight MUST include a full URL hyperlink to a real, publicly accessible source.
-2. Format every finding as: [data point] — [source title](URL)
-3. If data is unavailable, say so explicitly. Label reasoned inferences as [REASONED INFERENCE — NOT SOURCED DATA].
-4. Do NOT fabricate or hallucinate any data. Only return what you actually found with verifiable URLs.
+1. Every claim, statistic, demographic figure, behavioral insight MUST include a full URL hyperlink
+2. Format: [data point] — [source title](URL)
+3. If data unavailable, state explicitly. Label inferences as [REASONED INFERENCE — NOT SOURCED DATA]
+4. Do NOT fabricate data. Only return what you actually found with verifiable URLs
+5. Return findings directly in your response. Do NOT write files.
+
+Keep your response structured and concise: data points with URLs only.
 ```
 
-**Execution:**
-1. Launch all research sub-agents with `run_in_background: true`
-2. Poll with `TaskOutput(task_id, block: false, timeout: 30)` periodically
-3. If a sub-agent is stuck after 2–3 polls, `TaskStop` it and spawn a replacement
-4. Once all research sub-agents have returned, proceed to Phase B
+---
 
-### Phase B — Report Writing (Delegated)
-
-Once you have collected all research data, **do NOT write the report yourself**. Instead:
-
-1. **Compile a concise data package** — consolidate all sub-agent findings into a single structured summary. Strip out noise, duplicates, and metadata. Keep only: data points, source URLs, and labels.
-2. **Spawn a writer sub-agent** with `run_in_background: true` and pass it:
-   - The compiled data package
-   - The OUTPUT FORMAT section from this skill (sections 1–9)
-   - The QUALITY STANDARDS section from this skill
-   - The output file path
-   - The sourcing rules block from Phase A
-3. **Do NOT wait for the writer sub-agent to finish.** Once you have dispatched the writer, your job for this skill is done. Signal completion immediately so the orchestrator (Sia) can move to the next skill.
-
-**Writer sub-agent prompt template:**
+### WRITE-UP AGENT PROMPT TEMPLATE
 
 ```
-You are a report writer. Using ONLY the data provided below, write a complete customer segmentation and buyer persona report.
+YOUR ROLE: Customer segmentation and buyer persona report writer
 
-OUTPUT FILE: [path]
-REPORT STRUCTURE:
-1. Scope Definition
-2. Segment Map — all identified segments with descriptions and relative sizing
-3. Buyer Personas — one full persona per major segment (11-point structure: archetype name, demographic profile, role context, goals/motivations, pain points, decision-making process, information sources, objections, preferred channels, representative quote, segment size estimate)
-4. JTBD Analysis — functional, emotional, social jobs per persona; Switch Interview Four Forces where applicable
-5. Segment Sizing and Prioritization — size estimate per segment with sourced inputs, prioritization matrix
-6. China-Specific Considerations (if applicable)
-7. Validation Assessment — confidence level per persona, data gaps
-8. Go-to-Market Implications — channel, messaging, pricing implications per priority segment
+OUTPUT FILE: [absolute path to output file]
+
+MARKET SCOPE:
+- Market: [market/product category]
+- Geography: [geography]
+- B2B/B2C: [classification]
+- Strategic Purpose: [purpose]
+
+YOUR TASK:
+1. Monitor the data gathering agents (2-3 agents) running in parallel with you
+2. Periodically check their progress using TaskOutput(task_id, block: false, timeout: 30)
+3. When you judge sufficient data has been collected, gather all findings
+4. Write a complete customer segmentation and buyer persona report using the collected data
+
+REPORT STRUCTURE (OUTPUT FORMAT):
+1. Scope Definition — market, geography, B2B/B2C, segmentation dimensions applied, strategic purpose
+2. Segment Map — overview of all identified segments with brief descriptions and relative sizing
+3. Buyer Personas — one full persona document per major segment (see 11-point structure below)
+4. JTBD Analysis — functional, emotional, social jobs for each persona; Switch Interview Four Forces where applicable
+5. Segment Sizing and Prioritization — size estimate per segment with sourced inputs, prioritization matrix with scores
+6. China-Specific Considerations (if applicable) — tier-city breakdown, generational cohort analysis, platform behavior
+7. Validation Assessment — confidence level per persona, data gaps, recommended primary research
+8. Go-to-Market Implications — channel, messaging, pricing implications per priority segment (brief)
 9. Full Source List — every URL cited, numbered
 
+BUYER PERSONA 11-POINT STRUCTURE:
+1. Archetype name and label — memorable name + one-line descriptor
+2. Demographic profile — age, gender, income, education, geography (cite source for each)
+3. Role context (B2B only) — job title, seniority, department, company size, industry
+4. Goals and motivations — functional, emotional, social goals (cite sources)
+5. Pain points and frustrations — problems with current solutions (cite review data, surveys)
+6. Decision-making process — how they discover, evaluate, purchase; who else is involved
+7. Information sources — which media, platforms, communities, influencers they trust
+8. Objections and barriers to purchase — what stops them from buying
+9. Preferred channels — where they spend time and how they prefer to be reached
+10. Representative quote — verbatim or [SYNTHESIZED FROM RESEARCH]
+11. Segment size estimate — % of addressable market (cite source)
+
+For B2B: map buying committee (Champion, Economic Buyer, Technical Buyer, End User, Influencer)
+
+SEGMENTATION FRAMEWORKS TO APPLY:
+
+**B2C Markets (layer these dimensions):**
+- Demographic: age, gender, income, education, occupation, household size, life stage
+- Psychographic: values, attitudes, interests, lifestyle, personality, social class
+- Behavioral: purchase history, usage rate, brand loyalty, occasion, benefits sought, channel preference
+- Geographic: country, region, city tier, urban/rural
+
+**B2B Markets (layer these dimensions):**
+- Firmographic: company size, industry, geography, ownership, growth stage
+- Technographic: technology stack, software adoption, digital maturity
+- Behavioral: purchase history, engagement patterns, content consumption
+- Needs-based: underlying problem, desired outcomes, decision criteria
+
+**Advanced approaches:**
+- Needs-based segmentation: group by underlying need regardless of demographics
+- Value-based segmentation: group by CLV or revenue potential
+- Jobs-to-Be-Done: reframe around the "job" customer is trying to accomplish
+
+JOBS-TO-BE-DONE ANALYSIS:
+For each persona identify:
+1. Functional job: practical task they're trying to accomplish
+2. Emotional job: how they want to feel while doing it
+3. Social job: how they want to be perceived
+4. Circumstance: specific situation that triggers the need
+
+Switch Interview Four Forces (when applicable):
+- Push: dissatisfaction with current solution
+- Pull: attraction to new solution
+- Anxiety: fear/uncertainty about switching
+- Habit: inertia and comfort with status quo
+
+SEGMENT SIZING METHOD:
+- Use demographic data to establish total population fitting segment profile
+- Apply behavioral/attitudinal filter rates from survey data
+- Cross-reference with market sizing data if available
+- Show all arithmetic and cite every input
+
+PRIORITIZATION MATRIX (score each segment 1-5):
+- Segment Attractiveness: size, growth rate, unmet need intensity, willingness to pay, accessibility
+- Strategic Fit: product-need match, competitive advantage, cost to serve
+- Priority segments: high attractiveness + high fit
+- Investment segments: high attractiveness + low fit
+- Niche segments: low attractiveness + high fit
+- Deprioritize: low on both
+
+CHINA-SPECIFIC VARIABLES (always address if China is in scope):
+- Tier-city segmentation: Tier 1, New Tier 1, Tier 2, Tier 3+ (cite NBS or iResearch)
+- Generational cohorts: Post-80s, Post-90s, Post-00s (cite CBNData, QuestMobile)
+- Platform-based behavioral segmentation: Douyin vs WeChat vs Pinduoduo users
+
 MANDATORY SOURCING RULES:
-1. Every claim, statistic, demographic figure, and behavioral insight MUST include a full URL hyperlink from the data provided.
-2. Do NOT add any data that is not in the provided data package. If the data package lacks information for a section, note the gap explicitly.
-3. The report MUST end with a numbered "Sources" section listing every URL cited.
-4. A report with no source URLs will be rejected.
-5. Label synthesized quotes as [SYNTHESIZED FROM RESEARCH, NOT VERBATIM].
+1. Every demographic figure, behavioral statistic, segment size estimate MUST include full URL hyperlink
+2. Do NOT add data not found by data gathering agents
+3. If data missing for a section, note the gap explicitly
+4. Report MUST end with numbered "Sources" section listing every URL cited
+5. Label synthesized quotes as [SYNTHESIZED FROM RESEARCH, NOT VERBATIM]
+6. Label inferences as [REASONED INFERENCE — NOT SOURCED DATA]
+7. A report with no source URLs will be rejected
 
 QUALITY STANDARDS:
-- No word limit. Include every relevant data point from the data package.
-- Never invent persona details. If data is unavailable, label as [REASONED INFERENCE — NOT SOURCED DATA].
-- Personas must be actionable: each should lead to a distinct channel, message, or product decision.
+- No word limit. Include every relevant data point found
+- Never invent persona details. If data unavailable, say so explicitly
+- Distinguish stated preferences vs revealed behavior (behavioral data takes precedence)
+- For China: cross-reference official/platform data with independent sources
+- Personas must be actionable: each should lead to distinct channel, message, or product decision
+- If two personas would receive identical treatment, merge them
+- Assign confidence level (High/Medium/Low) per persona based on data quality and recency
 
-DATA PACKAGE:
-[paste compiled data here]
+When you complete the report, signal completion.
 ```
 
 ---
