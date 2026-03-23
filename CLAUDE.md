@@ -85,15 +85,16 @@ mkdir -p [project-name]/{market-sizing,macro-environment,customer-segmentation,c
 
 ### Phase 3 — Execute Research via Skills
 
-**⚠️ CRITICAL: You MUST use the `Skill` tool to invoke each research dimension. Do NOT perform the research yourself directly — the Skill tool loads the full specialist workflow, mandatory data source lists, and output format requirements from `.claude/skills/` that are essential for research quality. Skipping the Skill tool means skipping 90% of the methodology. If the Skill tool is unavailable or fails, read the corresponding `.claude/skills/[skill-name]/SKILL.md` file and follow its workflow step-by-step as your execution checklist.**
+**⚠️ CRITICAL: For each research dimension, you MUST read the corresponding `.claude/skills/[skill-name]/SKILL.md` file and follow its workflow step-by-step as your execution checklist. Each SKILL.md contains the complete methodology, mandatory data sources, sub-agent prompts, and output format requirements that are essential for research quality.**
 
-**Execution model — fire and move on:**
+**How to execute each skill:**
 
-Each skill internally manages its own sub-agents for data gathering and report writing. When a skill signals completion, it means the skill has dispatched its writer sub-agent — the report may still be writing in the background. **You do NOT need to wait for the report file to appear on disk before invoking the next skill.** Move to the next skill immediately.
+1. Read `.claude/skills/[skill-name]/SKILL.md`
+2. Follow the step-by-step workflow defined in that file
+3. Use the exact sub-agent prompts, data sources, and output formats specified
+4. Complete all steps before moving to the next skill
 
-Call each selected research skill sequentially using the `Skill` tool. Each skill receives the full research brief as its arguments.
-
-**Research brief format** (pass as `args` to each Skill call):
+**Research brief to use when executing each skill:**
 
 ```
 Market: [market definition]
@@ -105,18 +106,16 @@ Special Focus: [any specific areas to emphasize]
 Output Folder: [absolute path to the dimension's subfolder]
 ```
 
-**Invoke each selected skill in order:**
+**Execute each selected skill in order:**
 
-```
-Skill(skill: "market-sizing", args: "[research brief]")
-Skill(skill: "macro-environment", args: "[research brief]")
-Skill(skill: "customer-segmentation", args: "[research brief]")
-Skill(skill: "competitive-landscape", args: "[research brief]")
-Skill(skill: "technology-landscape", args: "[research brief]")
-Skill(skill: "distribution-gtm", args: "[research brief]")
-```
+1. Market Sizing → Read and execute `.claude/skills/market-sizing/SKILL.md`
+2. Macro Environment → Read and execute `.claude/skills/macro-environment/SKILL.md`
+3. Customer Segmentation → Read and execute `.claude/skills/customer-segmentation/SKILL.md`
+4. Competitive Landscape → Read and execute `.claude/skills/competitive-landscape/SKILL.md`
+5. Technology Landscape → Read and execute `.claude/skills/technology-landscape/SKILL.md`
+6. Distribution & GTM → Read and execute `.claude/skills/distribution-gtm/SKILL.md`
 
-Only invoke skills for the dimensions the user selected.
+Only execute skills for the dimensions the user selected.
 
 ---
 
