@@ -23,9 +23,9 @@ If scope is ambiguous, state your assumed scope at the top of the master report 
 
 ---
 
-### Step 2 — Map the Channel Architecture
+### Step 2 — Map the Channel Architecture (YOU do this research)
 
-Establish the full map of distribution channels before deep-diving into any individual channel.
+**Your job in this step:** Conduct web research yourself to establish the full map of distribution channels before delegating to sub-agents.
 
 **Channel Level Classification:** Classify by intermediary count — Zero-level (Direct: producer→consumer), One-level (producer→retailer→consumer), Two-level (producer→distributor→retailer→consumer), Three-level (with agent/broker layer).
 
@@ -41,152 +41,84 @@ Compile a **Channel Architecture Table**: channel type, level, intensity, estima
 
 ---
 
-### Step 3 — Analyze Channel Economics
+### Step 3 — Launch Sub-Agents for Each Key Channel
 
-Build a **Margin Stack** for each major channel tracing money flow from end-customer price to producer net revenue, showing each intermediary's take (retailer margin, distributor margin, agent commission, platform take rate).
+Once you have mapped the channel architecture, launch one sub-agent per key channel (recommend 5-8 channels).
 
-**Cost-to-Serve per channel:** channel margin/commission, sales cost, marketing cost (co-op, MDF, spiffs), logistics/fulfillment, training/enablement, support, channel technology (PRM, deal registration).
+**For each channel, launch a sub-agent with `run_in_background: true` and provide:**
+1. Channel name
+2. Research methodology (see CHANNEL RESEARCH SUB-AGENT PROMPT TEMPLATE below)
+3. Output file path: `[output-folder]/[N]-channel-[name].md`
+4. Report structure requirements (11-point channel profile)
+5. Mandatory sourcing rules
 
-**Key metrics to calculate:** channel margin %, producer net margin %, CAC by channel, CAC payback period, LTV:CAC by channel, channel ROI.
-
----
-
-### Step 4 — Analyze Go-to-Market Motions
-
-Map dominant GTM motions in the market:
-
-| Motion | Best For | Key Metrics |
-|--------|----------|-------------|
-| Field Sales (Enterprise) | High ACV (>$100K), complex products | ACV, win rate, sales cycle length |
-| Inside Sales (Mid-Market) | Mid ACV ($10K–$100K) | Pipeline velocity, demo-to-close rate |
-| Product-Led Growth (PLG) | Low ACV (<$10K), dev tools, horizontal SaaS | Free-to-paid rate, NRR, PQLs |
-| Channel / Partner Sales | Markets needing local presence or implementation | Partner-sourced revenue %, deal registration volume |
-| Marketplace / Platform | Cloud-native software, mobile apps | Marketplace-sourced revenue, co-sell deals |
-| Community-Led Growth | Developer tools, open-source | Community size, community-to-pipeline conversion |
-| Outbound / ABM | High ACV, concentrated buyer universe | Account engagement, pipeline per target account |
-
-Analyze hybrid/multi-motion patterns: which motion serves which segment, handoff mechanisms, revenue mix by motion, efficiency comparison.
+**After launching all channel sub-agents:**
+- Continue to Step 4 to write the master report
+- Do NOT wait for sub-agents to finish
+- Sub-agents will autonomously research, judge when they have sufficient data, and write their reports
 
 ---
 
-### Step 5 — Map the Partner Ecosystem
+### Step 4 — Write Master GTM Report (while sub-agents work)
 
-For markets with significant indirect channels, analyze the partner ecosystem:
+While channel sub-agents are researching in the background, write the master GTM report yourself using the channel architecture data from Step 2.
 
-**Partner types:** VARs (resell + bundle, 20–40% discount), System Integrators (implement + customize), MSPs (ongoing management), Consulting/Advisory (recommend + influence), Technology Alliance (integrate products), OEM/Embedded (50–70% discount), Referral (10–20% of first-year revenue), Distributors (two-tier, 5–15% margin).
+**Master report content:**
+1. Scope Definition
+2. Channel Architecture Table (from Step 2)
+3. Channel Architecture Diagram
+4. Channel Economics Summary
+5. GTM Motion Analysis
+6. Partner Ecosystem Overview
+7. Channel Conflict Assessment
+8. Channel Trend Forecast
+9. China-Specific Assessment (if applicable)
+10. Strategic Implications
+11. Confidence Assessment and key gaps
+12. Full Source List
 
-**Partner program analysis** for major vendors: program tiers and requirements, margin levels and MDF, deal registration and co-sell programs.
-
----
-
-### Step 6 — Assess Channel Conflict and Multi-Channel Dynamics
-
-**Conflict types:** vertical (producer vs. distributor), horizontal (reseller vs. reseller), multi-channel (direct vs. partner), free-rider (education in one channel, purchase in another).
-
-**Management mechanisms:** territory exclusivity, deal registration, MAP/price parity, channel-specific SKUs, compensation alignment, governance councils.
-
-**Omnichannel assessment:** channel role clarity, cross-channel data integration, pricing consistency, channel attribution.
-
----
-
-### Step 7 — China-Specific Distribution Analysis
-
-For markets with significant Chinese activity, conduct dedicated China analysis.
-
-**Digital channels:** Tmall/Taobao, JD.com, Pinduoduo, Douyin E-commerce, Kuaishou, WeChat Mini Programs, Xiaohongshu/RED, Meituan.
-
-**Offline structure:** Provincial/regional distributors (backbone), city-level sub-distributors, traditional trade (mom-and-pop), modern trade (hypermarkets, convenience), specialty retail.
-
-**B2B channels:** Direct enterprise sales, regional resellers/VARs/SIs, government procurement, B2B platforms (1688.com, JD Enterprise).
-
-**Key dynamics to address:** online penetration by category, tier-city distribution gap, live-streaming commerce, community group buying, cross-border e-commerce, platform exclusivity pressure.
+Save to: `[output-folder]/00-master-distribution-gtm-report.md`
 
 ---
 
-### Step 8 — Synthesize Trends and Forecast
+### Step 5 — Monitor and Complete
 
-**Channel shift analysis:** historical share trajectory (3–5 years), growth drivers, disruption signals.
-
-**Evolution patterns:** disintermediation (D2C trend), re-intermediation (cloud marketplaces), channel convergence (O2O), platform shift (search→social discovery), AI/automation impact on channel economics.
-
-**Scenario planning:** bull case (accelerated transformation), base case (most likely trajectory), bear case (preserved incumbent structures).
+After writing the master report, your work is done. The sub-agents will complete their channel reports autonomously.
 
 ---
 
-### Step 9 — Validate and Stress-Test
+## RESEARCH SOURCES REFERENCE (for Step 2 — Channel Architecture Mapping)
 
-- Triangulate channel share from 2+ independent sources
-- Cross-check margin stacks against public company data and marketplace fee schedules
-- Validate GTM motions against observable evidence (job postings, pricing pages, partner programs)
-- Ensure data recency (flag anything >24 months old)
-- Label: `[SINGLE-SOURCE — VERIFY INDEPENDENTLY]`, `[REASONED INFERENCE — NOT SOURCED DATA]`, `[MODELED ESTIMATE — NOT DISCLOSED DATA]`, `[FORECAST — SUBJECT TO UNCERTAINTY]`
-- Assign confidence levels: High / Medium / Low per major finding
-
----
-
-## RESEARCH SOURCES REFERENCE
-
-**Company filings & financials:**
-- SEC EDGAR 10-K/S-1 filings ([sec.gov](https://www.sec.gov/cgi-bin/browse-edgar)) — channel strategy, cost structure, risk factors, GTM descriptions
-- Investor Day presentations, earnings call transcripts — Seeking Alpha ([seekingalpha.com](https://seekingalpha.com/)), The Motley Fool
-
-**Industry & channel data:**
-- Euromonitor ([euromonitor.com](https://www.euromonitor.com/)) — channel share by category/country, retail forecasts
-- IBISWorld ([ibisworld.com](https://www.ibisworld.com/)) — industry channel breakdowns
-- Statista ([statista.com](https://www.statista.com/)) — channel share, e-commerce penetration
-- eMarketer / Insider Intelligence ([insiderintelligence.com](https://www.insiderintelligence.com/)) — digital channel forecasts, marketplace share
-
-**Channel & partner strategy:**
-- Canalys ([canalys.com](https://www.canalys.com/)) — IT/telecom channel analysis, partner ecosystem
-- Channelnomics ([channelnomics.com](https://www.channelnomics.com/)) — partner program benchmarking
-- Forrester ([forrester.com](https://www.forrester.com/)) — B2B channel strategy, partner ecosystem, buying journey
-- CRN ([crn.com](https://www.crn.com/)) — partner program guides and rankings
-
-**GTM & SaaS metrics:**
-- OpenView Partners ([openviewpartners.com](https://openviewpartners.com/)) — PLG benchmarks, SaaS GTM
-- Bessemer Cloud Index ([bvp.com/cloud](https://www.bvp.com/cloud)) — SaaS efficiency metrics
-- SaaStr ([saastr.com](https://www.saastr.com/)) — GTM motions, benchmarks
-- G2 / TrustRadius — buyer reviews revealing channel attribution
-
-**Consulting & strategy:**
-- McKinsey ([mckinsey.com](https://www.mckinsey.com/)) — route-to-market, omnichannel strategy
-- Bain ([bain.com](https://www.bain.com/)) — channel economics, D2C analysis
-- BCG ([bcg.com](https://www.bcg.com/)) — B2B GTM transformation
-- Gartner ([gartner.com](https://www.gartner.com/)) — sales technology, GTM strategy
-
-**Emerging channels & investment:**
-- CB Insights ([cbinsights.com](https://www.cbinsights.com/)) — channel technology startups
-- PitchBook ([pitchbook.com](https://pitchbook.com/)) — distribution/marketplace investment activity
+**General sources:**
+- Euromonitor, IBISWorld, Statista, eMarketer
+- Company filings (SEC EDGAR), earnings calls
+- Canalys, Channelnomics, Forrester, CRN
+- OpenView Partners, Bessemer Cloud Index, SaaStr
 
 **China-specific:**
-- iResearch ([iresearch.cn](https://www.iresearch.cn/)), QuestMobile ([questmobile.cn](https://www.questmobile.cn/)), CBNData ([cbndata.com](https://www.cbndata.com/)), Analysys ([analysys.cn](https://www.analysys.cn/)) — e-commerce channel share, platform analytics
-- EqualOcean ([equalocean.com](https://equalocean.com/)) — English-language China research
-- MOFCOM ([mofcom.gov.cn](http://www.mofcom.gov.cn/)), CCFA ([ccfa.org.cn](http://www.ccfa.org.cn/)), NBS ([stats.gov.cn](http://www.stats.gov.cn/)) — policy, retail chain data, official statistics
-- 36Kr ([36kr.com](https://36kr.com/)), LatePost ([latepost.com](https://www.latepost.com/)) — new retail models, platform strategy
+- iResearch, QuestMobile, CBNData, Analysys
+- EqualOcean, MOFCOM, CCFA, NBS
+- 36Kr, LatePost
 
 ---
 
-## OUTPUT FORMAT
+## CHANNEL RESEARCH SUB-AGENT PROMPT TEMPLATE
 
-Create folder at the provided path.
+Use this template when launching a sub-agent for each channel:
 
-### Master Report (`00-master-distribution-gtm-report.md`)
+```
+YOUR ROLE: Distribution channel research analyst
 
-1. Scope Definition
-2. Channel Architecture Table (all channels: type, level, intensity, share, players, trajectory)
-3. Channel Architecture Diagram (product flow from producer to customer)
-4. Channel Economics Summary (margin stack comparison, cost-to-serve ranking, CAC/LTV:CAC)
-5. GTM Motion Analysis (dominant motions, revenue mix, efficiency, hybrid patterns)
-6. Partner Ecosystem Overview (partner types, major partners, program structures, benchmarks)
-7. Channel Conflict Assessment (types, severity, management mechanisms, omnichannel maturity)
-8. Channel Trend Forecast (historical shifts, emerging models, 3-year projection with scenarios)
-9. China-Specific Assessment (if applicable)
-10. Strategic Implications (recommendations by company type, investment priorities, build vs. partner)
-11. Confidence Assessment and key gaps
-12. Full Source List (every URL, numbered)
+CHANNEL: [Channel Name]
+OUTPUT FILE: [absolute path to output file, e.g., /path/01-channel-marketplace.md]
 
-### Channel Deep-Dive Reports (`[N]-channel-[name].md`, one per key channel)
+YOUR TASK:
+Research this distribution channel comprehensively and write a complete channel deep-dive report. You must autonomously:
+1. Search for and collect all relevant data about this channel
+2. Judge when you have sufficient information
+3. Write the complete report following the structure below
 
+REPORT STRUCTURE (11-point channel profile):
 1. Overview — definition, market share, growth trajectory, key terms
 2. Structure & Mechanics — product flow, intermediaries, contract terms, tech infrastructure, sales cycle
 3. Economics — margin stack, cost-to-serve, CAC/LTV:CAC, volume economics, channel comparison
@@ -199,47 +131,56 @@ Create folder at the provided path.
 10. Strategic Recommendations — when to use, optimization factors, investment level, integration
 11. Confidence Level and recommended primary research
 12. Sources (every URL, numbered)
+```
+
+**RESEARCH DATA SOURCES TO USE:**
+
+**Company filings & financials:**
+- SEC EDGAR, earnings calls, investor presentations
+
+**Industry & channel data:**
+- Euromonitor, IBISWorld, Statista, eMarketer
+
+**Channel & partner strategy:**
+- Canalys, Channelnomics, Forrester, CRN
+
+**GTM & SaaS metrics:**
+- OpenView Partners, Bessemer Cloud Index, SaaStr, G2, TrustRadius
+
+**China-specific:**
+- iResearch, QuestMobile, CBNData, Analysys, EqualOcean
+- MOFCOM, CCFA, NBS, 36Kr, LatePost
+
+MANDATORY SOURCING RULES:
+1. Every claim, statistic, margin figure, channel share estimate MUST include a full URL hyperlink
+2. Do NOT use numbered reference markers like [1], [2] without providing actual URLs
+3. Inline citations preferred: "Platform take rate is 15% ([source](https://...))"
+4. If data unavailable, state explicitly. Label inferences as [REASONED INFERENCE — NOT SOURCED DATA]. Label estimates as [MODELED ESTIMATE — NOT DISCLOSED DATA]
+5. The report MUST end with a numbered "Sources" section listing every URL cited
+6. A report with no source URLs will be rejected
+
+When you complete the report, save it to the specified output file.
+```
+
+---
+
+## OUTPUT FORMAT AND FILE STRUCTURE
+
+**YOU (Sia) create:**
+- `00-master-distribution-gtm-report.md` — Master report with channel architecture table, economics summary, GTM motion analysis, strategic implications
+
+**Sub-agents create:**
+- `[N]-channel-[name].md` — One deep-dive report per channel (11-point structure as specified in sub-agent template)
 
 ---
 
 ## QUALITY STANDARDS
 
-- No word limit — include every relevant data point found.
-- Channel economics data held to highest standard: margin stacks must be sourced from filings, fee schedules, or analyst reports.
-- For China data: cross-reference platform-reported figures with independent sources; note reliability concerns.
-- Always distinguish sourced data from reasoned estimates.
-- GTM motion analysis must be grounded in observable evidence, not generic frameworks.
-- Create output folder at provided path. Confirm all file paths and list every file created in final response.
+- Every claim must have a source URL
+- Channel economics data held to highest standard
+- Distinguish sourced data from reasoned estimates
+- For China: cross-reference platform data with independent sources
 
 ---
 
-## SUB-AGENT DELEGATION RULES
-
-If you decide to use the Agent tool to delegate sub-tasks (e.g., researching individual channels in parallel), you MUST include the following mandatory instructions verbatim in every sub-agent's prompt. Sub-agents do NOT inherit your instructions — if you do not explicitly pass these rules, the sub-agent will produce unsourced output.
-
-**Copy-paste this block into every sub-agent prompt:**
-
-```
-MANDATORY SOURCING RULES — FAILURE TO COMPLY WILL RESULT IN REJECTED OUTPUT:
-1. Every claim, statistic, margin figure, channel share estimate, and partner reference MUST include a full URL hyperlink to a real, publicly accessible source.
-2. Do NOT use numbered reference markers like [1], [2] without providing the actual URLs. Every reference number must resolve to a real URL in a Sources section at the end of the document.
-3. Inline citations are preferred: include the URL directly after the claim, e.g., "Platform take rate is 15% ([source](https://...))" or as a markdown hyperlink.
-4. If data is unavailable, explicitly state so. Label reasoned inferences as [REASONED INFERENCE — NOT SOURCED DATA]. Label modeled estimates as [MODELED ESTIMATE — NOT DISCLOSED DATA]. Label forecasts as [FORECAST — SUBJECT TO UNCERTAINTY].
-5. The final document MUST end with a numbered "Sources" section listing every URL cited, with descriptive titles.
-6. A report with no source URLs will be considered a failed deliverable and will need to be completely redone.
-```
-
-You may add task-specific context (channel name, research scope, output path, format requirements) around this block, but the sourcing rules above must appear in full in every sub-agent prompt. Do not paraphrase or abbreviate them.
-
-**Sub-agent execution strategy — non-blocking polling:**
-
-When you spawn sub-agents, you MUST use `run_in_background: true` so they execute in parallel without blocking you. Then use `TaskOutput` with `block: false` to periodically check their progress. Do NOT use `block: true` to wait indefinitely for a sub-agent — sub-agents can stall or run excessively long, which will freeze the entire research process.
-
-Recommended polling approach:
-1. Launch all sub-agents with `run_in_background: true`
-2. Continue working on other tasks (e.g., writing the master report, researching the next item)
-3. Periodically check each sub-agent with `TaskOutput(task_id, block: false, timeout: 30)`
-4. If a sub-agent has produced substantial output (the report file has been written), collect its results and move on — do not wait for a "perfect" completion signal if the deliverable is already written to disk
-5. If a sub-agent appears stuck (no new progress after 2–3 polling cycles), stop it with `TaskStop` and either retry with a fresh agent or complete that portion yourself
-
-The goal is to keep the overall research moving. Never let a single slow sub-agent hold up the entire project.
+## FILE OUTPUT INSTRUCTIONS

@@ -28,9 +28,9 @@ If the scope is ambiguous, state your assumed scope clearly at the top of your m
 
 ---
 
-### Step 2 — Map the Technology Landscape
+### Step 2 — Map the Technology Landscape (YOU do this research)
 
-Before deep-diving into any individual technology, establish the full map of relevant technologies in the domain.
+**Your job in this step:** Conduct web research yourself to identify all relevant technologies before delegating to sub-agents.
 
 **Framework 1 — Gartner Hype Cycle**
 The most widely used industry framework. Plots technologies across five phases:
@@ -65,284 +65,155 @@ Compile a **Technology Landscape Table** listing all identified technologies wit
 
 ---
 
-### Step 3 — Academic Paper Research
+### Step 3 — Launch Sub-Agents for Each Key Technology
 
-For each key technology, conduct a systematic academic literature search. This step is mandatory for deep-tech domains (AI/ML, biotech, materials science, quantum computing, semiconductors, energy storage, etc.) and optional for software/SaaS domains.
+Once you have identified the technology landscape, launch one sub-agent per key technology (recommend 5-10 technologies).
 
-**Primary search databases — use all that are relevant:**
+**For each technology, launch a sub-agent with `run_in_background: true` and provide:**
+1. Technology name
+2. Research methodology (see TECHNOLOGY RESEARCH SUB-AGENT PROMPT TEMPLATE below)
+3. Output file path: `[output-folder]/[N]-technology-[name].md`
+4. Report structure requirements (10-point technology profile)
+5. Mandatory sourcing rules
 
-| Database | Best For | Access | URL |
-|----------|---------|--------|-----|
-| **Google Scholar** | Broadest coverage, citation counts, author profiles | Free | [scholar.google.com](https://scholar.google.com/) |
-| **arXiv** | CS, physics, math, quantitative biology preprints — fastest publication | Free | [arxiv.org](https://arxiv.org/) |
-| **Semantic Scholar** | AI-powered search, citation graphs, author profiles, influential paper detection | Free | [semanticscholar.org](https://www.semanticscholar.org/) |
-| **IEEE Xplore** | Electrical engineering, electronics, computing, communications | Subscription (some free) | [ieeexplore.ieee.org](https://ieeexplore.ieee.org/) |
-| **ACM Digital Library** | Computer science, HCI, systems, programming languages | Subscription (some free) | [dl.acm.org](https://dl.acm.org/) |
-| **PubMed / PubMed Central** | Biomedical, life sciences, clinical research | Free | [pubmed.ncbi.nlm.nih.gov](https://pubmed.ncbi.nlm.nih.gov/) |
-| **ResearchGate** | Author-uploaded papers, author contact, cross-disciplinary | Free | [researchgate.net](https://www.researchgate.net/) |
-
-**How to find papers by a specific company's research team:**
-
-Method 1 — Company research portals (check these first):
-- Google Research: [research.google/pubs](https://research.google/pubs/)
-- Google DeepMind: [deepmind.google/research](https://deepmind.google/research/)
-- OpenAI: [openai.com/research](https://openai.com/research)
-- Meta AI Research: [ai.meta.com/research/publications](https://ai.meta.com/research/publications/)
-- Microsoft Research: [microsoft.com/en-us/research/publications](https://www.microsoft.com/en-us/research/publications/)
-- Apple ML Research: [machinelearning.apple.com](https://machinelearning.apple.com/)
-- Tencent AI Lab: [ai.tencent.com/ailab/en/index](https://ai.tencent.com/ailab/en/index)
-- Baidu Research: [research.baidu.com](http://research.baidu.com/)
-- ByteDance Research: [research.bytedance.com](https://research.bytedance.com/)
-- Huawei Noah's Ark Lab: [noahlab.com.hk](http://www.noahlab.com.hk/)
-- Alibaba DAMO Academy: [damo.alibaba.com](https://damo.alibaba.com/)
-
-Method 2 — Affiliation search in databases:
-- **Google Scholar**: search `"[Company Name]" [technology keyword]`
-- **Semantic Scholar**: use author search, filter by institution
-- **arXiv**: search `affiliation:"[Company Name]"` in the author field
-- **IEEE Xplore**: Advanced search → Author Affiliations field
-- **Scopus**: Advanced search → `AFFIL("[Company Name]")`
-
-Method 3 — Author-centric search:
-1. Identify key researchers at the company from papers, LinkedIn, or conference talks
-2. Search their name in Google Scholar or Semantic Scholar
-3. Follow co-author networks to find the full research team
-
-Method 4 — Conference proceedings:
-Search NeurIPS, ICML, ICLR, CVPR, ACL, EMNLP proceedings for a company name to find all their submissions in a given year.
-
-**Assessing paper quality and impact:**
-
-Quantitative metrics:
-- **Citation count**: 100+ = notable; 1,000+ = landmark; 10,000+ = field-defining
-- **h-index**: an author with h-index N has N papers each cited at least N times
-- **Venue tier**: NeurIPS, ICML, ICLR, CVPR, ACL, EMNLP, ICCV (AI/ML); ISSCC, IEDM (semiconductors); Nature, Science, Cell (life sciences)
-- **Altmetrics**: social media mentions, news coverage, policy citations
-
-Qualitative signals:
-- Does the paper release code? (check GitHub link in paper)
-- Can results be replicated? (check Papers With Code for reproductions)
-- Are there ablation studies? (indicates rigorous methodology)
-- Is it peer-reviewed? (arXiv preprints are not; conference/journal papers are)
-
-**Structured reading protocol for each paper:**
-1. **Abstract**: What problem does it solve? What is the claimed contribution?
-2. **Introduction**: What is the prior state of the art? What gap does this fill?
-3. **Figures and Tables**: Read these before the methods — most key results are in 2–3 key figures
-4. **Results/Experiments**: What benchmarks were used? How does it compare to baselines?
-5. **Conclusion**: What do the authors say are limitations and future work?
-6. **Methods/Math**: Read in detail only if implementation specifics are needed
-
-For each paper included in the report, document: title, authors, affiliation, venue, year, citation count, URL, and a 3–5 sentence plain-language summary of the key contribution.
+**After launching all technology sub-agents:**
+- Continue to Step 4 to write the master report
+- Do NOT wait for sub-agents to finish
+- Sub-agents will autonomously research, judge when they have sufficient data, and write their reports
 
 ---
 
-### Step 4 — Patent Landscape Analysis
+### Step 4 — Write Master Technology Report (while sub-agents work)
 
-For each key technology, conduct a patent landscape analysis.
+While technology sub-agents are researching in the background, write the master technology report yourself using the landscape data from Step 2.
 
-**Step-by-step patent analysis:**
+**Master report content:**
+1. Scope Definition
+2. Technology Landscape Table (from Step 2)
+3. Technology Positioning Map (2x2 matrix)
+4. Key Innovation Trends
+5. Investment and Patent Signal Summary
+6. China vs. Global Technology Assessment (if applicable)
+7. Technology Convergence Map
+8. Strategic Implications
+9. Confidence Assessment
+10. Full Source List
 
-1. **Define the IPC/CPC codes** for the technology space
-2. **Build the patent corpus** using:
-   - **Google Patents** — [patents.google.com](https://patents.google.com/): free, full-text search, citation analysis
-   - **Espacenet (EPO)** — [worldwide.espacenet.com](https://worldwide.espacenet.com/): European and PCT international filings
-   - **WIPO PATENTSCOPE** — [patentscope.wipo.int](https://patentscope.wipo.int/): PCT international applications
-   - **CNIPA (China)** — [pss-system.cnipa.gov.cn](https://pss-system.cnipa.gov.cn/): essential for China-originated patents
-   - **USPTO** — [patents.google.com](https://patents.google.com/) or [ppubs.uspto.gov](https://ppubs.uspto.gov/): US patents
-3. **Run the following analyses** and cite specific patent numbers:
-   - **Filing volume over time**: identifies technology acceleration or deceleration
-   - **Assignee analysis**: who owns the most patents? who is growing fastest?
-   - **Geographic distribution**: where are patents being filed?
-   - **Citation analysis**: which patents are most cited?
-   - **Continuation patent families**: indicates active, ongoing development
-   - **White space identification**: technology areas with few patents
+Save to: `[output-folder]/00-master-technology-report.md`
 
 ---
 
-### Step 5 — Technology Readiness Level (TRL) Assessment
+### Step 5 — Monitor and Complete
 
-For each key technology, assess its maturity using the NASA TRL scale:
-
-| TRL | Description | Commercial Equivalent |
-|-----|-------------|----------------------|
-| 1 | Basic principles observed | Pure research |
-| 2 | Technology concept formulated | Applied research |
-| 3 | Experimental proof of concept | Lab demonstration |
-| 4 | Technology validated in lab | Prototype |
-| 5 | Technology validated in relevant environment | Pilot |
-| 6 | Technology demonstrated in relevant environment | Pre-commercial |
-| 7 | System prototype demonstrated in operational environment | Beta / field trial |
-| 8 | System complete and qualified | Commercial launch |
-| 9 | Actual system proven in operational environment | Full deployment |
-
-Beyond TRL, assess:
-- **Manufacturing readiness**: can it be produced at scale?
-- **Regulatory clearance**: relevant approvals obtained?
-- **Customer adoption**: paying customers? pilot programs? design wins?
-- **Cost trajectory**: is the cost curve declining toward commercial viability?
-- **Ecosystem readiness**: are complementary technologies, standards, and developer skills available?
+After writing the master report, your work is done. The sub-agents will complete their technology reports autonomously.
 
 ---
 
-### Step 6 — China-Specific Technology Research
+## RESEARCH SOURCES REFERENCE (for Step 2 — Technology Landscape Mapping)
 
-For any technology with significant Chinese research or commercial activity, conduct a dedicated China-specific research pass.
+**General sources:**
+- Gartner Hype Cycle, Forrester Wave, IDC MarketScape
+- McKinsey Technology Trends, CB Insights
+- arXiv, Papers With Code
+- ThoughtWorks Technology Radar
 
-**Academic and research databases:**
-
-- **CNKI (中国知网)** — [cnki.net](https://www.cnki.net/): the largest Chinese academic database
-- **Wanfang Data (万方数据)** — [wanfangdata.com.cn](https://www.wanfangdata.com.cn/): second-largest Chinese academic database
-- **VIP (维普)** — [cqvip.com](https://www.cqvip.com/): third major Chinese academic database
-
-**Government and policy sources:**
-
-- **MOST (Ministry of Science and Technology)** — [most.gov.cn](http://www.most.gov.cn/): national S&T plans, key research program results
-- **CAS (Chinese Academy of Sciences)** — [cas.cn](http://www.cas.cn/) / [english.cas.cn](http://english.cas.cn/): China's premier research institution
-- **NSFC (National Natural Science Foundation of China)** — [nsfc.gov.cn](http://www.nsfc.gov.cn/): funded project databases
-- **CAICT (China Academy of Information and Communications Technology)** — [caict.ac.cn](http://www.caict.ac.cn/): white papers on telecom, internet, AI, and digital economy
-- **CNIPA (China National Intellectual Property Administration)** — [cnipa.gov.cn](https://www.cnipa.gov.cn/): Chinese patent database
-
-**Key differences to document for China vs. global:**
-- Chinese research output volume vs. citation impact
-- State policy support: which Five-Year Plan priorities apply
-- Key Chinese research institutions and corporate labs
-- Technology gaps where China lags and areas where China leads
-- Export control and technology transfer restrictions
+**China-specific:**
+- MOST, CAS, NSFC, CAICT
+- CNKI, Wanfang Data, VIP
+- CNIPA (patent database)
 
 ---
 
-### Step 7 — Synthesize Trends and Forecast
+## TECHNOLOGY RESEARCH SUB-AGENT PROMPT TEMPLATE
 
-After researching all individual technologies, synthesize the landscape-level trends.
+Use this template when launching a sub-agent for each technology:
 
-**Apply the S-curve adoption model:**
-Technologies follow S-curves. Identify where each technology sits:
-- Early adopters phase (steep growth beginning)
-- Mainstream adoption phase (fastest growth)
-- Saturation phase (growth slowing)
+```
+YOUR ROLE: Technology research analyst
 
-**Scenario planning — produce three scenarios for each technology:**
-- **Bull case**: what conditions would accelerate adoption beyond the base case?
-- **Base case**: most likely trajectory given current evidence
-- **Bear case**: what risks or barriers could slow or derail adoption?
+TECHNOLOGY: [Technology Name]
+OUTPUT FILE: [absolute path to output file, e.g., /path/01-technology-transformer-models.md]
 
-**Investment signal analysis:**
-- CB Insights State of Technology reports — [cbinsights.com](https://www.cbinsights.com/)
-- PitchBook sector reports — [pitchbook.com](https://pitchbook.com/)
-- Crunchbase funding trend data — [crunchbase.com](https://www.crunchbase.com/)
-- Corporate venture capital activity
+YOUR TASK:
+Research this technology comprehensively and write a complete technology deep-dive report. You must autonomously:
+1. Search for and collect all relevant data about this technology
+2. Judge when you have sufficient information
+3. Write the complete report following the structure below
+
+REPORT STRUCTURE (10-point technology profile):
+1. Technology Overview — plain-language definition, why it matters now, key terminology glossary
+2. Technical Mechanism — core mechanism explained in depth, architecture, key variants, performance metrics, limitations
+3. Historical Evolution and Iteration — origin, timeline of key breakthroughs, paradigm shifts, version history, technology genealogy
+4. Academic Research Landscape — seminal papers, company-affiliated research, research frontier, key researchers, research output by geography
+5. Patent Landscape — total volume, top holders, geographic distribution, key patents, filing trends, freedom-to-operate
+6. Technology Readiness and Commercialization — TRL assessment, commercial deployments, cost trajectory, regulatory status, manufacturing readiness
+7. Competitive Technology Comparison — competing approaches, comparison matrix, likely dominant approach
+8. Future Outlook — near-term (1–3yr), mid-term (3–7yr), long-term (7–15yr), scenarios, key research frontiers, risks
+9. China-Specific Analysis (if applicable) — Chinese research output, state policy support, key Chinese companies and labs, technology gaps, areas where China leads
+10. Strategic Implications — investment signals, build vs. buy vs. partner, companies to watch, monitoring indicators
+11. Confidence Level — High / Medium / Low, with explanation
+12. Sources — every URL cited, numbered; academic papers in full citation format
+```
+
+**RESEARCH DATA SOURCES TO USE:**
+
+**Academic databases:**
+- Google Scholar, arXiv, Semantic Scholar
+- IEEE Xplore, ACM Digital Library
+- PubMed/PubMed Central, ResearchGate
+
+**Patent databases:**
+- Google Patents, USPTO, EPO, WIPO PATENTSCOPE
+- CNIPA (China)
+
+**Technology landscape:**
+- Gartner, Forrester, IDC, McKinsey
+- CB Insights, PitchBook, Crunchbase
+
+**Company research portals:**
+- Google Research, DeepMind, OpenAI, Meta AI, Microsoft Research
+- Tencent AI Lab, Baidu Research, ByteDance Research, Huawei Noah's Ark, Alibaba DAMO
+
+**China-specific:**
+- CNKI, Wanfang Data, VIP
+- MOST, CAS, NSFC, CAICT
+- CNIPA
+
+MANDATORY SOURCING RULES:
+1. Every technical claim, statistic, paper citation, patent reference, forecast MUST include a full URL hyperlink
+2. Do NOT use numbered reference markers like [1], [2] without providing actual URLs
+3. Inline citations preferred: "The model achieved 95% accuracy ([source](https://...))"
+4. Academic paper citations MUST include: title, authors, venue, year, and URL (arXiv, DOI, or Semantic Scholar link)
+5. Never cite a paper you have not verified exists
+6. If data unavailable, state explicitly. Label inferences as [REASONED INFERENCE — NOT SOURCED DATA]. Label forecasts as [FORECAST — SUBJECT TO UNCERTAINTY]
+7. The report MUST end with a numbered "Sources" section listing every URL cited
+8. A report with no source URLs will be rejected
+
+When you complete the report, save it to the specified output file.
+```
 
 ---
 
 ## OUTPUT FORMAT AND FILE STRUCTURE
 
-This skill produces a **folder of deliverables**, not a single file. Create the following structure:
+**YOU (Sia) create:**
+- `00-master-technology-report.md` — Master report with technology landscape table, positioning map, innovation trends, strategic implications
 
-```
-[output-folder]/
-├── 00-master-technology-report.md
-├── 01-technology-[name].md
-├── 02-technology-[name].md
-├── 03-technology-[name].md
-└── ... (one file per key technology)
-```
-
----
-
-### Master Technology Report (`00-master-technology-report.md`)
-
-1. **Scope Definition** — technology domain, geography, number of technologies profiled, academic depth applied
-2. **Technology Landscape Table** — all identified technologies with: name, description, Horizon classification, Gartner Hype Cycle phase, TRL estimate, primary use cases
-3. **Technology Positioning Map** — 2x2 matrix (e.g., maturity vs. commercial impact)
-4. **Key Innovation Trends** — 5–7 cross-cutting trends, each sourced
-5. **Investment and Patent Signal Summary** — where capital and IP activity is concentrating
-6. **China vs. Global Technology Assessment** — where China leads, where it lags, state policy tailwinds
-7. **Technology Convergence Map** — which technologies are combining or enabling each other
-8. **Strategic Implications** — which technologies to monitor, invest in, or build around
-9. **Confidence Assessment** — overall data quality rating, key gaps
-10. **Full Source List** — every URL cited, numbered
-
----
-
-### Individual Technology Deep-Dive Report (`[N]-technology-[name].md`)
-
-One file per key technology:
-
-**1. Technology Overview** — plain-language definition, why it matters now, key terminology glossary
-
-**2. Technical Mechanism** — core mechanism explained in depth, architecture, key variants, performance metrics, limitations
-
-**3. Historical Evolution and Iteration** — origin, timeline of key breakthroughs, paradigm shifts, version history, technology genealogy. Find literature review academic papers where possible.
-
-**4. Academic Research Landscape** — seminal papers, company-affiliated research, research frontier, key researchers, research output by geography
-
-**5. Patent Landscape** — total volume, top holders, geographic distribution, key patents, filing trends, freedom-to-operate
-
-**6. Technology Readiness and Commercialization** — TRL assessment, commercial deployments, cost trajectory, regulatory status, manufacturing readiness
-
-**7. Competitive Technology Comparison** — competing approaches, comparison matrix, likely dominant approach
-
-**8. Future Outlook** — near-term (1–3yr), mid-term (3–7yr), long-term (7–15yr), scenarios, key research frontiers, risks
-
-**9. China-Specific Analysis** (if applicable) — Chinese research output, state policy support, key Chinese companies and labs, technology gaps, areas where China leads
-
-**10. Strategic Implications** — investment signals, build vs. buy vs. partner, companies to watch, monitoring indicators
-
-**11. Confidence Level** — High / Medium / Low, with explanation
-
-**12. Sources** — every URL cited, numbered; academic papers in full citation format
+**Sub-agents create:**
+- `01-technology-[name].md`, `02-technology-[name].md`, etc. — One deep-dive report per technology (10-point structure as specified in sub-agent template)
 
 ---
 
 ## QUALITY STANDARDS
 
-- There is no word limit. Include every relevant technical detail you find.
-- Every technical claim must have a source URL.
-- **Academic paper citations are held to the highest standard**: only cite papers you have verified exist.
-- Terminology must be defined before use. Use the Feynman Technique.
-- Historical timelines must be sourced.
-- TRL assessments must be justified with specific evidence.
-- China-specific analysis must use Chinese-language sources where available.
-- Label all reasoned inferences as [REASONED INFERENCE — NOT SOURCED DATA].
-- Label all forward-looking statements as [FORECAST — SUBJECT TO UNCERTAINTY].
-
----
-
-## SUB-AGENT DELEGATION RULES
-
-If you decide to use the Agent tool to delegate sub-tasks (e.g., researching individual technologies in parallel), you MUST include the following mandatory instructions verbatim in every sub-agent's prompt. Sub-agents do NOT inherit your instructions — if you do not explicitly pass these rules, the sub-agent will produce unsourced output.
-
-**Copy-paste this block into every sub-agent prompt:**
-
-```
-MANDATORY SOURCING RULES — FAILURE TO COMPLY WILL RESULT IN REJECTED OUTPUT:
-1. Every technical claim, statistic, paper citation, patent reference, and forecast MUST include a full URL hyperlink to a real, publicly accessible source.
-2. Do NOT use numbered reference markers like [1], [2] without providing the actual URLs. Every reference number must resolve to a real URL in a Sources section at the end of the document.
-3. Inline citations are preferred: include the URL directly after the claim, e.g., "The model achieved 95% accuracy ([source](https://...))" or as a markdown hyperlink.
-4. Academic paper citations MUST include: title, authors, venue, year, and a URL (arXiv, DOI, or Semantic Scholar link). Never cite a paper you have not verified exists.
-5. If data is unavailable, explicitly state so. Label reasoned inferences as [REASONED INFERENCE — NOT SOURCED DATA]. Label forward-looking statements as [FORECAST — SUBJECT TO UNCERTAINTY].
-6. The final document MUST end with a numbered "Sources" section listing every URL cited, with descriptive titles.
-7. A report with no source URLs will be considered a failed deliverable and will need to be completely redone.
-```
-
-You may add task-specific context (technology name, research scope, output path, format requirements) around this block, but the sourcing rules above must appear in full in every sub-agent prompt. Do not paraphrase or abbreviate them.
-
-**Sub-agent execution strategy — non-blocking polling:**
-
-When you spawn sub-agents, you MUST use `run_in_background: true` so they execute in parallel without blocking you. Then use `TaskOutput` with `block: false` to periodically check their progress. Do NOT use `block: true` to wait indefinitely for a sub-agent — sub-agents can stall or run excessively long, which will freeze the entire research process.
-
-Recommended polling approach:
-1. Launch all sub-agents with `run_in_background: true`
-2. Continue working on other tasks (e.g., writing the master report, researching the next item)
-3. Periodically check each sub-agent with `TaskOutput(task_id, block: false, timeout: 30)`
-4. If a sub-agent has produced substantial output (the report file has been written), collect its results and move on — do not wait for a "perfect" completion signal if the deliverable is already written to disk
-5. If a sub-agent appears stuck (no new progress after 2–3 polling cycles), stop it with `TaskStop` and either retry with a fresh agent or complete that portion yourself
-
-The goal is to keep the overall research moving. Never let a single slow sub-agent hold up the entire project.
+- Every claim must have a source URL
+- Academic paper citations held to highest standard
+- Label inferences, forecasts, and estimates appropriately
+- For China: use Chinese-language sources where available
 
 ---
 
 ## FILE OUTPUT INSTRUCTIONS
 
-Create the output files at the path provided in the research brief. Confirm all file paths in your final response and list every file created.
+Create the output folder at the provided path. Confirm all file paths and list every file created in your final response.
+
