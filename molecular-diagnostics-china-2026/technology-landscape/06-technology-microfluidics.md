@@ -751,4 +751,237 @@ All URLs cited in this report, numbered for reference:
 ---
 
 *Report prepared by Technology Research Analyst | March 2026*
+
+---
+
+## 13. Capital Flow & Hype Cycle Analysis
+*(Supplementary Research — March 2026)*
+
+### 13A. Hype Cycle Position
+
+**Current Phase**: Slope of Enlightenment (platform-level) / entering Plateau of Productivity (application-specific sub-segments)
+
+**Evidence**:
+
+Microfluidics as a platform technology does not appear by name on Gartner's Hype Cycle for Emerging Technologies — a meaningful signal in itself. Gartner's 2024 and 2025 cycles focus on broad themes (autonomous AI, total experience, human-centric security). When an enabling platform technology disappears from "Emerging Technologies" lists, it typically means the technology has graduated: it is no longer considered speculative, and its value is increasingly captured through specific applications rather than the platform itself.
+
+Triangulating from independent signals:
+
+- **VC deal size and structure**: Microfluidics-pure-play startups are raising smaller rounds at the platform level (Parallel Fluidics: $7M seed, November 2024; Volta Labs total cumulative: $37.9M). By contrast, applications built on microfluidics — liquid biopsy (Freenome: $254M, 2024), oncology diagnostics (BillionToOne: $130M Series D, 2024) — are raising 10–50x larger rounds. This is the classic "Slope of Enlightenment" pattern: capital moves from the enabling platform to the applications it enables.
+  [GenomeWeb — H1 2024 Life Science Tools Investment](https://www.genomeweb.com)
+  [Volta Labs — Series A](https://www.voltalabs.com)
+  [Parallel Fluidics — $7M Seed Round, November 2024](https://www.prnewswire.com)
+
+- **Market growth rate**: The global microfluidics market is tracking at USD ~$22–32B in 2023–2024 (estimates vary by scope) with consistent 9–15% CAGR across multiple independent sources — a mature, predictable growth rate characteristic of Slope of Enlightenment, not the volatile boom-bust of Peak or Trough.
+  [Microfluidics Market — Precedence Research](https://www.precedenceresearch.com/microfluidics-market)
+  [Microfluidics Market — GM Insights](https://www.gminsights.com)
+
+- **Sub-segment differentiation**: Within microfluidics, different applications are at different hype cycle positions:
+  - *POCT diagnostics*: Plateau of Productivity — GeneXpert, Abbott ID NOW are established, reimbursed, and deployed at scale globally
+  - *Digital PCR (ddPCR)*: Slope of Enlightenment — validated clinical utility, ~$857M market in 2025, growing at ~24% CAGR
+  - *Digital microfluidics (DMF/EWOD)*: Trough of Disillusionment / early Slope — commercialization has been "slower than anticipated despite extensive research"; Miroculus raised its last major round in 2021 with no major follow-on reported
+  - *Organ-on-chip*: Peak of Inflated Expectations — significant academic publication volume but limited commercial revenues; regulatory frameworks nascent
+  - *CRISPR-microfluidics integration*: Innovation Trigger to Peak — significant research, limited commercial products
+  [Microfluidics EWOD Commercialization — Elveflow](https://elveflow.com/microfluidic-reviews/)
+  [Digital PCR Market — Fortune Business Insights](https://www.fortunebusinessinsights.com/digital-pcr-market-102014)
+
+**Next Phase Transition**: The platform-level will reach Plateau of Productivity by 2027–2028 [FORECAST], as thermoplastic chip manufacturing matures and Chinese domestic manufacturers achieve cost parity with PDMS research formats. POCT diagnostics and ddPCR are the first sub-segments expected to achieve full Plateau by 2026–2027 in China, driven by NMPA approvals and volume-based procurement inclusion.
+
+---
+
+### 13B. Historical Capital Flow (2020–2024)
+
+**Note on data methodology**: Granular microfluidics-specific VC investment totals by year are not publicly aggregated by Crunchbase or CB Insights without paid database access. The figures below are constructed by triangulating: (1) publicly reported deal data for microfluidics-specific companies, (2) broader life science tools & diagnostics VC sector data with microfluidics share estimated, and (3) direct company funding announcements. All figures are labeled accordingly.
+
+| Year | Global Life Science Tools & Dx Investment (USD) | Microfluidics-Specific Deals (notable) | Trend Signal |
+|------|------------------------------------------------|----------------------------------------|--------------|
+| 2020 | ~$15–18B (biotech/tools total; pandemic surge beginning) | Parallel Fluidics $0.5M grant; Micronoma $3M seed | Baseline — COVID driving POCT investment surge |
+| 2021 | Peak ~$35–44B (record biotech VC year globally) | Miroculus $45M Series B total; 奥素科技 Pre-A (tens of millions USD); Volta Labs first rounds | Peak — record biotech year; microfluidics POCT riding COVID tailwind |
+| 2022 | Contraction — tools & Dx raised $~9.8B (37% above 2019 but declining from peak) | Volta Labs $20M Series A; 奥素科技 Pre-A+ >$10M USD (Qiming Ventures lead) | Contraction — "biotech winter" begins; POCT funding drops post-COVID |
+| 2023 | $6.2B in tools & Dx (37% decline from 2022; only 8 deals >$100M vs. 20 in 2022) | HICOMP MicroTech 100M Yuan B+ (China); Tinker Bio A+ (China); Haoli Tech Pre-A (China) | Trough — Western VC retreats; Chinese domestic investment continues |
+| 2024 | Recovery: $1.39B in H1 2024 alone (+53% vs H1 2023); average deal size up 39% | Parallel Fluidics $7M seed; Volta Labs $12.7M (PitchBook); 奥素科技 ~100M Yuan Series A | Recovery — application-layer deals dominate; microfluidics-as-enabler thesis strengthens |
+
+[REASONED INFERENCE: Year-level microfluidics deal totals above are estimated from sector-wide data; direct microfluidics-only aggregates are not publicly available without paid Crunchbase/CB Insights access]
+
+Sources:
+- [GenomeWeb — H1 2024 Life Science Tools & Dx Private Investment](https://www.genomeweb.com)
+- [Morgan Lewis — Biotech VC Trends 2022–2024](https://www.morganlewis.com)
+- [McKinsey — Biopharma VC Funding Trends](https://www.mckinsey.com)
+- [Parallel Fluidics $7M Seed — PR Newswire](https://www.prnewswire.com)
+- [Volta Labs Series A — BusinessWire 2022](https://www.businesswire.com)
+- [Volta Labs PitchBook 2024 data — PitchBook](https://pitchbook.com)
+
+**China-specific investment**:
+
+China's microfluidics startup ecosystem maintained positive deal flow through 2022–2024 even as Western VC contracted sharply. Key documented rounds:
+
+- **奥素科技 (Ousutech)**: Pre-A (tens of millions USD, Nov 2021, Hillhouse + Country Garden Ventures); Pre-A+ (>$10M USD, March 2022, Qiming Ventures lead); Series A (~100M RMB / ~$14M USD, January 2024, Luxin VC lead + Qiming + Linear Capital + Cowin Capital). Focus: digital microfluidics platform for single-cell proteomics; Cambridge/CAS-origin technology.
+  [奥素科技 Series A — EET China](https://www.eet-china.com/mp/a279690.html)
+  [奥素科技 Instrument.com.cn coverage](https://instrument.com.cn)
+
+- **HICOMP MicroTech**: 100M Yuan B+ round (manufacturing-focused microfluidic chip producer)
+  [HICOMP B+ Round — Pandaily](https://pandaily.com/microfluidic-firm-hicomp-microtech-secures-100m-yuan-in-b-round-financing)
+
+- **Digifluidic (珠海迪奇孚瑞)**: ~100M Yuan A+ round (digital microfluidics platform, founded 2018)
+  [Digifluidic A+ Round](https://digifluidic.com/focus-news/18)
+
+- **Tinker Bio (霆科生物)**: A+ round; building dedicated microfluidic manufacturing base explicitly under 14th Five-Year Plan framework
+  [Tinker Bio Funding](http://tinkerbio.com/nd.jsp?id=197)
+
+- **Haoli Technology (毫厘科技)**: Pre-A round (2024); production-grade microfluidic chips
+  [Haoli Technology](https://haolitech.com/)
+
+- **CapitalBio Corporation**: State-linked (Tsinghua spin-off with state enterprise backing via Sichuan Energy Investment Group); commercial revenue; not raising VC rounds but receiving procurement and policy support
+  [CapitalBio](https://www.capitalbio.com)
+
+**Government grant flows (China)**:
+
+The NDRC's 14th Five-Year Bio-Economy Development Plan (2022–2025) explicitly names microfluidics as a key focus technology — a designation that triggers cascading government grant eligibility across MOST (National Key R&D Program), NSFC (National Natural Science Foundation), and provincial science bureaus. The plan calls for "boosting investment in basic life sciences research and significantly increasing R&D intensity in bio-industries." Specific grant amounts to microfluidics are not publicly disaggregated, but the explicit policy naming is the strongest available signal of sustained government capital allocation.
+[NDRC 14th Five-Year Bio-Economy Plan — MERICS analysis](https://merics.org)
+[14th Five-Year Plan Bio-Economy text — Gov.cn](https://www.gov.cn)
+[14th Five-Year Plan IVD Industry — CACLP](https://en.caclp.com/industry-news/1451.html)
+
+**Notable deals globally (>$50M) with microfluidics as enabling technology**:
+
+- **Freenome** — $254M (led by Roche, H1 2024): blood-based cancer diagnostics; microfluidics central to liquid biopsy sample prep workflow
+  [Freenome $254M — Drug Discovery Trends](https://www.drugdiscoverytrends.com)
+- **BillionToOne** — $130M Series D (H1 2024): liquid biopsy / prenatal diagnostics; microfluidic single-molecule counting
+  [BillionToOne Series D — FierceBiotech](https://www.fiercebiotech.com)
+- **Alamar Biosciences** — $128M Series C (H1 2024): ultra-sensitive protein detection; microfluidic sample prep
+  [Alamar Biosciences — GenomeWeb](https://www.genomeweb.com)
+- **Miroculus** — $45M Series B total (2021, last major reported round): digital microfluidics lab automation platform; no major follow-on reported through 2024 — a signal of DMF commercialization difficulty
+  [Miroculus Series B — BusinessWire](https://www.businesswire.com)
+- **Volta Labs** — $37.9M total cumulative through 2024: digital fluidics for genomics sample prep; smaller scale reflects platform-level vs. application-level capital allocation pattern
+  [Volta Labs — PitchBook](https://pitchbook.com)
+
+---
+
+### 13C. Capital Flow Trend Signal
+
+**Current Trend**: 🟢 Growing (with important structural nuance — see analysis below)
+
+| Leading Indicator | Signal | Direction | Source |
+|------------------|--------|-----------|--------|
+| Patent filing trend (global) | Growing strongly; US holds ~40% of global microfluidics patents; AI-integrated microfluidic device patents surged in 2022 | ↑ Accelerating | [ResearchAndMarkets Patent Report](https://www.researchandmarkets.com); [GlobeNewswire Patent Landscape 2024](https://www.globenewswire.com/news-release/2024/11/11/2978093/) |
+| Patent filing trend (China/CNIPA) | China active contributor to global filings; CNIPA total invention patents exceeded 4M in 2024 (all fields); microfluidics share growing consistent with bio-economy plan | ↑ Growing | [CNIPA 2024 Annual Report](https://english.cnipa.gov.cn/art/2024/1/24/art_3090_190001.html) |
+| Academic publication volume (China) | China is world's largest publisher of microfluidics research by volume, growing ~20–25% annually; China accounts for ~33% of global SCI papers across fields (2023) | ↑ Accelerating | [Macao News — China Scientific Output 2024](https://macaonews.org); [CAST.org.cn](https://cast.org.cn) |
+| Government grant allocation (China) | 14th Five-Year Bio-Economy Plan (2022–2025) explicitly names microfluidics; MOST National Key R&D Program eligible; NSFC funding flows | ↑ Growing (policy-mandated through 2025) | [NDRC Bio-Economy Plan — MERICS](https://merics.org); [Gov.cn](https://www.gov.cn) |
+| Manufacturing investment (China) | Active: HICOMP, Tinker Bio, Haoli Tech building dedicated chip fabs; WenHao operating at scale; thermoplastic injection molding capex underway | Active / Accelerating | [HICOMP Pandaily](https://pandaily.com/microfluidic-firm-hicomp-microtech-secures-100m-yuan-in-b-round-financing); [Wenmicro.com](https://whmicro.com); [Technology Networks — China Microfluidics Manufacturing](https://www.technologynetworks.com/applied-sciences/blog/why-is-china-becoming-a-microfluidics-manufacturing-superpower-307179) |
+| VC deal flow — platform-level | Plateauing / small deal sizes ($7–37M range for pure-play microfluidics platforms) — capital shifting to applications | Plateauing | [PitchBook — Volta Labs](https://pitchbook.com); [Parallel Fluidics seed round](https://www.prnewswire.com) |
+| VC deal flow — application-level | Accelerating: $130M–$254M rounds for applications built on microfluidics (liquid biopsy, POCT, oncology diagnostics) | ↑ Accelerating | [GenomeWeb H1 2024 Tools & Dx Investment](https://www.genomeweb.com) |
+| Competing technology maturity (NGS) | NGS costs declining ($100 genome approaching); short-read sequencing increasingly integrated with microfluidic sample prep — complementary, not competing | Complementary / Moderate threat to standalone POCT for some applications | [REASONED INFERENCE] |
+| Competing technology (LFA paper-based) | Paper-based lateral flow fully commoditized; <$0.50/chip; not competing in molecular diagnostics (insufficient sensitivity) — no threat to microfluidic molecular platforms | Low threat | [REASONED INFERENCE] |
+| Public market signal — pure-play | Standard BioTools (NASDAQ: LAB, formerly Fluidigm) trading at ~$1.15 post Q1 2025 earnings miss; 10x Genomics (TXG) revenue declining modestly year-over-year; signals market skepticism about pure-play microfluidic tools companies in current macro environment | Cautionary | [Standard BioTools — Investing.com](https://investing.com); [10x Genomics Q1 2025 — PR Newswire](https://www.prnewswire.com) |
+
+**Nuanced assessment of "Growing" signal**:
+
+The 🟢 Growing signal masks an important bifurcation: capital is **contracting at the enabling-platform layer** and **accelerating at the application layer**. This is a mark of technology maturity, not weakness. It means:
+
+1. Capital allocators no longer fund "microfluidics" — they fund "liquid biopsy," "POCT for respiratory pathogens," "single-cell multi-omics," which happen to use microfluidics as plumbing
+2. The transition creates a structural disadvantage for pure-play microfluidics platform companies (explaining Standard BioTools' and Miroculus's difficulties) while rewarding vertically integrated application players
+3. In China, the trend is modified by policy: government grants flow explicitly to microfluidics as a named technology, sustaining platform-level investment that Western VC has largely abandoned for this category
+
+**3-Year Capital Outlook (2026–2028)** [FORECAST]:
+
+- **Global**: Capital continues shifting to microfluidics-enabled applications (liquid biopsy, POCT, dPCR, organ-on-chip drug testing). Platform-level microfluidics funding remains modest (<$50M/deal), concentrated in manufacturing scale-up rather than platform innovation. Recovery in broader biotech VC (ongoing since H2 2023) will partially lift microfluidics deal flow but not to 2021 peaks.
+- **China**: Sustained investment through 2025 (end of 14th Five-Year Plan cycle), then policy refresh under 15th Five-Year Plan (2026–2030) expected to continue support. Manufacturing-focused investment (chip fabs, thermoplastic tooling) will be the dominant use of capital. Domestic import substitution narrative (replacing Cepheid, Bio-Rad, Abbott) will sustain institutional and government-backed deal flow.
+- **Key risk**: If the 15th Five-Year Plan de-emphasizes microfluidics in favor of AI-genomics convergence, Chinese government-backed investment could shift abruptly — the most significant capital flow risk for the sector.
+
+---
+
+### 13D. Competitive Capital Landscape
+
+**The Central Dynamic: Capital Flows to Applications, Not Platforms**
+
+Microfluidics is structurally similar to semiconductors in this respect: no major institutional investor funds "CMOS technology" — they fund the chips, smartphones, and AI accelerators that CMOS enables. Similarly, microfluidics capital now flows predominantly to application verticals:
+
+| Application Vertical | Capital Flow Status | Representative Recent Deals | Microfluidics Role |
+|---------------------|--------------------|-----------------------------|-------------------|
+| Liquid biopsy / cfDNA | 🚀 Accelerating | Freenome $254M (2024); BillionToOne $130M (2024) | Core enabling technology for sample prep and single-molecule detection |
+| POCT infectious disease | 🟢 Growing (post-COVID normalization) | Karius $100M (2024); domestic Chinese market sustained | Pressure-driven / centrifugal microfluidics is the dominant format |
+| Digital PCR | 🟢 Growing | Bio-Rad dominant; Chinese alternatives (Digifluidic, domestic players) rising | Droplet microfluidics is the enabling mechanism |
+| Single-cell & spatial genomics | 🟢 Growing | 10x Genomics revenues; academic instrument sales | Microfluidic partitioning (Chromium platform) is core IP |
+| Organ-on-chip | 🟡 Plateauing (academic) / 🔴 Struggling (commercial) | Limited large rounds post-2022 | PDMS-based or thermoplastic multi-layer chips |
+| Lab automation (digital microfluidics) | 🔴 Struggling | Miroculus last major round 2021; Volta Labs modest totals | EWOD / digital microfluidics; slowest to commercialize |
+| Drug delivery microfluidics | 🟢 Growing | LNP manufacturing for mRNA vaccines; major pharma capex | Microfluidic mixing for nanoparticle synthesis |
+
+**Sub-Platform Investment Competition**:
+
+Within microfluidics itself, three fabrication approaches compete for capital and market share:
+
+1. **Pressure-driven thermoplastic microfluidics** (PMMA, COC, COP injection-molded chips): The manufacturing winner. This is where Chinese chip fabs (HICOMP, Tinker Bio, WenHao) are investing. Lowest per-unit cost at volume, compatible with automated production. Capital flowing to: tooling, injection molding capacity, cleanroom buildout.
+
+2. **Droplet microfluidics / centrifugal lab-on-disc**: The diagnostics winner for medium-complexity POCT. Capital flows to application companies (GeneXpert-type platforms, Chinese ddPCR developers) rather than the underlying platform. China seeing investment in centrifugal formats for primary care.
+
+3. **Digital microfluidics (EWOD)**: The precision winner but commercial laggard. Despite 45% market share of "technology mix" by some metrics, EWOD has failed to generate the large commercial exits expected. Commercialization has been "slower than anticipated." Capital has not followed academic enthusiasm. 奥素科技 and Digifluidic are notable Chinese exceptions still attracting VC in this sub-segment — their success will be the key test of whether Chinese market conditions (import substitution narrative, policy support, lower labor costs for integration) can overcome the same commercialization barriers that stalled Western DMF companies.
+[Digital Microfluidics Commercialization Analysis — Elveflow](https://elveflow.com)
+[EWOD market share 45% — HealthcareWebWire](https://healthcarewebwire.com)
+
+4. **Paper-based microfluidics (µPADs)**: Fully commoditized. Capital flows to lateral flow assay manufacturers as a commodity, not as a microfluidics technology category. No meaningful VC interest at the platform level.
+
+**Capital Consolidation Pattern**:
+
+Capital is consolidating around two poles:
+- **High-value, high-complexity**: EWOD/DMF for precision lab automation and single-cell analysis; droplet microfluidics for ddPCR and liquid biopsy — small number of well-funded players
+- **High-volume, low-cost**: Thermoplastic chip manufacturing for POCT — China is building manufacturing dominance here, with government-backed and VC-backed fabs scaling capacity
+
+The middle ground — PDMS research microfluidics — is seeing **declining investment interest** as the platform matures and academia transitions to thermoplastics and commercial chip sources. This is a clear sign of market maturation.
+
+**China's Distinctive Capital Position**:
+
+China's microfluidics capital landscape diverges from global patterns in three important ways:
+
+1. **Import substitution premium**: Chinese investors and government funds attach an explicit premium to domestic alternatives to Cepheid, Bio-Rad, 10x Genomics, and Abbott. This sustains platform-level investment that Western VC has abandoned. HICOMP (chip manufacturing), Digifluidic (ddPCR), and 奥素科技 (single-cell DMF) all benefit from this premium.
+
+2. **Policy-driven demand creation**: The 14th Five-Year Plan's grassroots healthcare push creates guaranteed demand for Chinese microfluidic POCT devices at primary care centers — de-risking the commercial investment case in a way that does not exist in Western markets.
+
+3. **Manufacturing cost advantage**: Chinese chip fabs can produce thermoplastic microfluidic chips at 30–50% lower cost than Western equivalents — creating both a domestic market advantage and early export potential to price-sensitive emerging markets (SE Asia, Africa, Middle East).
+
+---
+
+### Sources for Section 13
+
+1. [GenomeWeb — H1 2024 Life Science Tools & Diagnostics Private Investment](https://www.genomeweb.com)
+2. [Drug Discovery Trends — H1 2024 Biotech Large Deals](https://www.drugdiscoverytrends.com)
+3. [FierceBiotech — BillionToOne $130M Series D 2024](https://www.fiercebiotech.com)
+4. [Volta Labs — Series A Announcement (BusinessWire 2022)](https://www.businesswire.com)
+5. [Volta Labs — PitchBook 2024 Series A Extension data](https://pitchbook.com)
+6. [Parallel Fluidics — $7M Seed Round November 2024 (PR Newswire)](https://www.prnewswire.com)
+7. [Miroculus — Series B Completion (BusinessWire 2021)](https://www.businesswire.com)
+8. [Tracxn — Miroculus Funding History](https://tracxn.com)
+9. [Tracxn — Micronoma Funding History](https://tracxn.com)
+10. [奥素科技 Series A — EET China January 2024](https://www.eet-china.com/mp/a279690.html)
+11. [奥素科技 Pre-A+ Round — Instrument.com.cn](https://instrument.com.cn)
+12. [奥素科技 — IT桔子 Profile](https://itjuzi.com)
+13. [奥素科技 — 36Kr Coverage](https://36kr.com)
+14. [HICOMP MicroTech B+ Round — Pandaily](https://pandaily.com/microfluidic-firm-hicomp-microtech-secures-100m-yuan-in-b-round-financing)
+15. [Digifluidic A+ Round](https://digifluidic.com/focus-news/18)
+16. [Tinker Bio A+ Round](http://tinkerbio.com/nd.jsp?id=197)
+17. [Haoli Technology — Company Site](https://haolitech.com/)
+18. [CapitalBio Corporation](https://www.capitalbio.com)
+19. [Standard BioTools (LAB) Q1 2025 Earnings — Investing.com](https://investing.com)
+20. [Standard BioTools Full Year 2024 Revenue — PR Newswire](https://www.prnewswire.com)
+21. [10x Genomics Q1 2025 Revenue — PR Newswire](https://www.prnewswire.com)
+22. [Morgan Lewis — Biotech VC Funding Downturn 2022–2023](https://www.morganlewis.com)
+23. [McKinsey — Biopharma VC Funding Trends](https://www.mckinsey.com)
+24. [Intuition Labs — AI Healthcare VC Recovery 2024](https://intuitionlabs.ai)
+25. [NDRC 14th Five-Year Bio-Economy Plan — MERICS Analysis](https://merics.org)
+26. [14th Five-Year Plan Bio-Economy — Gov.cn](https://www.gov.cn)
+27. [14th Five-Year Plan IVD Industry — CACLP](https://en.caclp.com/industry-news/1451.html)
+28. [Microfluidics Patent Landscape 2024–2032 — GlobeNewswire](https://www.globenewswire.com/news-release/2024/11/11/2978093/28124/en/Microfluidics-Patent-Landscape-Report-and-Industry-Forecast-2024-2032-Rise-of-High-Throughput-Genomics-and-Drug-Delivery-Systems-Fuels-Microfluidics-Patent-Growth-Global-Market-Rea.html)
+29. [Microfluidics Patents — ResearchAndMarkets](https://www.researchandmarkets.com)
+30. [CNIPA — Chinese Invention Patents Exceed 4M (2024)](https://english.cnipa.gov.cn/art/2024/1/24/art_3090_190001.html)
+31. [China Scientific Output — Macao News 2024](https://macaonews.org)
+32. [Clarivate 2024 Research Fronts Report](https://clarivate.com)
+33. [Microfluidics Market — Precedence Research](https://www.precedenceresearch.com/microfluidics-market)
+34. [Microfluidics Market Size 2021–2024 — GM Insights](https://www.gminsights.com)
+35. [Microfluidics Market — Future Market Insights](https://www.futuremarketinsights.com)
+36. [EWOD Digital Microfluidics Market Share 45% — HealthcareWebWire](https://healthcarewebwire.com)
+37. [Digital Microfluidics Commercialization — Elveflow](https://elveflow.com)
+38. [China Microfluidics Manufacturing — Technology Networks](https://www.technologynetworks.com/applied-sciences/blog/why-is-china-becoming-a-microfluidics-manufacturing-superpower-307179)
+39. [WenHao Microfluidic Manufacturer China — Whmicro.com](https://whmicro.com)
+40. [Digital PCR Market 2025 — Fortune Business Insights](https://www.fortunebusinessinsights.com/digital-pcr-market-102014)
+41. [Lab-on-a-Chip Market 2024 — Precedence Research](https://www.precedenceresearch.com)
+42. [Microfluidics for POCT — Future Market Insights (37% of revenue 2025)](https://www.futuremarketinsights.com)
+43. [Life Science Tools & Dx VC — GenomeWeb sector reports](https://www.genomeweb.com)
 *Part of the China Molecular Diagnostics Market Technology Landscape series*
