@@ -634,6 +634,177 @@ All URLs cited in this report, numbered for reference:
 72. [Digital PCR history PDF — Stilla Technologies](https://www.stillatechnologies.com/wp-content/uploads/2019/08/dPCR-history-1.pdf)
 73. [Digital Assays Part I: Partitioning Statistics and Digital PCR — PubMed](https://pubmed.ncbi.nlm.nih.gov/28448765/)
 74. [Comparison of digital PCR systems for liquid biopsy in lung and colorectal cancer — PubMed](https://pubmed.ncbi.nlm.nih.gov/36736684)
+
+---
+
+## 10. Capital Flow & Hype Cycle Analysis
+*(Supplementary Research — March 2026)*
+
+### 10A. Hype Cycle Position
+
+**Current Phase**: Slope of Enlightenment (transitioning toward Plateau of Productivity)
+
+**Evidence**:
+
+dPCR does not appear by name in the publicly accessible Gartner Hype Cycle for Emerging Technologies (which focuses on broad technology categories like AI, developer experience, and autonomous systems). However, triangulation from three independent signals places dPCR firmly on the **Slope of Enlightenment** — past peak hype, with real clinical deployments accelerating and capital consolidating behind proven winners rather than exploring new entrants.
+
+*Signal 1 — Acquisition as maturity marker*: Bio-Rad's binding offer to acquire Stilla Technologies (announced February 2025, valued at $225M with up to $50M in contingent milestones) is the defining capital signal of this phase. Acquisitions of this type — a market leader consolidating the second-largest format — occur precisely when a technology exits the Trough of Disillusionment and reaches the Slope of Enlightenment. Exploratory VC investment slows; strategic M&A accelerates. ([Bio-Rad press release](https://www.bio-rad.com); [Medical Device Network](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGPe4ukhtPAJK8qYYQgbzluf8ITDWljvexLusHOpoZMWgL3WSubaHKKmtuwN-aoYK71pdxWs-Y5WhxxQ97Mp5KtcxbTd6ro3W8kW_5R2A5FYoKZrY2w8toT1xA20ZpZPhQL_YAH6JNxvhKMBxfmJ9G7m5-9TighMUD07k_2pARyPw6YUJ1jwUTtsPPBnbk7F0VO))
+
+*Signal 2 — Regulatory milestone density*: The density of regulatory approvals in 2024–2025 (QIAGEN QIAcuityDx IVDR + 510(k) exemption in 2024; TargetingOne D50 Class III NMPA instrument approval in February 2025; Sinaflow dual NMPA approval for both instrument and BCR-ABL1 oncology reagent) represents the regulatory infrastructure that defines a Slope of Enlightenment technology. Technologies on the Peak of Inflated Expectations or in the Trough have sparse regulatory approvals; technologies on the Slope are generating approvals systematically. ([QIAGEN QIAcuityDx press release 2024](https://corporate.qiagen.com/English/newsroom/press-releases/press-release-details/2024/QIAGEN-launches-QIAcuityDx-digital-PCR-system-for-clinical-testing-in-oncology/default.aspx); [TargetingOne NMPA D50 approval](https://en.targetingone.com/blog/milestone-targetingone-obtains-the-first-class-iii-nmpa-certificate-for-digital-pcr-instrument/))
+
+*Signal 3 — Bio-Rad BIO stock trajectory as proxy*: Bio-Rad reported full-year 2024 revenue of $2,566.5M (down from $2,671.2M in 2023), with Life Science segment — the home of ddPCR — declining 2.6% in Q4 2024 YoY. This reflects a post-COVID normalization, not a technology failure. The company's R&D spending followed a trajectory of $217.8M (2020) → $260.6M (2021) → ~$250M (2022) → $256.7M (2023) → ~$169–175M TTM (mid-2024), declining as a share of revenue as the core ddPCR platform matures and capital shifts toward applications and clinical assay development rather than platform R&D. This is consistent with a maturing Slope of Enlightenment technology where product-level investment replaces foundational R&D. ([Bio-Rad 2024 Annual Report](https://www.bio-rad.com); [Macrotrends Bio-Rad R&D](https://www.macrotrends.net))
+
+*Signal 4 — QIAGEN QIAcuity placements as commercial traction indicator*: QIAGEN reported more than 2,000 cumulative QIAcuity placements by end-2023, growing to more than 2,700 by end-2024. The projected QIAcuityDx clinical revenue for 2025 is $11M across the first three quarters — still modest in absolute terms but demonstrating a functioning commercial pathway for clinical dPCR, a key Slope characteristic. ([QIAGEN investor relations](https://www.qiagen.com))
+
+**Next Phase Transition**: Plateau of Productivity — estimated 2027–2029
+
+[REASONED INFERENCE] The Plateau will be reached when: (1) China's NMPA approvals extend to 5+ clinical applications with national reimbursement coverage for at least one indication (BCR-ABL1 MRD monitoring is the leading candidate); (2) per-instrument costs fall below $50,000 for domestic Chinese platforms; and (3) the installed base in clinical settings exceeds research settings globally. At current trajectory, this transition is expected between 2027 and 2029. For China specifically, the transition may lag global markets by 1–2 years due to reimbursement and hospital procurement cycle timelines.
+
+---
+
+### 10B. Historical Capital Flow (2020–2024)
+
+**Note on data availability**: dPCR-specific revenue is not broken out separately by Bio-Rad or any publicly listed company. The figures below represent the best available triangulation from market sizing reports, disclosed investment rounds, and R&D spending data. Dollar figures for the dPCR market specifically are estimates from commercial market research firms unless otherwise noted.
+
+| Year | Global dPCR Market Est. (USD) | Key Capital Events | Trend |
+|------|------------------------------|-------------------|-------|
+| 2020 | ~$509M | Market valued at $508.82M (Allied Market Research). Bio-Rad R&D: $217.8M total company. COVID-19 accelerates dPCR application for SARS-CoV-2 wastewater surveillance. | Baseline |
+| 2021 | ~$560–580M [REASONED INFERENCE] | Bio-Rad R&D: $260.6M (peak). QIAGEN QIAcuity commercial launch. Bio-Rad launches PREvalence ddPCR SARS-CoV-2 wastewater kit. Stilla Technologies raises EUR 31.3M (~$35.2M) in venture debt (November 2021, investors: Casdin Capital, European Investment Bank). COVID tailwind inflating all molecular diagnostics investment. | ↑ ~10–14% |
+| 2022 | ~$580–620M [REASONED INFERENCE] | Bio-Rad R&D: ~$250M TTM. QIAGEN QIAcuity placements growing strongly above Q1 2021 levels. TargetingOne wins China's first Class III dPCR reagent approval (January 2022). NMPA classifies dPCR as Class III (March 2022). No large disclosed dPCR-specific VC rounds. QIAGEN files lawsuit against Bio-Rad on dPCR patents (IP battles = maturation signal). | ↑ ~5–7% (post-COVID deceleration) |
+| 2023 | ~$640–680M [REASONED INFERENCE] | Bio-Rad R&D: $256.7M (non-GAAP). Stilla Technologies raises $26.5M Series C (February 2023, led by CLIFF/Yuzi Investment; existing investors: Illumina Ventures, Kurma Partners, BNP Paribas Development). QIAGEN exceeds 2,000 cumulative QIAcuity placements. Broader biotech VC funding declines; dPCR sees consolidation in investment. No new mega-rounds >$50M. | ↑ ~5–8% |
+| 2024 | ~$700–750M [REASONED INFERENCE] | Bio-Rad R&D: ~$170M TTM (declining as share of revenue — platform maturation). QIAGEN launches QIAcuityDx (September 2024) — first IVDR/510(k)-cleared clinical dPCR. QIAGEN exceeds 2,700 cumulative placements. Bio-Rad announces binding offer for Stilla ($225M + $50M milestones) — largest dPCR-specific M&A. Global dPCR market approaching ~$840–857M by end-2025 per multiple forecasters. | ↑ ~5–8%; M&A replaces VC as dominant capital form |
+
+Sources: [Allied Market Research dPCR market 2020](https://www.alliedmarketresearch.com); [Bio-Rad 2024 earnings](https://www.bio-rad.com); [Macrotrends Bio-Rad R&D data](https://www.macrotrends.net); [Stilla $35M round 2021 — Stilla Technologies](https://www.stillatechnologies.com); [Stilla $26.5M Series C 2023 — GlobeNewswire](https://www.globenewswire.com); [QIAGEN 2024 placements data](https://www.qiagen.com); [Mordor Intelligence dPCR forecast](https://www.mordorintelligence.com/industry-reports/digital-pcr-market); [Fortune Business Insights dPCR market](https://www.fortunebusinessinsights.com/digital-pcr-market-102014)
+
+**China-specific investment**:
+
+China-specific dPCR investment is poorly documented in English-language sources, reflecting the early-stage nature of domestic players. Key data points:
+
+- **TargetingOne (北京迈基诺)**: No publicly disclosed funding rounds found in English-language sources. The company has obtained China's first two Class III NMPA instrument approvals (D50, D2) and three reagent approvals, suggesting sustained operating capital but likely through undisclosed strategic or government-linked investment rather than traditional VC. [REASONED INFERENCE — funding details not publicly available]
+- **Sinaflow**: No publicly disclosed funding rounds found. Regulatory trajectory (dual instrument + oncology reagent NMPA approval) indicates meaningful R&D investment.
+- **Government grant support**: China's 14th Five-Year Bioeconomy Plan and provincial science programs have channeled grants to molecular diagnostics companies, but grant-level data for individual dPCR companies is not publicly consolidated. [REASONED INFERENCE]
+- **Import substitution policy**: Government procurement preferences for domestic medical devices create an indirect capital subsidy for domestic dPCR manufacturers competing with Bio-Rad and QIAGEN. The value of this policy preference is not captured in investment tables but is a material competitive advantage.
+
+Sources: [TargetingOne official site](https://en.targetingone.com); [BioWorld TargetingOne Class III approval](https://www.bioworld.com/articles/515307-targetingone-digital-pcr-testing-kit-wins-first-of-kind-class-iii-chinese-approval); [bydrug.pharmcube.com Sinaflow approval](https://bydrug.pharmcube.com/news/detail/852b4cfaf7d329409aca5bf2c8310c3a)
+
+**Notable mega-rounds (>$50M)**:
+
+No pure-play dPCR startup has raised a disclosed round exceeding $50M in the 2020–2024 period. The largest disclosed dPCR-specific rounds were:
+
+- **Stilla Technologies — EUR 31.3M (~$35.2M) venture debt, November 2021**: Casdin Capital + European Investment Bank. Earmarked for commercial expansion of naica® Crystal Digital PCR platform. ([Stilla Technologies announcement](https://www.stillatechnologies.com))
+- **Stilla Technologies — $26.5M Series C, February 2023**: Led by CLIFF (Yuzi Investment Holding Group, Tus-Holdings); existing investors Illumina Ventures, Kurma Partners, PSSF, IdInvest, BNP Paribas Development, LBO France. Purpose: accelerate commercialization of Nio®+ system. ([GlobeNewswire / Stilla](https://www.globenewswire.com))
+- **Bio-Rad acquisition of Stilla Technologies, February 2025 announcement**: $225M + up to $50M contingent milestones. This is the defining capital event of the dPCR market — transforming the two largest format providers into a single entity. ([Bio-Rad press release](https://www.bio-rad.com); [BioProcess International](https://www.bioprocessintl.com))
+- **Fluidigm / Standard BioTools — $250M strategic infusion, January 2022**: Casdin Capital + Viking Global Investors. Note: Fluidigm's dPCR platform (BioMark) is a secondary product; the company primarily focuses on mass cytometry and single-cell analysis. This round does not represent a clean dPCR investment signal. ([Standard BioTools press release](https://www.standardbio.com))
+
+---
+
+### 10C. Capital Flow Trend Signal
+
+**Current Trend**: 🟢 Growing (transitioning toward Accelerating in China specifically)
+
+The global dPCR market is growing at a measured 8–16% CAGR depending on methodology, with the lower end (8.6%) reflecting conservative Allied Market Research estimates and the upper end (16–17%) reflecting Mordor Intelligence and Fortune Business Insights projections. The Chinese market is on a higher-growth trajectory (17.6% CAGR projected to 2031 per Mobility Foresights) driven by import substitution and regulatory opening.
+
+| Leading Indicator | Signal | Source |
+|------------------|--------|--------|
+| Patent filing trend — global | ↑ Growing: Global patent applications reached 3.55M in 2023 (+2.7% YoY); China CNIPA filings in digital biomarkers grew ~7x from 2013 to 2022 (1,051 filings in 2022). QIAGEN–Bio-Rad patent dispute (filed 2022) signals that existing dPCR IP is commercially valuable enough to litigate — a maturation indicator. | [WIPO 2023 report](https://www.wipo.int); [GenomeWeb QIAGEN–Bio-Rad suit](https://www.genomeweb.com) |
+| Patent filing trend — China (CNIPA) | ↑ Growing: [REASONED INFERENCE] Chinese CNIPA filings in dPCR-related categories (microfluidic chip design, application-specific assays) estimated to have grown 30–50% annually 2020–2024, consistent with broader CNIPA biotech filing trends. | [REASONED INFERENCE based on WIPO data and broader China patent trends] |
+| Academic publication volume | ↑ Accelerating: dPCR publications have shown "rapid and exponential increase" since 2007. COVID-19 (2020–2022) created an additional surge (wastewater surveillance, SARS-CoV-2 detection). 2023–2024 publications show continued high volume across oncology, infectious disease, NIPT, and environmental monitoring. Chinese institutions estimated at 25–30% of global output (growing from <10% in 2015). | [PubMed trend described in multiple 2024 review articles](https://pubmed.ncbi.nlm.nih.gov); [MDPI dPCR reviews 2024](https://www.mdpi.com) |
+| Government grant allocation — China | Growing: 14th Five-Year Bioeconomy Plan and Cancer Prevention Action Plan (2023–2030) explicitly support precision molecular diagnostics. 15th Five-Year Plan signals (2026–2030) indicate policy continuity. NMPA issued 4 new IVD guidelines (January 2024) and 268 updated IVD classifications (November 2024) — active infrastructure building. | [gov.cn Cancer Prevention Plan](https://www.gov.cn/zhengce/202311/content_6915389.htm); [chinameddevice.com IVD guidelines](https://chinameddevice.com/nmpa-ivd-guidelines/) |
+| Regulatory approval velocity — China | Accelerating: First Class III reagent approval: January 2022 (TargetingOne COVID-19 kit). First Class III instrument approval: February 2025 (TargetingOne D50). Sinaflow dual approval (instrument + BCR-ABL1 oncology reagent). Multiple reagent approvals across infectious disease and oncology 2022–2025. Velocity is increasing as the regulatory pathway is de-risked. | [TargetingOne D50 approval](https://en.targetingone.com/blog/milestone-targetingone-obtains-the-first-class-iii-nmpa-certificate-for-digital-pcr-instrument/); [BioWorld](https://www.bioworld.com/articles/515307-targetingone-digital-pcr-testing-kit-wins-first-of-kind-class-iii-chinese-approval); [Pharmcube Sinaflow](https://bydrug.pharmcube.com/news/detail/852b4cfaf7d329409aca5bf2c8310c3a) |
+| Regulatory approval velocity — Global | Accelerating: QIAGEN QIAcuityDx received IVDR certification and 510(k) exemption in 2024 — the first globally certified clinical dPCR system. Signals readiness for cross-jurisdictional clinical deployment. | [QIAGEN QIAcuityDx press release 2024](https://corporate.qiagen.com/English/newsroom/press-releases/press-release-details/2024/QIAGEN-launches-QIAcuityDx-digital-PCR-system-for-clinical-testing-in-oncology/default.aspx) |
+| Competing technology maturity (NGS) | High threat but co-existence, not displacement: NGS held 76.67% of the liquid biopsy market technology share in 2025. NGS companies (Grail, Guardant Health, Exact Sciences) have raised billions — Grail alone raised ~$1.9B through 2020 and continued raising in 2024 ($300M). However, dPCR and NGS occupy different performance niches and are increasingly used in complementary, tiered models rather than as substitutes. | [Precedence Research liquid biopsy 2025](https://www.precedenceresearch.com); [Grail funding history](https://www.grail.com) |
+| Bio-Rad foundational patent status | Neutral-to-positive: Bio-Rad's core ddPCR patents (droplet generation, emulsion chemistry) remain active and have been successfully enforced (10X Genomics $34M judgment + cross-licensing through 2030). Bio-Rad's acquisition of Stilla (2025) adds cdPCR IP. Patent expiry of the earliest foundational patents (filed ~2011–2013) will begin approximately 2031–2033, potentially opening the market to broader competition. Current IP position is strong and commercially enforced. | [JD Supra Bio-Rad v. 10X Genomics](https://www.jdsupra.com/legalnews/court-enters-permanent-injunction-and-31134/); [GenomeWeb IP settlement](https://genomeweb.com/business-news/bio-rad-laboratories-10x-genomics-settle-ip-lawsuits-sign-global-cross-licensing) |
+
+**3-Year Capital Outlook (2026–2028)**: [FORECAST]
+
+The primary capital flows into dPCR over the next three years will take three forms:
+
+1. **Strategic M&A by large diagnostics companies** (Roche, Abbott, Thermo Fisher evaluating dPCR portfolio additions following Bio-Rad's Stilla consolidation). The market is now sufficiently proven to attract large-cap acquirers.
+2. **China domestic growth capital** (Series A/B rounds for domestic platform companies as clinical approvals de-risk the investment thesis; government-guided funds will be active). TargetingOne and Sinaflow are the most likely recipients given their regulatory lead.
+3. **Clinical assay development investment** (instrument-agnostic assay companies developing validated dPCR kits for EGFR, BCR-ABL1, HBV, and NIPT applications — the "razor blade" business model on top of installed instrument bases).
+
+Pure-play dPCR platform VC investment is unlikely to resurge significantly; the window for Series A/B instrument platform investment has passed for the major formats. Capital will flow toward clinical application development, reagent kits, and channel/distribution access in China.
+
+---
+
+### 10D. Competitive Capital Landscape
+
+**dPCR vs. NGS: capital competition in liquid biopsy and MRD**
+
+The most important capital competition dPCR faces is not from qPCR — it is from NGS-based liquid biopsy platforms. NGS has captured the majority of venture investment in liquid biopsy:
+
+- **Grail** raised approximately $1.9B through four rounds by May 2020 (Series D: $390M, Series C: $300M) and continued raising in 2024 ($300M). Grail's Galleri multi-cancer early detection test is an NGS-based product.
+- **Guardant Health** (NASDAQ: GH) raised $350M in convertible notes in late 2025, has an established commercial liquid biopsy test (Guardant360) and MRD test (Guardant Reveal). These are NGS-based.
+- **Exact Sciences** raised $266.75M in convertible notes (April 2024) and has an active MRD program — NGS-primary.
+- The global liquid biopsy market was valued at approximately $9.07B in 2024 and is projected at $25.19B by 2033 (CAGR 10.7%). NGS held 76.67% of the technology share in 2025. ([Precedence Research](https://www.precedenceresearch.com))
+
+Against this backdrop, dPCR has not attracted comparable venture capital in liquid biopsy. The reason is structural: **dPCR is not a standalone clinical test business model in the same way NGS is.** dPCR is a platform technology sold primarily through instrument + consumable + assay bundles by established life science companies (Bio-Rad, QIAGEN, Thermo Fisher). The venture opportunity in dPCR has been primarily at the platform level (Stilla, now acquired) rather than at the clinical assay application level.
+
+However, dPCR is not being displaced by NGS in its core use cases — it is co-existing in a tiered model:
+
+| Clinical Use Case | Capital Trend | Assessment |
+|------------------|---------------|------------|
+| ctDNA broad mutation profiling (discovery) | Capital flowing strongly to NGS | NGS has 76.67% liquid biopsy tech share; Grail, Guardant attracting billions |
+| MRD monitoring — known mutations (BCR-ABL1, NPM1) | Capital flowing to dPCR | dPCR is the established standard; NGS is too complex for known-variant quantification |
+| ctDNA — known hotspot monitoring (EGFR, KRAS) | Capital split between dPCR and NGS | dPCR preferred for sensitivity; NGS for breadth; both have active development programs |
+| Multi-cancer early detection | Capital strongly to NGS/methylation platforms | Grail's Galleri, Singlera (China) dominating; dPCR plays limited role |
+| Viral load (HBV, HIV, CMV) | Capital flows to qPCR (established) and dPCR (reference method) | qPCR remains dominant for routine use; dPCR growing as reference standard and for low-load detection |
+
+**Is capital flowing INTO dPCR from qPCR upgraders, or being captured by NGS?**
+
+The answer is: **both, but through different mechanisms.**
+
+Capital is flowing INTO dPCR from two sources: (1) qPCR users upgrading to dPCR for high-sensitivity applications where qPCR is insufficient (this is the primary commercial driver of instrument placements — QIAGEN's 2,700+ placements are predominantly from labs with existing qPCR infrastructure); and (2) regulatory-driven clinical adoption in oncology and infectious disease, where NMPA/FDA/IVDR approvals create reimbursable clinical use cases that justify instrument capital expenditure.
+
+Capital is simultaneously being captured by NGS at the liquid biopsy/MRD "discovery" and "multi-cancer screening" layer — applications where dPCR's multiplexing ceiling (2–6 targets) makes it structurally unsuitable compared to NGS panels covering hundreds of variants.
+
+The net result is that **dPCR and NGS are not competing for the same capital pool** — they are addressing different clinical problems. The more accurate framing is: dPCR is not gaining ground against NGS in broad liquid biopsy; NGS is not displacing dPCR in absolute quantification of known targets. Both markets are growing; neither is cannibalizing the other at the technology-investment level.
+
+**China-specific competitive capital dynamics**:
+
+In China, the competitive capital landscape has an additional dimension: the import substitution mandate creates a government-directed capital advantage for domestic dPCR manufacturers that does not exist for NGS companies (which also have strong domestic players: Burning Rock, Berry Genomics, Genetron). In the dPCR segment, domestic manufacturers (TargetingOne, Sinaflow) face less domestic competition from Chinese NGS platforms because their clinical applications (BCR-ABL1 MRD, EGFR liquid biopsy quantification) are distinct from NGS use cases. The more acute capital competition for Chinese dPCR companies is from **Chinese domestic qPCR manufacturers** (DAAN Gene, Sansure Bio, Hybribio) who serve the same hospitals with lower-cost PCR solutions and who may enter dPCR through product line extension, leveraging existing hospital relationships and distribution networks.
+
+Sources: [Precedence Research liquid biopsy market](https://www.precedenceresearch.com); [Grail funding history](https://www.grail.com); [Guardant Health convertible notes 2025](https://www.guardanthealth.com); [Exact Sciences April 2024 funding](https://www.exactsciences.com); [QIAGEN 2024 QIAcuity placements](https://www.qiagen.com); [einpresswire.com liquid biopsy market 2025](https://www.einpresswire.com)
+
+---
+
+### Sources for Section 10
+
+1. [Bio-Rad Laboratories — binding offer to acquire Stilla Technologies (2025)](https://www.bio-rad.com)
+2. [Medical Device Network — Bio-Rad Stilla acquisition details](https://www.medicaldevice-network.com)
+3. [BioProcess International — Bio-Rad Stilla acquisition](https://www.bioprocessintl.com)
+4. [Kurma Partners — Stilla Technologies Series C lead investor](https://www.kurmapartners.com)
+5. [Chemanager Online — Stilla acquisition coverage](https://www.chemanager-online.com)
+6. [QIAGEN — QIAcuityDx launch press release, September 2024](https://corporate.qiagen.com/English/newsroom/press-releases/press-release-details/2024/QIAGEN-launches-QIAcuityDx-digital-PCR-system-for-clinical-testing-in-oncology/default.aspx)
+7. [QIAGEN — QIAcuity placements and revenue data, investor relations](https://www.qiagen.com)
+8. [Bio-Rad Laboratories — 2024 Annual Report and earnings](https://www.bio-rad.com)
+9. [Macrotrends — Bio-Rad R&D spending historical](https://www.macrotrends.net)
+10. [BioSpace — Bio-Rad 2024 financial performance](https://www.biospace.com)
+11. [StockTitan — Bio-Rad quarterly results](https://www.stocktitan.net)
+12. [TargetingOne — D50 instrument NMPA Class III approval](https://en.targetingone.com/blog/milestone-targetingone-obtains-the-first-class-iii-nmpa-certificate-for-digital-pcr-instrument/)
+13. [BioWorld — TargetingOne first Class III dPCR reagent approval (2022)](https://www.bioworld.com/articles/515307-targetingone-digital-pcr-testing-kit-wins-first-of-kind-class-iii-chinese-approval)
+14. [Pharmcube bydrug — Sinaflow BCR-ABL1 dual NMPA Class III approval](https://bydrug.pharmcube.com/news/detail/852b4cfaf7d329409aca5bf2c8310c3a)
+15. [chinameddevice.com — NMPA January 2024 IVD guidelines](https://chinameddevice.com/nmpa-ivd-guidelines/)
+16. [chinameddevice.com — NMPA November 2024 IVD classifications](https://chinameddevice.com/nmpa-ivd-classification/)
+17. [Stilla Technologies — EUR 31.3M venture debt round November 2021](https://www.stillatechnologies.com)
+18. [GlobeNewswire — Stilla Technologies $26.5M Series C, February 2023](https://www.globenewswire.com)
+19. [Standard BioTools (formerly Fluidigm) — $250M investment from Casdin/Viking, 2022](https://www.standardbio.com)
+20. [Allied Market Research — global dPCR market 2020 valuation ($508.82M)](https://www.alliedmarketresearch.com)
+21. [Mordor Intelligence — global dPCR market forecast](https://www.mordorintelligence.com/industry-reports/digital-pcr-market)
+22. [Fortune Business Insights — global dPCR market forecast](https://www.fortunebusinessinsights.com/digital-pcr-market-102014)
+23. [Mobility Foresights — China dPCR market forecast ($1.28B 2025, $3.46B 2031, 17.6% CAGR)](https://mobilityforesights.com/product/china-digital-pcr-market)
+24. [WIPO — global patent filing report 2023 (3.55M applications)](https://www.wipo.int)
+25. [GenomeWeb — QIAGEN files lawsuit against Bio-Rad on dPCR patents (2022)](https://www.genomeweb.com)
+26. [JD Supra — Bio-Rad v. 10X Genomics $34M permanent injunction](https://www.jdsupra.com/legalnews/court-enters-permanent-injunction-and-31134/)
+27. [GenomeWeb — Bio-Rad / 10X Genomics global cross-licensing settlement](https://genomeweb.com/business-news/bio-rad-laboratories-10x-genomics-settle-ip-lawsuits-sign-global-cross-licensing)
+28. [Precedence Research — global liquid biopsy market 2024 ($9.07B)](https://www.precedenceresearch.com)
+29. [einpresswire.com — liquid biopsy market NGS technology share (76.67%, 2025)](https://www.einpresswire.com)
+30. [Grail — funding history and Galleri test](https://www.grail.com)
+31. [Guardant Health — convertible notes offering November 2025](https://www.guardanthealth.com)
+32. [Exact Sciences — $266.75M convertible notes April 2024](https://www.exactsciences.com)
+33. [gov.cn — Healthy China Cancer Prevention Action Plan 2023–2030](https://www.gov.cn/zhengce/202311/content_6915389.htm)
+34. [Tracxn — dPCR startup funding landscape](https://www.tracxn.com)
+35. [Preqin — life science VC market context 2021–2024](https://www.preqin.com)
 75. [The Role of Digital PCR in Enhancing Diagnostic Power — MDPI Diagnostics](https://www.mdpi.com/2075-4418/14/15/1598)
 
 ---
