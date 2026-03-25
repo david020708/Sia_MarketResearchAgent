@@ -141,6 +141,27 @@ Research this technology comprehensively and write a complete technology deep-di
 2. Judge when you have sufficient information
 3. Write the complete report following the structure below
 
+⚠️ SOURCING RULE — READ THIS BEFORE YOU START AND FOLLOW IT FOR EVERY SINGLE SENTENCE:
+
+Every number, statistic, claim, company name, funding figure, paper title, and forecast in this report MUST be followed immediately by a working hyperlink to the source where you found it. No exceptions.
+
+The correct format is inline citation: write the information, then immediately link the source in parentheses.
+Example: "The global qPCR market was valued at $4.2 billion in 2023 ([Grand View Research](https://www.grandviewresearch.com/...))"
+
+FORBIDDEN behaviors — if you do any of these, the report will be rejected:
+- Writing a number or statistic without a URL immediately after it
+- Using [1], [2], [3] footnote markers instead of inline links
+- Citing a source name (e.g. "according to Gartner") without providing the actual URL
+- Fabricating or guessing a URL that you have not actually visited and confirmed
+- Writing a funding figure (e.g. "$500M raised in 2023") without a direct link to the Crunchbase, PitchBook, press release, or news article where you found that number
+- Citing an academic paper without verifying it exists and providing its DOI or arXiv link
+
+IF YOU CANNOT FIND A SOURCE FOR A PIECE OF INFORMATION:
+- Do NOT write the information as if it were a fact
+- Do NOT guess or estimate without labeling it explicitly as: [REASONED INFERENCE — no source found]
+- Do NOT fill in numbers to make the report look complete
+- Write: "Data unavailable — no reliable source found for this data point" and move on
+
 REPORT STRUCTURE (12-point technology profile):
 1. Technology Overview — plain-language definition, why it matters now, key terminology glossary
 2. Technical Mechanism — core mechanism explained in depth, architecture, key variants, performance metrics, limitations
@@ -181,6 +202,8 @@ To determine the phase:
 **10B — Historical Capital Flow (Past 5 Years)**
 
 Research the actual dollar amounts invested in this technology over the past 5 years. Provide year-by-year data where possible.
+
+⚠️ CAPITAL DATA SOURCING WARNING: Funding figures are the most commonly fabricated data in AI-generated reports. Every single dollar amount, deal count, and company valuation you write MUST link directly to the source (Crunchbase URL, news article, press release, or analyst report). If you cannot find a verified source for a specific year's total, write "Data unavailable for [year]" — do NOT estimate or fill in a plausible-looking number.
 
 Data sources to search:
 - Crunchbase (search the technology as a category tag): https://www.crunchbase.com
@@ -285,15 +308,18 @@ Is capital flowing INTO this technology, or is it being redirected to a competin
 - MOST, CAS, NSFC, CAICT
 - CNIPA
 
-MANDATORY SOURCING RULES:
-1. Every technical claim, statistic, paper citation, patent reference, forecast MUST include a full URL hyperlink
-2. Do NOT use numbered reference markers like [1], [2] without providing actual URLs
-3. Inline citations preferred: "The model achieved 95% accuracy ([source](https://...))"
-4. Academic paper citations MUST include: title, authors, venue, year, and URL (arXiv, DOI, or Semantic Scholar link)
-5. Never cite a paper you have not verified exists
-6. If data unavailable, state explicitly. Label inferences as [REASONED INFERENCE — NOT SOURCED DATA]. Label forecasts as [FORECAST — SUBJECT TO UNCERTAINTY]
-7. The report MUST end with a numbered "Sources" section listing every URL cited
-8. A report with no source URLs will be rejected
+MANDATORY SOURCING RULES (reminder — these apply to every sentence in every section):
+1. Every technical claim, statistic, funding figure, patent reference, and forecast MUST include a working URL hyperlink inline, immediately after the information
+2. Correct format: "The market grew 40% YoY ([Source Name](https://actual-url.com/page))"
+3. Do NOT use [1], [2] footnote markers — use inline hyperlinks only
+4. Do NOT write "according to Gartner" or "per CB Insights" without providing the actual URL
+5. Academic paper citations MUST include: title, authors, venue, year, and a working URL (DOI, arXiv, PubMed, or Semantic Scholar)
+6. Never cite a paper or report you have not verified exists at a real URL
+7. If data is unavailable: write "Data unavailable — no reliable source found" — never fill in a plausible number
+8. Label inferences explicitly: [REASONED INFERENCE — NOT SOURCED DATA]
+9. Label forecasts explicitly: [FORECAST — SUBJECT TO UNCERTAINTY]
+10. The report MUST end with a numbered "Sources" section listing every URL cited
+11. A report containing any unlinked statistics or fabricated URLs will be rejected
 
 WRITING INSTRUCTIONS — CHUNKED OUTPUT (MANDATORY):
 Do NOT write the entire report in a single Write tool call. The file is too large and the Write tool will fail.
