@@ -260,6 +260,118 @@ Based on publication trends, patent filings, and company investment patterns acr
 
 ---
 
+## 5B. Capital Flow Comparative Dashboard / 资本流向对比仪表盘
+*(Synthesized from Section 10/13 Capital Flow & Hype Cycle Analysis across all 9 technology reports — March 2026)*
+
+### 5B.1 Capital Flow Comparison Table
+
+| Technology | Hype Cycle Phase | 2024 Global Market (USD) | Capital Trend | 3-Year Outlook | Substitution Risk |
+|-----------|-----------------|--------------------------|--------------|----------------|-------------------|
+| **qPCR** | Plateau of Productivity | ~$10.0B | 🟡 Plateauing | Stable infrastructure; reagent consumables market durable to 2030 | Medium — dPCR encroaching in liquid biopsy/MRD niches (3–7yr timeline) |
+| **NGS** | Slope of Enlightenment | ~$10.4B (sector revenue) | 🟢 Growing | Clinical CDx/NIPT steady; long-read sequencing 26% CAGR | Low for clinical CDx; High for research-use revenue (AI/long-read disruption) |
+| **dPCR** | Slope of Enlightenment | ~$700–750M | 🟢 Growing | Bio-Rad/Stilla consolidation signals maturing growth phase; China domestic build accelerating | Low — complementary to qPCR and NGS, not displacing either |
+| **POCT Molecular** | Slope of Enlightenment | ~$5.2B (molecular Dx POCT) | 🟢 Growing | Structural growth driven by China grassroots expansion; non-COVID panel buildout | Low for molecular POCT; Medium from rapid antigen tests in consumer segment |
+| **LAMP** | Early Plateau of Productivity | ~$112–200M | 🟡 Plateauing | Eiken patent expiry → commoditization → stable niche; CRISPR-LAMP hybrids as next frontier | High from CRISPR (long-term 5–8yr); Medium from RATs (near-term) |
+| **Microfluidics** | Slope of Enlightenment (platform) / Plateau (applications) | ~$3.2B (diagnostics segment) | 🟢 Growing | Platform layer consolidating; application layer (POCT, dPCR, liquid biopsy) accelerating | Low — enabling technology; capital migrating from platform to application layer |
+| **Liquid Biopsy (MCED)** | Trough of Disillusionment | ~$2.5B (global liquid biopsy) | 🔴 Contracting | NHS-Galleri failure (Feb 2026) triggers MCED retrenchment; 5–7yr reset expected | High — MCED thesis requires clinical trial rebuild; capital shifting to CDx/MRD |
+| **Liquid Biopsy (CDx/MRD)** | Slope of Enlightenment | (sub-segment of above) | 🚀 Accelerating | Guardant Shield FDA+Medicare (Jul 2024); Burning Rock NMPA CDx (Oct 2024); pharma CDx partnership model emerging | Low — clear clinical utility, reimbursement pathway opening |
+| **DNA Microarray** | Plateau of Productivity (niche) | ~$1.6–2.1B | 🔴 Contracting (research) / 🟡 Plateauing (clinical niche) | No new VC investment; capital flowing to spatial transcriptomics (10x Visium, BGI Stereo-seq); prenatal CMA and GWAS niches stable | Very High from NGS for research; Low in prenatal/neonatal niche |
+| **CRISPR Diagnostics** | Early Slope of Enlightenment | ~$460–570M (VC raised 2020–2024) | 🟢 Growing | OraSure/Sherlock acquisition (Dec 2024) + Siemens/VedaBio partnership (Sep 2025) = two strategic buyers in 12 months; FDA pipeline advancing | Low from existing technologies; long-term replaces LAMP in isothermal POC |
+
+---
+
+### 5B.2 Capital Flow Ranking — Where Is the Money Going?
+
+**By current absolute investment volume (2024):**
+1. 🥇 **NGS** — ~$10.4B sector revenue; GRAIL $325M private placement (Oct 2025); long-read market growing 26% CAGR
+2. 🥈 **qPCR** — ~$10.0B sector revenue; largest installed base; reagent consumables dominate
+3. 🥉 **POCT Molecular** — ~$5.2B; fastest growth among mature technologies (+55.7% YoY equity funding to Dec 2025)
+4. **Microfluidics** — ~$3.2B diagnostics segment; application-layer capital (Freenome $254M, BillionToOne $130M) dwarfs platform-layer VC
+5. **Liquid Biopsy (all)** — ~$2.5B; bifurcated between MCED contraction and CDx/MRD acceleration
+6. **dPCR** — ~$700–750M; Bio-Rad/Stilla $225M acquisition as defining event
+7. **DNA Microarray** — ~$1.6–2.1B revenue; zero new VC; capital exiting to spatial transcriptomics
+8. **CRISPR Diagnostics** — ~$460–570M VC (2020–2024 cumulative); growing from small base
+9. **LAMP** — ~$112–200M; no pure-play VC; commodity procurement market
+
+**By growth rate / momentum (2024–2026 outlook):**
+1. 🚀 **Liquid Biopsy CDx/MRD** — Accelerating; pharma partnership model replacing equity raises
+2. 🚀 **CRISPR Diagnostics** — Growing fastest from small base; two strategic acquirers in 12 months
+3. 🟢 **POCT Molecular** — Structural grassroots healthcare demand in China; non-COVID panel expansion
+4. 🟢 **dPCR** — Consolidating; China domestic build creating new growth vector
+5. 🟢 **NGS (long-read)** — 26–31% CAGR for long-read specifically; ONT clinical revenue +60% in 2024
+6. 🟡 **qPCR** — Stable; reagent infrastructure durable; instrument replacement driven by VBP
+7. 🟡 **LAMP** — Plateauing; patent expiry commoditizing; CRISPR-LAMP hybrid R&D as only innovation vector
+8. 🔴 **Liquid Biopsy MCED** — Contracting post-NHS-Galleri failure; 5–7yr reset
+9. 🔴 **DNA Microarray** — Secular decline outside prenatal/neonatal niche; capital exiting
+
+---
+
+### 5B.3 Hype Cycle Positioning Map
+
+```
+HIGH EXPECTATIONS
+        │
+        │  Peak of Inflated     ←── [MCED Liquid Biopsy peaked ~2021,
+        │  Expectations              now descending]
+        │        ╲
+        │         ╲ Trough of
+        │          ╲ Disillusionment ←── MCED Liquid Biopsy (2025–2026)
+        │           ╲
+        │            ╲____ Slope of Enlightenment
+        │                  ├── NGS ──────────────────────→ Approaching Plateau
+        │                  ├── dPCR ─────────────────────→ Approaching Plateau
+        │                  ├── POCT Molecular ───────────→ Approaching Plateau
+        │                  ├── Microfluidics (platform) ─→ Approaching Plateau
+        │                  ├── CDx/MRD Liquid Biopsy ───→ Early-mid Slope
+        │                  └── CRISPR Diagnostics ───────→ Early Slope
+        │
+        │  Plateau of Productivity
+        │  ├── qPCR ─────────────────────── (mature infrastructure)
+        │  ├── LAMP ─────────────────────── (early plateau, commoditizing)
+        │  └── DNA Microarray ────────────── (niche plateau, secular decline)
+        │
+LOW EXPECTATIONS
+        │
+Innovation    Peak      Trough    Slope    Plateau
+Trigger    Expectations           Enlightenment  Productivity
+──────────────────────────────────────────────────────────────→ TIME
+```
+
+---
+
+### 5B.4 "Follow the Money" Conclusion — 3-Year Capital Outlook
+
+**If you had to bet on which technology will receive the most NEW capital in 2026–2029, the answer is:**
+
+**1st bet: Liquid Biopsy CDx/MRD (Companion Diagnostics + Minimal Residual Disease)**
+
+The NHS-Galleri failure paradoxically *clarifies* where capital should flow: not to population screening (MCED) but to high-value clinical applications with clear reimbursement pathways. Guardant Health's Shield test receiving FDA approval AND Medicare coverage in July 2024 is the template. In China, the pivot is from equity-market-dependent business models toward pharma CDx partnerships (Burning Rock + AstraZeneca; Geneseeq + multiple MNCs). This segment will attract the largest new capital inflows 2026–2029 because the clinical utility is proven and the reimbursement pathway is now visible.
+
+**2nd bet: CRISPR Diagnostics**
+
+Two strategic acquirers (OraSure, Siemens Healthineers) entering within 12 months is the clearest signal that the Trough of Disillusionment has been cleared and rational money is returning. CRISPR Dx is at TRL 7–8 for specific applications; FDA pipeline is advancing (CT/NG submission expected end-2025). The technology addresses a genuine unmet need (isothermal, point-of-care, high specificity) that neither LAMP nor qPCR can match for SNV detection. 2026–2029 is the window for strategic positions before commercial scale.
+
+**3rd bet: Long-Read NGS (ONT + PacBio successors)**
+
+ONT clinical revenue grew 60% in 2024. Long-read sequencing market growing 26–31% CAGR through 2033. The clinical use cases unlocking long-read adoption (structural variant detection, full-length 16S microbiome, direct RNA sequencing for splice isoforms) are not addressable by short-read NGS. Capital is rotating within NGS from short-read incumbents (Illumina flat since 2021) to long-read challengers.
+
+---
+
+### 5B.5 Substitution Risk Flags — Capital Shifting Between Technologies
+
+| Capital Flowing FROM | Capital Flowing TO | Timeline | Confidence |
+|---------------------|-------------------|----------|------------|
+| DNA Microarray (research expression arrays) | NGS / RNA-seq | Already happening — 85% of GEO submissions now RNA-seq | High |
+| DNA Microarray (spatial) | Spatial Transcriptomics (10x Visium, BGI Stereo-seq) | 2024–2027 | High |
+| Liquid Biopsy MCED platforms | Liquid Biopsy CDx/MRD multi-analyte | 2025–2028 | High |
+| LAMP standalone platforms | CRISPR-LAMP hybrid platforms | 2026–2030 | Medium |
+| qPCR (liquid biopsy/MRD niche) | dPCR (absolute quantification superior) | 2025–2029 | Medium |
+| Short-read NGS (Illumina instruments) | Long-read NGS (ONT, successors) | 2024–2030 | Medium |
+| Western liquid biopsy equity (GRAIL, Guardant) | Chinese domestic liquid biopsy pharma CDx partnerships | 2024–2027 | Medium-High |
+| Pure-play POCT instrument plays | AI-enabled POCT result interpretation platforms | 2027–2032 | Medium |
+
+---
+
 ## 6. China vs. Global Technology Assessment / 中国与全球技术对比
 
 ### Summary Assessment Table
