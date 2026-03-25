@@ -30,82 +30,83 @@ If the scope is ambiguous, state your assumed scope clearly at the top of your m
 
 ### Step 2 — Map the Technology Landscape (YOU do this research)
 
-**Your job in this step:** Conduct web research yourself to identify all relevant technologies before delegating to sub-agents.
+**Your job in this step:** Conduct MINIMAL web research to identify the list of key technologies. Do NOT research detailed technology information — that is the sub-agents' job in Step 3.
 
-**Framework 1 — Gartner Hype Cycle**
-The most widely used industry framework. Plots technologies across five phases:
-1. Innovation Trigger — early proof-of-concept, media interest
-2. Peak of Inflated Expectations — early success stories, unrealistic expectations
-3. Trough of Disillusionment — failures, interest wanes
-4. Slope of Enlightenment — second/third-generation products emerge, cautious enterprise adoption
-5. Plateau of Productivity — mainstream adoption, ROI demonstrable
+**Your goal:** Create a list of 5-10 technology names to research. Stop after identifying the technologies.
 
-Search for the most recent Gartner Hype Cycle report for the relevant domain at [gartner.com](https://www.gartner.com/). Cite the specific report title and year.
+**Quick research sources to identify technology names:**
+- Gartner Hype Cycle reports
+- McKinsey Technology Trends
+- Industry analyst reports
 
-**Framework 2 — McKinsey Technology Trends Outlook**
-McKinsey's [annual technology trends report](https://www.mckinsey.com/capabilities/mckinsey-digital/our-insights/the-top-trends-in-tech) tracks macro technology clusters using patent filing volume, academic publication growth rates, investment flows, and adoption surveys. Search for the most recent edition and extract relevant technology clusters.
+**Output of Step 2:** A simple list of 5-10 technology names. Do NOT research detailed information about each technology yet.
 
-**Framework 3 — Horizon Classification**
-Classify each identified technology by time horizon:
-- Horizon 1: Current, optimizing existing business (0–3 years to mainstream adoption)
-- Horizon 2: Emerging, adjacent opportunities (3–7 years)
-- Horizon 3: Transformational, speculative (7–15 years)
+**CRITICAL: After identifying the technology list, immediately proceed to Step 3. Do NOT do any additional research. Do NOT write any reports. Do NOT search for academic papers, patents, or any other technology-specific information. The sub-agents will do all of that.**
 
-**Research method — General:**
-1. **Gartner Hype Cycle** for the relevant domain — [gartner.com](https://www.gartner.com/)
-2. **Forrester Wave** for the relevant category — [forrester.com](https://www.forrester.com/)
-3. **IDC MarketScape** for technology markets — [idc.com](https://www.idc.com/)
-4. **McKinsey Technology Trends Outlook** — [mckinsey.com](https://www.mckinsey.com/capabilities/mckinsey-digital/our-insights/the-top-trends-in-tech)
-5. **CB Insights State of Technology reports** — [cbinsights.com](https://www.cbinsights.com/)
-6. **arXiv category submission volume** — track which research areas are growing fastest; search [arxiv.org](https://arxiv.org/) by category
-7. **Papers With Code** — [paperswithcode.com](https://paperswithcode.com/): ML benchmark leaderboards and state-of-the-art tracking
-8. **ThoughtWorks Technology Radar** — [thoughtworks.com/radar](https://www.thoughtworks.com/radar): engineering-focused technology adoption ratings
-
-Compile a **Technology Landscape Table** listing all identified technologies with: technology name, brief description, Horizon classification, Gartner Hype Cycle phase (if applicable), TRL estimate, and primary use cases. This table anchors the rest of the analysis.
+**YOU MUST STOP HERE. Step 2 is complete. Now go to Step 3.**
 
 ---
 
 ### Step 3 — Launch Sub-Agents for Each Key Technology
 
+**YOU ARE NOW IN STEP 3. Your ONLY job in this step is to launch sub-agents using the Agent tool.**
+
 Once you have identified the technology landscape, launch one sub-agent per key technology (recommend 5-10 technologies).
 
-**For each technology, launch a sub-agent with `run_in_background: true` and provide:**
-1. Technology name
-2. Research methodology (see TECHNOLOGY RESEARCH SUB-AGENT PROMPT TEMPLATE below)
-3. Output file path: `[output-folder]/[N]-technology-[name].md`
-4. Report structure requirements (10-point technology profile)
-5. Mandatory sourcing rules
+**CRITICAL: You MUST use the Agent tool to launch sub-agents. Do NOT write technology reports yourself. Do NOT continue researching. Do NOT write any files.**
 
-**After launching all technology sub-agents:**
-- Continue to Step 4 to write the master report
-- Do NOT wait for sub-agents to finish
-- Sub-agents will autonomously research, judge when they have sufficient data, and write their reports
+**For each technology, use the Agent tool with these parameters:**
+- `description`: "Research [Technology Name]"
+- `prompt`: Use the TECHNOLOGY RESEARCH SUB-AGENT PROMPT TEMPLATE below, filling in the technology name and output file path
+- `run_in_background`: true
+
+**Launch all technology sub-agents in parallel by calling the Agent tool multiple times in a single response.**
+
+**After launching all technology sub-agents, wait for them to complete.**
 
 ---
 
-### Step 4 — Write Master Technology Report (while sub-agents work)
+### Step 4 — Wait for All Technology Reports to Complete
 
-While technology sub-agents are researching in the background, write the master technology report yourself using the landscape data from Step 2.
+Use Glob to check the output folder every 30 seconds until all expected technology report files are present on disk. Only proceed to Step 5 when all sub-agent reports are complete.
 
-**Master report content:**
+---
+
+### Step 5 — Write Master Technology Report
+
+After all technology reports are complete, read every technology report file and synthesize a master technology report.
+
+**Master report content (synthesized from all technology reports):**
 1. Scope Definition
-2. Technology Landscape Table (from Step 2)
-3. Technology Positioning Map (2x2 matrix)
-4. Key Innovation Trends
-5. Investment and Patent Signal Summary
-6. China vs. Global Technology Assessment (if applicable)
-7. Technology Convergence Map
-8. Strategic Implications
-9. Confidence Assessment
-10. Full Source List
+2. Technology Landscape Table (technology name, description, Horizon, Hype Cycle phase, TRL, use cases)
+3. Technology Positioning Map (2x2 matrix based on technology report findings)
+4. Key Innovation Trends (synthesized from technology reports)
+5. Capital Flow Comparative Dashboard — SEE INSTRUCTIONS BELOW
+6. Patent Signal Summary (synthesized from technology reports)
+7. China vs. Global Technology Assessment (if applicable, synthesized from technology reports)
+8. Technology Convergence Map
+9. Strategic Implications
+10. Confidence Assessment
+11. Full Source List
+
+**Section 5 Instructions — Capital Flow Comparative Dashboard:**
+
+This section synthesizes the Capital Flow & Hype Cycle Analysis sections from ALL individual technology reports into one comparative view. It must include:
+
+- A comparison table of all technologies showing: Hype Cycle phase, 2024 investment level (USD), YoY trend, 3-year capital outlook
+- A capital flow ranking: which technology is attracting the most capital right now? Which is growing fastest?
+- A Hype Cycle positioning map (text-based 2x2 or timeline) showing where each technology sits
+- A "follow the money" conclusion: if you had to bet on which technology will receive the most capital in 3 years, which would it be and why?
+- Substitution risk flags: where is capital visibly shifting FROM one technology TO another?
+
+Format the comparison table as:
+
+| Technology | Hype Cycle Phase | 2024 Investment | YoY Trend | 3-Year Outlook | Substitution Risk |
+|-----------|-----------------|-----------------|-----------|----------------|-------------------|
+| [Tech A]  | [Phase]         | $Xbn            | ↑ X%      | 🚀 Accelerating | Low |
+| [Tech B]  | [Phase]         | $Xbn            | ↓ X%      | 🔴 Contracting  | High (losing to Tech A) |
 
 Save to: `[output-folder]/00-master-technology-report.md`
-
----
-
-### Step 5 — Monitor and Complete
-
-After writing the master report, your work is done. The sub-agents will complete their technology reports autonomously.
 
 ---
 
@@ -140,7 +141,7 @@ Research this technology comprehensively and write a complete technology deep-di
 2. Judge when you have sufficient information
 3. Write the complete report following the structure below
 
-REPORT STRUCTURE (10-point technology profile):
+REPORT STRUCTURE (12-point technology profile):
 1. Technology Overview — plain-language definition, why it matters now, key terminology glossary
 2. Technical Mechanism — core mechanism explained in depth, architecture, key variants, performance metrics, limitations
 3. Historical Evolution and Iteration — origin, timeline of key breakthroughs, paradigm shifts, version history, technology genealogy
@@ -150,9 +151,114 @@ REPORT STRUCTURE (10-point technology profile):
 7. Competitive Technology Comparison — competing approaches, comparison matrix, likely dominant approach
 8. Future Outlook — near-term (1–3yr), mid-term (3–7yr), long-term (7–15yr), scenarios, key research frontiers, risks
 9. China-Specific Analysis (if applicable) — Chinese research output, state policy support, key Chinese companies and labs, technology gaps, areas where China leads
-10. Strategic Implications — investment signals, build vs. buy vs. partner, companies to watch, monitoring indicators
-11. Confidence Level — High / Medium / Low, with explanation
-12. Sources — every URL cited, numbered; academic papers in full citation format
+10. Capital Flow & Hype Cycle Analysis — SEE DETAILED INSTRUCTIONS BELOW — this is a mandatory section
+11. Strategic Implications — investment signals, build vs. buy vs. partner, companies to watch, monitoring indicators
+12. Confidence Level — High / Medium / Low, with explanation
+13. Sources — every URL cited, numbered; academic papers in full citation format
+
+---
+
+### SECTION 10 INSTRUCTIONS — Capital Flow & Hype Cycle Analysis (MANDATORY)
+
+This section must be researched and written with the same rigor as any other section. Do NOT skip it or write a generic summary. Follow these sub-steps:
+
+**10A — Gartner Hype Cycle Positioning**
+
+Determine where this technology sits on the Gartner Hype Cycle. Use this framework:
+
+- **Innovation Trigger**: Technology just emerged, proof-of-concept, no commercial product, high media interest beginning
+- **Peak of Inflated Expectations**: Maximum media hype, early adopters rushing in, valuations often disconnected from fundamentals
+- **Trough of Disillusionment**: Hype has collapsed, failures publicized, investment slows or reverses, only committed players remain
+- **Slope of Enlightenment**: Rational money returns, second-generation products emerge, use cases proven, enterprise adoption begins
+- **Plateau of Productivity**: Mainstream adoption, stable investment, technology is now infrastructure
+
+To determine the phase:
+1. Search for the technology name in recent Gartner Hype Cycle reports (the most recent available)
+2. If not listed in Gartner, triangulate using: (a) media sentiment trend — rising or falling? (b) VC deal count trend — accelerating or decelerating? (c) incumbent vs. startup investment ratio — if incumbents dominate, technology is maturing
+3. State the phase explicitly and justify with evidence
+4. Estimate where the technology will be in 2 years (which phase transition is next?)
+
+**10B — Historical Capital Flow (Past 5 Years)**
+
+Research the actual dollar amounts invested in this technology over the past 5 years. Provide year-by-year data where possible.
+
+Data sources to search:
+- Crunchbase (search the technology as a category tag): https://www.crunchbase.com
+- CB Insights (technology market maps and funding data): https://www.cbinsights.com
+- PitchBook (funding rounds by technology sector)
+- For China specifically: IT桔子 (itjuzi.com), 烯牛数据 (xiniudata.com), 36Kr research reports
+- Public market proxies: ETF flows, listed company R&D spend disclosures in 10-K/annual reports
+
+Report the following:
+- Total VC/PE investment in the technology globally over the past 3–5 years (in USD)
+- Year-by-year trend: is investment growing, flat, or declining?
+- Investment by geography (US, China, Europe, other)
+- Stage distribution: seed/Series A (early bets), Series B/C (scaling), late-stage/IPO (maturation)
+- Notable mega-rounds (>$50M) that signal institutional conviction
+- If exact figures are unavailable, state this explicitly and provide the best available proxy with source
+
+**10C — Capital Flow Trend Signal**
+
+Based on 10A and 10B, assess the direction of capital:
+
+Classify the current trend as one of:
+- 🔴 **Contracting** — investment falling YoY, funders exiting
+- 🟡 **Plateauing** — investment stable, market maturing
+- 🟢 **Growing** — investment rising YoY, new funders entering
+- 🚀 **Accelerating** — investment growing >50% YoY, new capital sources (corporate, sovereign) entering
+
+Then assess the **leading indicators** for whether capital will increase or decrease in the next 2–3 years:
+
+| Leading Indicator | Signal | Source |
+|------------------|--------|--------|
+| Patent filing trend (last 3 years) | ↑ / ↓ / Flat | Google Patents |
+| Academic publication volume trend | ↑ / ↓ / Flat | Google Scholar / Semantic Scholar |
+| Government grant allocation | Growing / Shrinking | NIH Reporter / NSFC / EU Horizon |
+| FDA/regulatory approval velocity | Accelerating / Slowing | FDA database |
+| Talent flow (big co → startups) | Active / Quiet | LinkedIn / news |
+| Competing technology maturity | Threat / No threat | [Assessment] |
+
+Synthesize these signals into a forward-looking capital outlook: **Will more or less capital flow into this technology in the next 3 years, and why?**
+
+**10D — Competitive Capital Landscape**
+
+Is capital flowing INTO this technology, or is it being redirected to a competing technology?
+
+- Name the 2–3 technologies competing for the same investment dollars
+- Compare capital inflow trends side-by-side (is capital shifting from this tech to a competitor?)
+- Identify the "substitution risk": could a competing technology make this one obsolete before it reaches mainstream adoption?
+
+**Format for Section 10 output:**
+
+```
+## 10. Capital Flow & Hype Cycle Analysis
+
+### Hype Cycle Position
+**Current Phase**: [Phase Name]
+**Evidence**: [2–3 sentences citing specific data]
+**Next Phase Transition**: [Expected in X years, because...]
+
+### Historical Capital Flow
+| Year | Global Investment (USD) | Key Rounds | Trend |
+|------|------------------------|------------|-------|
+| 2020 | $Xbn | [Notable deals] | Baseline |
+| 2021 | $Xbn | [Notable deals] | ↑/↓ X% |
+| 2022 | $Xbn | [Notable deals] | ↑/↓ X% |
+| 2023 | $Xbn | [Notable deals] | ↑/↓ X% |
+| 2024 | $Xbn | [Notable deals] | ↑/↓ X% |
+
+**China-specific**: [Investment figures for China market if available]
+
+### Capital Flow Trend Signal
+**Current Trend**: 🟢 Growing / 🟡 Plateauing / 🔴 Contracting / 🚀 Accelerating
+
+[Leading indicators table]
+
+**3-Year Capital Outlook**: [Will capital grow or shrink? Why? What would need to change?]
+
+### Competitive Capital Landscape
+[Which competing technologies are competing for the same dollars? Is capital shifting away?]
+```
 ```
 
 **RESEARCH DATA SOURCES TO USE:**
@@ -188,6 +294,16 @@ MANDATORY SOURCING RULES:
 6. If data unavailable, state explicitly. Label inferences as [REASONED INFERENCE — NOT SOURCED DATA]. Label forecasts as [FORECAST — SUBJECT TO UNCERTAINTY]
 7. The report MUST end with a numbered "Sources" section listing every URL cited
 8. A report with no source URLs will be rejected
+
+WRITING INSTRUCTIONS — CHUNKED OUTPUT (MANDATORY):
+Do NOT write the entire report in a single Write tool call. The file is too large and the Write tool will fail.
+Instead, write the report in chunks using this sequence:
+1. Use the Write tool to create the file with sections 1–3 only (Technology Overview, Technical Mechanism, Historical Evolution)
+2. Use the Edit tool to append sections 4–6 (Academic Research Landscape, Patent Landscape, Technology Readiness and Commercialization)
+3. Use the Edit tool to append sections 7–9 (Competitive Technology Comparison, Future Outlook, China-Specific Analysis)
+4. Use the Edit tool to append section 10 (Capital Flow & Hype Cycle Analysis — including the full data tables for 10A, 10B, 10C, 10D)
+5. Use the Edit tool to append sections 11–13 (Strategic Implications, Confidence Level, Sources)
+Each Edit call appends to the end of the file. Never rewrite the whole file after the initial Write.
 
 When you complete the report, save it to the specified output file.
 ```
