@@ -623,3 +623,220 @@ All URLs cited in this report, numbered for reference:
 63. Bioworld — Burning Rock gains breakthrough designations in China, US for MCED: https://www.bioworld.com/articles/701996-burning-rock-gains-breakthrough-designations-in-china-us-for-multicancer-detection-blood-test
 64. Bioworld — Genetron develops testing kit for China's nationwide cancer screening program: https://www.bioworld.com/articles/497748-genetron-develops-testing-kit-for-chinas-nationwide-cancer-screening-program
 65. ASCO — Cost-effectiveness of liquid biopsy for NSCLC in Asian population (2024): https://ascopubs.org/doi/10.1200/JCO.2024.42.23_suppl.178
+
+---
+
+## 13. Capital Flow & Hype Cycle Analysis
+*(Supplementary Research — March 2026)*
+
+---
+
+### 13A. Hype Cycle Position
+
+**Current Phase**: Bifurcated — MCED is entering the Trough of Disillusionment; Companion Diagnostics (CDx) / MRD is on the Slope of Enlightenment
+
+Gartner does not publish a specific Hype Cycle position for liquid biopsy as a standalone entry in its publicly released reports (Gartner Hype Cycle for Life Sciences or Healthcare). However, the capital and sentiment trajectory described below — and the structural parallel to Gartner's framework — supports a clear bifurcated mapping based on the two principal sub-segments.
+
+**MCED (Multi-Cancer Early Detection):**
+
+The MCED sub-segment followed the classic Hype Cycle arc with unusual speed and violence. The Illumina/GRAIL saga — from the 2021 $7.1B acquisition announcement to the forced EU-mandated divestiture and June 2024 spin-off as a standalone public company — traces the exact shape of an inflated expectations peak followed by a regulatory and clinical correction. The February 20, 2026, publication of NHS-Galleri trial results (primary endpoint missed; GRAIL stock fell ~45.6% in premarket trading on that day) is arguably the single most visible "Trough of Disillusionment" moment the MCED category has experienced.
+
+Evidence against premature burial: GRAIL stock's all-time high of $116.06 (January 22, 2026) preceded the trial result by only 29 days, indicating sentiment remained euphoric into 2026 before the crash. The current GRAL price of ~$46.84 (March 20, 2026) represents a market cap of ~$1.99B — still meaningful, but sharply below peak. GRAIL's PMA submission to the FDA (filed early 2026) means the trough has not yet become permanent write-off territory.
+
+**Companion Diagnostics / MRD (Treatment Monitoring):**
+
+The companion Dx sub-segment is materially different. Guardant Health's Shield CRC test received FDA approval on July 29, 2024, with immediate Medicare coverage — the first blood-based primary colorectal cancer screening test approved in the US. Guardant's market cap recovered from a trough of ~$2.78B (end 2022) to ~$11B (March 2026), driven by this approval and growing CDx revenue (~22-24% YoY revenue growth in 2024). Foundation Medicine (Roche-owned, FoundationOne Liquid CDx) received expanded FDA approval in September 2024. China's NMPA approved Burning Rock's first co-developed NGS CDx in October 2024. These are Slope of Enlightenment dynamics: commercial validation, growing payer acceptance, and regulatory precedent-setting.
+
+[Source: MedTech Dive — NHS-Galleri trial fails primary endpoint: https://medtechdive.com/news/grail-galleri-nhs-trial-misses-primary-endpoint/]
+[Source: BMJ — NHS-Galleri trial primary endpoint not met: https://bmj.com]
+[Source: Medscape — Galleri Cancer Detection Test Fails in Key Trial: https://www.medscape.com/viewarticle/galleri-cancer-detection-test-fails-key-trial-now-what-2026a100062t]
+[Source: First Word HealthTech — GRAIL NHS trial results February 2026: https://firstwordhealthtech.com]
+[Source: Guardant Health — Shield FDA Approval and Medicare Coverage: https://guardanthealth.com]
+[Source: companiesmarketcap.com — Guardant Health market cap history: https://companiesmarketcap.com/healthcare/guardant-health/marketcap/]
+[Source: companiesmarketcap.com — GRAIL market cap history post-spin-off: https://companiesmarketcap.com/healthcare/grail/marketcap/]
+
+**Next Phase Transition:**
+
+- MCED: The trough is real but not permanent. The next transition to Slope of Enlightenment requires either (a) FDA PMA approval for GRAIL Galleri (outcome highly uncertain given primary endpoint miss), or (b) positive data from alternative MCED approaches (multi-analyte, methylation + protein + mutation) demonstrating mortality benefit. Timeline: 2027–2030 at earliest for Slope of Enlightenment re-entry. [REASONED INFERENCE based on MCED clinical trial timelines]
+- Companion Dx / MRD: Already on the Slope of Enlightenment; expected to reach Plateau of Productivity in China by 2028–2030 as NMPA approvals accumulate and hospital in-house sequencing deployments scale. [REASONED INFERENCE]
+
+---
+
+### 13B. Historical Capital Flow (2020–2024)
+
+| Year | Global Notable Events / Capital | Key Rounds & M&A | Trend |
+|------|--------------------------------|------------------|-------|
+| 2020 | GRAIL files for IPO (Sep 2020), then Illumina announces re-acquisition; cfDNA segment alone raised >$1.53B in VC — its highest year in a decade; Burning Rock Biotech NASDAQ IPO at ~$2.41B market cap | GRAIL Series D $390M; Karius $165M; Burning Rock IPO (BNR) | Baseline — Peak Optimism |
+| 2021 | Illumina closes GRAIL acquisition at $7.1B (Aug 2021) despite ongoing EU/FTC review; biotech VC peaks; Burning Rock market cap peaks at ~$996M (Dec 2021); BNR all-time high stock price $395.80 (Feb 2021); Berry Oncology Series B1 $99–108M | Illumina/GRAIL $7.1B (M&A); Berry Oncology Series B1 ~$99M; Singlera Genomics Later Stage VC (amount undisclosed) | Peak of Inflated Expectations |
+| 2022 | EU formally blocks Illumina/GRAIL; biotech VC declines ~21% from 2021 peak; Burning Rock market cap collapses to $237M; overall liquid biopsy VC contracts with broader market | Singlera Genomics Series B+ $44.97M (RMB 300M, Jun 2022); broader VC pullback | ↓ Correction |
+| 2023 | Illumina announces GRAIL divestiture plan (Dec 2023); EU approves divestiture plan (Apr 2024); biotech VC $23B globally (−21% vs 2022, −42% vs 2021 peak); Burning Rock market cap bottoms at ~$98M; Genetron Holdings contracts for AZ and Roche partnerships | No mega-rounds identified for liquid biopsy in China; selective seed/Series A activity globally; Dxcover (global) $11.9M Series A | ↓ Trough deepens |
+| 2024 | GRAIL spins off as GRAL (Jun 25, 2024); Guardant Health Shield FDA approval (Jul 2024) — re-ignites CDx investment thesis; life science tools & diagnostics private investment H1 2024: $1.39B | Freenome $254M (led by Roche, Feb 2024); BillionToOne $130M Series D; Alamar Biosciences $128M Series C; Burning Rock NMPA CDx approval (Oct 2024) — no disclosed equity raise | 🟢 CDx recovering; MCED still uncertain |
+
+**Notes on data quality:** Precise annual aggregate totals for liquid biopsy-specific VC globally are not publicly compiled by CB Insights or Pitchbook in freely available formats. The above figures represent known major transactions and directional indicators. [REASONED INFERENCE for aggregate trend direction; individual deal figures are sourced]
+
+[Source: fiercebiotech.com — cfDNA segment raised >$1.53B in 2020: https://fiercebiotech.com]
+[Source: companiesmarketcap.com — Burning Rock market cap by year: https://companiesmarketcap.com/healthcare/burning-rock-biotech/marketcap/]
+[Source: macrotrends.net — Burning Rock revenue history: https://macrotrends.net/stocks/charts/BNR/burning-rock-biotech/revenue]
+[Source: companiesmarketcap.com — Guardant Health market cap by year: https://companiesmarketcap.com/healthcare/guardant-health/marketcap/]
+[Source: pharmaphorum.com — Illumina GRAIL acquisition and divestiture timeline: https://pharmaphorum.com]
+[Source: forbes.com — Illumina GRAIL divestiture: https://forbes.com]
+[Source: tracxn.com — Singlera Genomics funding rounds: https://tracxn.com/d/companies/singlera-genomics/__funding]
+[Source: yicaiglobal.com — Berry Oncology Series B1 $99M (Apr 2021): https://yicaiglobal.com]
+[Source: qimingvc.com — Berry Oncology Series B1: https://qimingvc.com]
+[Source: freenome.com — Freenome $254M raise, Feb 2024: https://freenome.com/company/news/]
+[Source: fiercebiotech.com — Freenome $254M Series funding 2024: https://fiercebiotech.com]
+[Source: decibio.com — Life science tools & diagnostics H1 2024 private investment $1.39B: https://decibio.com]
+[Source: drugdiscoverytrends.com — Biotech VC 2023 $23B, -21% vs 2022: https://drugdiscoverytrends.com]
+
+**China-specific investment highlights:**
+
+| Company | Event | Amount | Year | Source |
+|---------|-------|--------|------|--------|
+| Burning Rock Biotech | NASDAQ IPO | ~$2.41B market cap at listing | 2020 | companiesmarketcap.com |
+| Berry Oncology (Berry Genomics subsidiary) | Series B1 | ~$99–108M (RMB 700M) | Apr 2021 | yicaiglobal.com / qimingvc.com |
+| Singlera Genomics | Later Stage VC | Undisclosed | Jun 2021 | tracxn.com |
+| Singlera Genomics | Series B+ | $44.97M (RMB 300M) | Jun 2022 | tracxn.com |
+| Geneseeq Technology | Series D (last disclosed round) | $114M | Dec 2019 | tracxn.com |
+| Genetron Holdings | NASDAQ-listed; AZ/Roche contracts | — | 2022 | bioworld.com |
+
+Note: Chinese private company fundraising data for 2022–2024 is sparsely publicly documented. The absence of reported mega-rounds for liquid biopsy in China during 2022–2024 reflects both the general biotech funding correction and the maturation of the leading players (post-IPO or pre-IPO with existing cash). [REASONED INFERENCE]
+
+**Notable global mega-rounds (>$50M), 2020–2024:**
+
+- Freenome — $254M (Feb 2024, led by Roche): https://freenome.com/company/news/
+- BillionToOne — $130M Series D (2024): https://biospace.com
+- Alamar Biosciences — $128M Series C (2024): https://biospace.com
+- Berry Oncology — ~$99–108M Series B1 (Apr 2021): https://yicaiglobal.com
+- Karius — $165M (2020): https://fiercebiotech.com
+- GRAIL — $390M Series D (2020, pre-Illumina acquisition): https://fiercebiotech.com
+- Illumina/GRAIL M&A — $7.1B (Aug 2021) [not a VC round but the defining capital event of the era]: https://pharmaphorum.com
+
+---
+
+### 13C. Capital Flow Trend Signal
+
+**Current Trend (March 2026):**
+
+| Sub-Segment | Signal | Rationale |
+|-------------|--------|-----------|
+| MCED (global) | 🔴 Contracting | NHS-Galleri primary endpoint failure (Feb 2026); GRAIL stock −45.6% in a day; uncertainty around FDA PMA outcome; investor caution on large MCED bets |
+| MCED (China) | 🟡 Plateauing | Chinese MCED companies (Burning Rock OverC, Singlera GutSeer) continue clinical development but no new mega-rounds disclosed; NMPA approval path for MCED remains multi-year away |
+| Companion Dx / CDx (global) | 🟢 Growing | Guardant Shield FDA + Medicare approval; FoundationOne Liquid CDx expansion; CDx deal activity with pharma partnerships growing |
+| Companion Dx / CDx (China) | 🟢 Growing | Burning Rock + Dizal CDx approval Oct 2024; Geneseeq NGS CDx in NMPA review; AZ/Roche partnership deals accelerating CDx co-development |
+| MRD monitoring (global + China) | 🚀 Accelerating | Fastest-growing segment; multiple clinical guideline inclusions in CRC and NSCLC post-surgery; in-hospital revenue for Burning Rock grew 19% YoY in 2024 vs. central lab −25% |
+
+| Leading Indicator | Signal | Source |
+|------------------|--------|--------|
+| Patent filing trend (liquid biopsy, global) | ↑ Continuing growth — over 2,600 articles screened in a single 2024 review period; US, China, Europe all filing actively | NIH/PubMed — https://pmc.ncbi.nlm.nih.gov/articles/PMC11335005/ |
+| Academic publication volume | ↑ Sustained growth — Nature, NEJM, Annals of Oncology continue to publish high-impact liquid biopsy papers in 2025–2026 | Nature 2024 review — https://www.nature.com/articles/s41392-024-02021-w |
+| Government grant allocation (China) | Growing — 14th Five-Year Plan, Healthy China 2030, national cancer screening programs all directing capital toward precision oncology including liquid biopsy | globenewswire.com — China oncology molecular testing market RMB 8.7B→38.8B by 2033: https://globenewswire.com |
+| NMPA approval velocity (CDx) | Accelerating — First NGS CDx co-development approved Oct 2024; Geneseeq PanTRKare approved 2025; CDx pipeline visible | PR Newswire — Geneseeq PanTRKare NMPA 2025: https://www.prnewswire.com/news-releases/geneseeq-receives-nmpa-approval-for-pantrkare---chinas-first-ngs-based-pan-solid-tumor-companion-diagnostic-kit-for-ntrk-gene-fusions-302610192.html |
+| NMPA approval velocity (MCED) | Slowing (relative to CDx) — No MCED test has received NMPA approval; Burning Rock NMPA Breakthrough Designation granted but approval timeline multi-year | Burning Rock IR — https://ir.brbiotech.com/news-releases/news-release-details/burning-rock-received-breakthrough-device-designation-chinas |
+| MCED clinical trial outcomes (global) | Negative — NHS-Galleri primary endpoint missed (Feb 2026); raises fundamental questions about trial design and demonstrable mortality benefit for MCED | BMJ / MedTech Dive — February 2026 |
+| Companion Dx clinical outcomes | Positive — Guardant Shield 83% sensitivity in ECLIPSE study; FoundationOne Liquid CDx expanded indications; CDx clinical evidence base solidifying | guardanthealth.com — ECLIPSE study data |
+| Competing technology maturity (AI + multi-omics) | Moderate threat to pure-play liquid biopsy — AI-enhanced tissue pathology and multi-omics platforms are improving, but liquid biopsy's non-invasive advantage remains structurally durable | MDPI Cancers AI-Enhanced Liquid Biopsy 2025 — https://www.mdpi.com/2072-6694/17/19/3165 |
+| Burning Rock revenue trend (China proxy) | Flat/slight decline — FY2024 revenue $71.65M (−4% vs FY2023 $75.88M), though in-hospital segment grew 19% | macrotrends.net / Burning Rock IR FY2024: https://ir.brbiotech.com/news-releases/news-release-details/burning-rock-reports-unaudited-fourth-quarter-and-full-year-2024 |
+
+**3-Year Capital Outlook (2026–2028):**
+
+*MCED:* [FORECAST] Capital will remain constrained for MCED globally and in China. The NHS-Galleri failure creates a "prove it" moment — new capital will demand de-risked clinical data packages, particularly randomized evidence of Stage I/II cancer upshift rather than reliance on observational detection rates. The GRAIL FDA PMA outcome (expected 2026–2027) will be the pivotal signal: approval would re-open capital flows; denial would cement the trough for 2–3 more years. China-specific MCED investment is likely to be patient strategic capital (pharma partnerships, government grants) rather than VC mega-rounds.
+
+*Companion Dx / MRD:* [FORECAST] Capital will accelerate. The FDA's approval of Shield and the growing CDx regulatory framework in China create commercial proof points that attract pharma co-development deals and CDx partnership capital. This is the segment most likely to see new large rounds in 2026–2028, particularly for MRD monitoring in CRC and NSCLC, and for CDx tests co-developed with targeted therapies entering late-stage trials. China's CDx segment is particularly attractive given the active NMPA CDx review pipeline and the large NSCLC/CRC patient population.
+
+---
+
+### 13D. Competitive Capital Landscape
+
+**Liquid Biopsy vs. Tissue Biopsy + Genomic Profiling for Oncology Capital**
+
+The competition for oncology diagnostics capital is not a zero-sum game between liquid and tissue biopsy — the evidence increasingly supports complementarity rather than replacement. A landmark 2024 JAMA Network Open study demonstrated a 24.7% higher detection rate for actionable mutations when combining liquid + tissue biopsy versus tissue alone. This means pharma companies are allocating capital to both, not choosing between them. However, at the margin, investor capital that was flowing into "pure liquid biopsy" stories (particularly MCED) has encountered clinical setbacks that redirect it toward more de-risked tissue-based genomic profiling or combined multi-modal platforms.
+
+The competitive dynamics within liquid biopsy itself are more consequential for capital allocation:
+
+**ctDNA (mutation-based) vs. Methylation-based vs. Multi-analyte:**
+
+- **ctDNA mutation panels** (Guardant, Foundation Medicine, Burning Rock OncoCompass, Geneseeq ONE): Best-established, commercially validated for CDx and treatment monitoring. Continuing to attract capital through pharma partnerships. The dominant modality in China's current commercial liquid biopsy market.
+- **Methylation-based approaches** (GRAIL Galleri, Burning Rock ELSA-seq/OverC, Singlera GutSeer): The GRAIL/Galleri NHS trial failure is a significant headwind specifically for pure methylation-based MCED. Capital formation for new methylation-only MCED companies is likely to be highly challenging in 2026–2027.
+- **Multi-analyte / multi-omics** (Freenome's multiomics platform combining genomic + transcriptomic + methylomic + proteomic signals; CancerSEEK-type approaches): This is where new capital is going. The Freenome $254M raise in Feb 2024 — led by Roche, with Quest Diagnostics as strategic investor — is the clearest signal that large pharma and diagnostics incumbents are betting on multi-analyte approaches as the path beyond the limitations of single-analyte MCED.
+- **CTC-based approaches**: Niche, research-stage. Not attracting significant new commercial capital at scale.
+
+**Is capital shifting from Western to Chinese liquid biopsy players?**
+
+[REASONED INFERENCE] The data does not support a clean "capital shift" narrative from West to East. Rather, what is occurring is:
+
+1. **Domestic Chinese capital is staying domestic**: Chinese investors (Qiming Venture Partners, Sequoia China, state-linked funds) are backing Chinese liquid biopsy companies for the domestic market rather than co-investing in Western platforms. This reflects China's technology self-sufficiency strategy more broadly.
+
+2. **Western pharma is entering China bilaterally**: AstraZeneca's partnership with Pillar Biosciences (2026), Roche's ownership of Foundation Medicine (and 14.5% Illumina stake post-GRAIL spin-off), and Roche's lead in Freenome's latest round all signal that Western pharma is running parallel China and Western strategies, not choosing one over the other.
+
+3. **Chinese companies face capital constraints globally**: Burning Rock's NASDAQ-listed stock has lost 80% of its market cap from IPO ($2.41B → $490M as of March 2026), limiting equity financing capacity. This has pushed Chinese liquid biopsy companies toward pharma partnership models (CDx co-development deals with AZ, Roche, Dizal) rather than equity raises — a strategically sound adaptation, but reflecting capital scarcity rather than abundance.
+
+4. **The real capital shift is CDx over MCED globally**: Pharma companies are investing in CDx co-development (funded through regulatory milestone payments rather than VC rounds) while backing away from MCED investment given clinical uncertainty. This is a structural preference for proven commercial models over speculative population screening.
+
+[Source: freenome.com — Freenome $254M raise led by Roche: https://freenome.com/company/news/]
+[Source: SmartDataWeek — Pillar Biosciences + AstraZeneca China liquid biopsy 2026: https://smartdataweek.com/article/pillar-biosciences-and-astrazeneca-revolutionizing-cancer-care-in-china-with-liquid-biopsy]
+[Source: companiesmarketcap.com — Burning Rock market cap decline 2020–2026: https://companiesmarketcap.com/healthcare/burning-rock-biotech/marketcap/]
+[Source: stockanalysis.com — Burning Rock stock decline: https://stockanalysis.com/stocks/bnr/]
+[Source: macrotrends.net — Guardant Health market cap history: https://macrotrends.net/stocks/charts/GH/guardant-health/market-cap/]
+[Source: mdpi.com — ctDNA + tissue biopsy combined detection advantage (JAMA 2024 reference): https://www.mdpi.com/2072-6694/17/19/3165]
+[Source: nih.gov — combined liquid and tissue biopsy 24.7% ESR1 detection advantage: https://pmc.ncbi.nlm.nih.gov/articles/PMC11335005/]
+
+---
+
+### Sources for Section 13
+
+66. MedTech Dive — GRAIL Galleri NHS trial misses primary endpoint (Feb 2026): https://medtechdive.com/news/grail-galleri-nhs-trial-misses-primary-endpoint/
+67. BMJ — NHS-Galleri trial primary endpoint not met: https://bmj.com
+68. First Word HealthTech — GRAIL NHS Galleri trial results 2026: https://firstwordhealthtech.com
+69. Cancer Letter — NHS-Galleri trial analysis: https://cancerletter.com
+70. Longbridge — GRAIL stock −45.6% on NHS trial results (Feb 2026): https://longbridge.com
+71. Motley Fool — GRAIL stock analysis post-NHS trial: https://fool.com
+72. Bioworld — GRAIL NHS trial and MCED sector reaction (Feb 2026): https://bioworld.com
+73. Tokenist — GRAIL stock drop analysis: https://tokenist.com
+74. pharmaphorum.com — Illumina GRAIL acquisition/divestiture timeline: https://pharmaphorum.com
+75. Forbes — Illumina GRAIL divestiture: https://forbes.com
+76. Illumina — GRAIL spin-off completion June 2024: https://illumina.com
+77. GRAIL — Independent company commencement trading June 2024: https://grail.com
+78. FierceBiotech — Illumina GRAIL divestiture: https://fiercebiotech.com
+79. companiesmarketcap.com — GRAIL (GRAL) market cap history post-spin-off: https://companiesmarketcap.com/healthcare/grail/marketcap/
+80. stockanalysis.com — GRAIL stock price history: https://stockanalysis.com/stocks/gral/
+81. macrotrends.net — GRAIL market cap: https://macrotrends.net/stocks/charts/GRAL/grail/market-cap/
+82. companiesmarketcap.com — Guardant Health market cap history 2020–2026: https://companiesmarketcap.com/healthcare/guardant-health/marketcap/
+83. macrotrends.net — Guardant Health market cap 2020–2024: https://macrotrends.net/stocks/charts/GH/guardant-health/market-cap/
+84. Guardant Health — Shield FDA Approval July 2024 + Medicare Coverage: https://guardanthealth.com
+85. Guardant Health — Shield ECLIPSE study results: https://guardanthealth.com
+86. NASDAQ — Guardant Health Shield commercial launch Q4 2024: https://nasdaq.com
+87. macrotrends.net — Burning Rock Biotech revenue history: https://macrotrends.net/stocks/charts/BNR/burning-rock-biotech/revenue
+88. companiesmarketcap.com — Burning Rock market cap history 2020–2026: https://companiesmarketcap.com/healthcare/burning-rock-biotech/marketcap/
+89. stockanalysis.com — Burning Rock stock and market cap: https://stockanalysis.com/stocks/bnr/
+90. macrotrends.net — Burning Rock stock price: https://macrotrends.net/stocks/charts/BNR/burning-rock-biotech/stock-price-history
+91. companiesmarketcap.com — Exact Sciences (EXAS) revenue/market cap: https://companiesmarketcap.com/healthcare/exact-sciences/marketcap/
+92. tracxn.com — Singlera Genomics funding rounds: https://tracxn.com/d/companies/singlera-genomics/__funding
+93. tracxn.com — Geneseeq Technology funding history (Series D $114M, Dec 2019): https://tracxn.com/d/companies/geneseeq/__funding
+94. tracxn.com — Genetron Holdings: https://tracxn.com/d/companies/genetron-holdings/__funding
+95. yicaiglobal.com — Berry Oncology Series B1 $99M (Apr 2021): https://yicaiglobal.com
+96. qimingvc.com — Berry Oncology Series B1 investment: https://qimingvc.com
+97. 36kr.com — Berry Genomics / Berry Oncology funding: https://36kr.com
+98. geneonline.com — Geneseeq Zai Lab collaboration Oct 2021: https://geneonline.com
+99. freenome.com — Freenome $254M raise (Feb 2024): https://freenome.com/company/news/
+100. fiercebiotech.com — Freenome $254M raise detail: https://fiercebiotech.com
+101. medtechdive.com — Freenome Series funding: https://medtechdive.com
+102. biospace.com — Freenome $254M investors including Roche, Quest: https://biospace.com
+103. prnewswire.com — Freenome financing announcement: https://prnewswire.com
+104. decibio.com — Life science tools & diagnostics H1 2024 private investment $1.39B: https://decibio.com
+105. drugdiscoverytrends.com — Biotech VC 2023 $23B globally, -21% vs 2022: https://drugdiscoverytrends.com
+106. fiercebiotech.com — cfDNA liquid biopsy segment raised >$1.53B in 2020: https://fiercebiotech.com
+107. tracxn.com — Liquid biopsy company funding tracker: https://tracxn.com
+108. startupresearcher.com — Liquid biopsy startup funding map: https://startupresearcher.com
+109. decibio.com — NMPA CDx approval landscape: https://decibio.com
+110. biospace.com — Burning Rock + Dizal NMPA CDx approval Oct 2024: https://biospace.com
+111. pacificbridgemedical.com — NMPA companion diagnostic regulatory framework: https://pacificbridgemedical.com
+112. globenewswire.com — China oncology molecular testing market RMB 8.7B→38.8B by 2033: https://globenewswire.com
+113. bioworld.com — Genetron AZ/Roche contracts Nov 2022: https://bioworld.com
+114. SmartDataWeek — Pillar Biosciences + AstraZeneca China liquid biopsy partnership 2026: https://smartdataweek.com/article/pillar-biosciences-and-astrazeneca-revolutionizing-cancer-care-in-china-with-liquid-biopsy
+115. mdpi.com — Combined liquid + tissue biopsy 24.7% ESR1 detection advantage (JAMA 2024): https://www.mdpi.com/2072-6694/17/19/3165
+116. nih.gov — Combined biopsy approach actionable mutation detection: https://pmc.ncbi.nlm.nih.gov/articles/PMC11335005/
+117. nih.gov — Liquid biopsy publications and clinical trials volume (2,600+ articles reviewed 2023–2024): https://pmc.ncbi.nlm.nih.gov/articles/PMC11335005/
+118. precedenceresearch.com — Liquid biopsy market size USD 7.05B→22.69B by 2034: https://precedenceresearch.com
+119. grandviewresearch.com — Liquid biopsy market North America dominant, Asia-Pacific fastest growing: https://grandviewresearch.com
+120. biospace.com — Foundation Medicine FoundationOne Liquid CDx expanded FDA approval Sep 2024: https://biospace.com
+121. sphericalinsights.com — Global liquid biopsy market USD 10.60B in 2024, projected $31.70B by 2035: https://sphericalinsights.com
