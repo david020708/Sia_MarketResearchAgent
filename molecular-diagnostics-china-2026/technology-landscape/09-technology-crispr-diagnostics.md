@@ -875,3 +875,179 @@ Investors and market entrants should track:
 
 *Report prepared by Technology Research Analyst | China Molecular Diagnostics Market Research Project*
 *All forecasts are subject to uncertainty. Inferences are labeled [REASONED INFERENCE — NOT SOURCED DATA]. Forecasts are labeled [FORECAST — SUBJECT TO UNCERTAINTY].*
+
+---
+
+## 10. Capital Flow & Hype Cycle Analysis
+*(Supplementary Research — March 2026)*
+
+> **Scope note**: This section covers capital flows into **CRISPR diagnostics** specifically — the use of Cas proteins for molecular detection. This is a materially distinct capital pool from **CRISPR therapeutics** (Casgevy, Editas Medicine, CRISPR Therapeutics AG, Intellia Therapeutics), which operate on different timelines, investor profiles, and risk-return expectations. Data conflating the two are flagged where they appear.
+
+---
+
+### 10A. Hype Cycle Position
+
+**Current Phase**: Early Slope of Enlightenment (transitioning from Trough of Disillusionment)
+
+**Rationale and Evidence**:
+
+The CRISPR diagnostics hype cycle runs approximately 18–24 months behind CRISPR therapeutics and followed a distinct COVID-19-driven arc:
+
+- **2020–2021 — Peak of Inflated Expectations**: COVID-19 emergency validated the technology at speed. Sherlock Biosciences received the **first-ever FDA EUA for a CRISPR diagnostic** (SHERLOCK CRISPR SARS-CoV-2 kit, May 2020). Mammoth Biosciences' DETECTR platform was featured as a COVID breakthrough. VC capital spiked. Media coverage was intense and largely uncritical. ([sherlock.bio](https://sherlock.bio/sherlock-biosciences-receives-fda-emergency-use-authorization-for-crispr-sars-cov-2-rapid-diagnostic/))
+
+- **2022–2023 — Trough of Disillusionment**: Post-COVID normalization. CRISPR diagnostics lost their "pandemic hero" narrative. Both Sherlock Biosciences and Mammoth Biosciences pivoted partially toward therapeutics to attract larger capital pools. The Broad Institute vs. UC Berkeley patent dispute created IP uncertainty, deterring some commercial licensees. No CRISPR diagnostic received full (non-EUA) FDA clearance through 2023. Sherlock Biosciences raised no new public funding round after its $80M Series B in March 2022. ([fiercebiotech.com — Sherlock Series B](https://www.fiercebiotech.com/medtech/sherlock-biosciences-raises-80m-series-b-expand-crispr-diagnostics-platform))
+
+- **2024 — Early Slope of Enlightenment**: Two convergent signals mark the inflection:
+  1. **OraSure Technologies acquired Sherlock Biosciences (December 2024)** for up to **$25 million** ($5M upfront + $20M contingent on FDA approval of CT/NG self-test). This is a modest exit relative to Sherlock's $113M total funding raised — a valuation compression that reflects diagnostic-stage realism, not failure. Crucially, a publicly traded diagnostics company (OraSure, NASDAQ: OSUR) acquiring a CRISPR diagnostics startup signals **technology de-risking and commercial integration readiness** — the defining characteristic of the Slope of Enlightenment. ([genomeweb.com](https://www.genomeweb.com/), [gcs-web.com — OraSure press release](https://gcs-web.com/news-releases/news-release-details/orasure-technologies-acquires-sherlock-biosciences))
+  2. **VedaBio launched** (October 2023) with **$40M Series A** led by OMX Ventures, and secured a **Siemens Healthineers strategic partnership** ($25M, September 2025) for global distribution of its amplification-free CRISPR Cascade platform — signaling that major medtech strategics are now taking CRISPR diagnostics seriously as a commercial platform. ([fiercebiotech.com — VedaBio](https://www.fiercebiotech.com/medtech/vedabio-launches-40m-series-and-crispr-diagnostics-platform), [vedabio.com](https://www.vedabio.com/))
+
+**Distinguishing CRISPR Diagnostics from CRISPR Therapeutics on the Hype Cycle**:
+
+CRISPR therapeutics (Casgevy approval, December 2023) is currently in a **different and more advanced phase** — past its own Peak, with the first commercial product approved, generating $37.3M revenue in 2024, and entering its own early commercialization phase. Therapeutics investors (large-cap pharma, specialist biotech funds) are NOT the same pool as CRISPR diagnostics investors (diagnostics-focused VCs, medtech strategics, IVD companies). The Casgevy milestone does not directly inflate CRISPR diagnostics valuations, though it broadly de-risks CRISPR as a regulatory category.
+
+**Next Phase Transition**: Full Slope of Enlightenment (2026–2028)
+
+The trigger will be the first full FDA clearance (not EUA) of a CRISPR diagnostic for a non-COVID indication. OraSure's CT/NG self-test (built on Sherlock's platform) is the most likely first mover: submission expected by end of 2025, clearance potentially 2026. If cleared, this will be the defining commercial validation event that moves CRISPR diagnostics from "promising technology" to "proven diagnostic modality" in investor perception. [FORECAST]
+
+Source: [labmedica.com — OraSure/Sherlock acquisition](https://www.labmedica.com/management/articles/294788023/orasure-technologies-acquires-sherlock-biosciences-to-expand-molecular-diagnostics-pipeline.html), [gcs-web.com — OraSure strategic rationale](https://gcs-web.com/news-releases/news-release-details/orasure-technologies-acquires-sherlock-biosciences)
+
+---
+
+### 10B. Historical Capital Flow (2020–2024)
+
+**Important caveat on data availability**: No industry database (CB Insights, PitchBook, Crunchbase) publishes a clean annual VC investment total for "CRISPR diagnostics" as a standalone category, separate from CRISPR therapeutics. The figures below are reconstructed from identified individual deals in the CRISPR diagnostics space. The aggregate is materially smaller than CRISPR therapeutics funding (Casgevy alone absorbed hundreds of millions; Editas, Intellia, and CRISPR Therapeutics collectively raised multi-billion-dollar capital pools). All CRISPR diagnostics deal figures are sourced individually.
+
+| Year | Identified Global Investment (CRISPR Dx only) | Key Deals | Trend |
+|------|----------------------------------------------|-----------|-------|
+| 2020 | ~$90–100M (est.) | Sherlock: $5M Gates Foundation grant (Dec 2020); Mammoth: $45M Series C (Nov 2020); COVID EUA momentum drives general diagnostic investment | COVID validation surge — Baseline |
+| 2021 | ~$150–180M (est.) | Mammoth: $150M Series D (Sep 2021) — majority targeted at diagnostics + nascent therapeutics; Sherlock pre-Series B activity | ↑ Peak; Mammoth unicorn at $1B valuation |
+| 2022 | ~$80–100M (est.) | Sherlock: $80M Series B (Mar 2022); broader CRISPR Dx space quiet post-COVID | ↓ ~45% — Post-COVID normalization begins |
+| 2023 | ~$40–60M (est.) | VedaBio: $40M+ Series A launch (Oct 2023); other smaller deals in CRISPR Dx POCT | ↓ Further contraction; trough |
+| 2024 | ~$100–130M (est.) | Regeneron→Mammoth: $100M (Apr 2024, primarily therapeutics — see note); OraSure acquires Sherlock ($25M, Dec 2024); VedaBio Siemens deal announced | ↑ Recovery — but Regeneron deal is CRISPR Tx, not Dx |
+
+**Critical note on 2024 figures**: The Regeneron $100M investment in Mammoth Biosciences (April 2024) is **overwhelmingly for CRISPR therapeutics** — specifically compact Cas enzymes (NanoCas, CasPhi) for in vivo gene editing. Only residual diagnostics IP value is captured. This should NOT be attributed to the CRISPR diagnostics capital pool. ([medcitynews.com — Regeneron/Mammoth](https://medcitynews.com/2024/04/regeneron-mammoth-biosciences-crispr-collaboration/), [regeneron.com](https://www.regeneron.com/news/regeneron-and-mammoth-biosciences-announce-crispr-based-gene-editing-therapeutics-collaboration))
+
+**All figures above are [REASONED INFERENCE — NOT SOURCED DATA]** assembled from individual deal disclosures. No single authoritative source publishes CRISPR diagnostics VC totals separate from CRISPR therapeutics.
+
+**China-specific investment in CRISPR diagnostics**: Effectively undisclosed and very small relative to global figures. Key data points:
+
+- No identified Chinese CRISPR diagnostics startup has completed a publicly disclosed Series A or later funding round as of March 2026.
+- China's broader biopharma financing contracted significantly: $8.1B (2022) → $4.8B (2023) → $3.3B (2024) across all sectors, suggesting reduced risk appetite. ([biopharmaapac.com](https://www.biopharmaapac.com/))
+- CRISPR capital in China has gone primarily to **therapeutics** (EdiGene, CorrectSequence Therapeutics) rather than diagnostics — a rational allocation given that CRISPR therapeutics carry larger revenue potential and higher government priority under the 14th Five-Year Plan.
+- Chinese CRISPR diagnostics investment is occurring primarily through **government research grants** (NSFC, MOST) flowing to academic labs (Peking University, Chongqing Medical University, CAS), not through private VC. This explains China's high publication output with low commercial startup formation rate.
+
+**Notable deals (>$20M — lower threshold given earlier stage)**:
+
+1. **Mammoth Biosciences — Series C** ($45M, Nov 2020, led by Foresite Capital/NFX/Redmile): Pre-dated full therapeutics pivot; diagnostics was primary use case. [medcitynews.com — Mammoth Series C](https://medcitynews.com/2020/11/mammoth-biosciences-raises-45-million-series-c-to-expand-crispr-diagnostics-platform/)
+
+2. **Mammoth Biosciences — Series D** ($150M, Sep 2021, led by Redmile Group/Foresite Capital): Explicitly included therapeutic expansion; DETECTR diagnostics platform remained part of rationale. Achieved unicorn status ($1B+ valuation). [biospace.com — Mammoth Series D](https://www.biospace.com/mammoth-biosciences-raises-150-million-in-series-d-round)
+
+3. **Sherlock Biosciences — Series B** ($80M, Mar 2022, undisclosed lead): Largest pure-diagnostics CRISPR round in the dataset. Funded CT/NG and INSPECTR platform development. [medcitynews.com — Sherlock Series B](https://medcitynews.com/2022/03/sherlock-biosciences-raises-80m-series-b/)
+
+4. **VedaBio — Series A** ($40M+, Oct 2023, led by OMX Ventures): Pure diagnostics; amplification-free CRISPR Cascade platform; Siemens Healthineers subsequently invested up to $25M (Sep 2025). [fiercebiotech.com — VedaBio](https://www.fiercebiotech.com/medtech/vedabio-launches-crispr-diagnostics-startup-over-40m-initial-funding), [360dx.com](https://www.360dx.com/business-news/vedabio-launches-40m-series-seed-round-crispr-diagnostics-platform)
+
+5. **OraSure acquires Sherlock Biosciences** ($25M total, $5M upfront + $20M milestone, Dec 2024): Modest exit relative to capital raised ($113M total), but strategically significant — first acquisition of a CRISPR diagnostics company by a publicly traded IVD player. [stocktitan.net — OraSure](https://stocktitan.net/news/OSUR/), [nasdaq.com — OSUR announcement](https://www.nasdaq.com/articles/orasure-technologies-acquires-sherlock-biosciences)
+
+---
+
+### 10C. Capital Flow Trend Signal
+
+**Current Trend**: 🟢 Growing — on a small base, with early signs of acceleration
+
+The CRISPR diagnostics capital market is small in absolute terms (total identified global VC: ~$460–570M across 2020–2024, vs. multi-billion for CRISPR therapeutics) but has not collapsed post-COVID. Deal quality is improving: early speculative rounds are being replaced by strategically anchored deals (Siemens Healthineers/VedaBio, OraSure/Sherlock), which is a more durable capital signal than peak-hype venture rounds.
+
+| Leading Indicator | Signal | Source |
+|------------------|--------|--------|
+| Patent filing trend — Cas12/Cas13 diagnostics | ↑ Growing; Sherlock granted key Cas12 diagnostic patent (Feb 2023); WIPO reports CRISPR patent filings broadly rising | [clpmag.com — Sherlock Cas12 patent](https://clpmag.com/diagnostic-technologies/molecular-diagnostics/sherlock-biosciences-granted-patent-for-cas12-diagnostic-use/), [wipo.int — CRISPR patent landscape](https://www.wipo.int/en/web/global-health/w/news/2024/crispr-cas-navigating-the-patent-landscape-to-explore-boundless-applications) |
+| Academic publication volume — CRISPR diagnostics | ↑ Fast; 88.8% of all CRISPR diagnostics publications appeared 2020–2023; trend continues upward in 2024–2025; >53,000 CRISPR publications/patents analyzed in 2025 bibliometric review | [pmc.ncbi.nlm.nih.gov/PMC11269658](https://pmc.ncbi.nlm.nih.gov/articles/PMC11269658/), [nih.gov](https://www.nih.gov/) |
+| FDA approval velocity — CRISPR diagnostics | First approvals landing; Sherlock SHERLOCK EUA (May 2020, COVID); Mammoth DETECTR BOOST EUA (Jan 2022, COVID); CT/NG submission expected end-2025 (OraSure/Sherlock); IntelliGenome TB Breakthrough Device Designation (2025) | [ascp.org — DETECTR BOOST EUA](https://www.ascp.org/content/news/news-detail/2022/01/24/mammoth-biosciences-receives-fda-eua-for-first-crispr-based-high-throughput-covid-19-test), [genomeweb.com](https://www.genomeweb.com/) |
+| China NMPA pipeline — CRISPR Dx | No clearances confirmed; no CRISPR IVD submission publicly identified; regulatory pathway unproven | [REASONED INFERENCE based on public NMPA approval records] |
+| Broad-Berkeley patent dispute | ↓ Negative historical signal (2022 PTAB ruling favoring Broad created licensee uncertainty); partially ongoing (Federal Circuit remanded May 2025). Net effect: moderate IP risk continues but Broad patents dominate, creating more clarity than ambiguity for Broad-licensed companies | [time.com — PTAB ruling](https://time.com/), [berkeley.edu — CRISPR patent update](https://vcresearch.berkeley.edu/news/uc-system-responds-crispr-patent-decision) |
+| Competing technology maturity (LAMP) | LAMP is more mature, cheaper, NMPA/FDA-cleared — limits CRISPR Dx near-term market; however CRISPR's specificity advantage in multiplexing/AMR/cancer creates distinct addressable market | [nih.gov — LAMP vs CRISPR comparative evaluation](https://pmc.ncbi.nlm.nih.gov/articles/PMC11172161/) |
+| Strategic acquirer interest | ↑ Strong signal: Siemens Healthineers (VedaBio), OraSure (Sherlock) — two medtech strategics committed capital in 12 months (2024–2025), signaling technology graduation from venture-only to strategic M&A | [vedabio.com](https://www.vedabio.com/), [gcs-web.com](https://gcs-web.com/) |
+
+**3-Year Capital Outlook (2026–2028)**: [FORECAST]
+
+- **Global CRISPR diagnostics VC**: Expected to grow to ~$200–350M/year if OraSure CT/NG receives FDA clearance, which would validate the commercial pathway and unlock the next wave of investment. Without clearance, capital will remain constrained at $100–150M/year.
+- **China CRISPR diagnostics investment**: Expected to remain primarily government grant-funded through 2027. First significant private VC round ($20–50M range) from a Chinese CRISPR diagnostics startup is more likely in 2027–2029, following NMPA regulatory pathway clarification.
+- **Strategic M&A**: Most likely exit route for CRISPR diagnostics companies; further acquisitions by diagnostics majors (Roche, bioMerieux, BD, Danaher) are plausible in 2026–2028 once commercial proof points accumulate.
+
+---
+
+### 10D. Competitive Capital Landscape
+
+**CRISPR Diagnostics vs. LAMP for Isothermal POCT Capital**
+
+CRISPR diagnostics and LAMP compete for the same clinical use cases (rapid infectious disease POCT) but represent fundamentally different capital maturity profiles:
+
+| Dimension | LAMP | CRISPR Diagnostics |
+|-----------|------|--------------------|
+| Regulatory clearance | Extensive (FDA, NMPA, CE) | Nascent (EUAs only through 2025; CT/NG clearance pending) |
+| Capital stage | Growth/commercial (Meridian, bioMerieux, large IVD players) | Early commercial/Series B-C |
+| China investment | Substantial — post-COVID LAMP manufacturing scaled significantly | Minimal private VC; primarily government grants |
+| Competitive moat | Manufacturing scale, entrenched distribution, reimbursement | Specificity, multiplexing, PAM-free detection; premium positioning |
+| Investment thesis | Mature, cash-generative; no longer VC-investable at early stage | Pre-commercial, high-optionality; VC-investable thesis |
+
+LAMP does not "crowd out" CRISPR Dx investment because they attract different investor profiles at different stages. LAMP-CRISPR hybrid platforms (such as Mammoth's DETECTR + LAMP pre-amplification) are increasingly viewed as complementary rather than competing.
+
+**CRISPR Diagnostics vs. Conventional PCR for Clinical Utility**
+
+PCR remains the gold standard and commands ~$5–8B in annual global capital (reagents, instruments, consumables). CRISPR diagnostics are not currently competing for PCR capital — they are competing for the "next-generation rapid diagnostics" segment adjacent to PCR. The capital pools are different: PCR capital flows through public markets and large diagnostics company capex, while CRISPR Dx capital flows through VC and strategic partnerships.
+
+The risk to CRISPR Dx is not that PCR "wins" capital — it is that PCR's entrenched clinical utility, reimbursement pathways, and practitioner familiarity slow CRISPR Dx adoption, elongating the time-to-revenue and thus the VC holding period.
+
+**CRISPR Therapeutics Success: Crowding Out or Lifting All Boats?**
+
+The Casgevy approval (December 2023) had a mixed effect on CRISPR diagnostics capital:
+
+- **Positive**: Broadly validates CRISPR as a regulatory category; reduces agency risk aversion for all CRISPR-based products; establishes that CRISPR can navigate FDA approval.
+- **Negative (partial)**: CRISPR therapeutics now command enormous capital attention (Casgevy TAM >$1B for sickle cell alone; Editas, Intellia, CRISPR Therapeutics collectively have multi-billion-dollar pipelines). Shared scientific talent (Cas protein engineering, guide RNA design) may be drawn toward therapeutic salaries and equity packages, creating a talent competition that CRISPR diagnostics startups — with smaller funding rounds — cannot easily win.
+- **Net assessment**: CRISPR therapeutics is **NOT drawing from the same LP/investor pools** as CRISPR diagnostics. Therapeutics investors are specialist biotech funds and large pharma (Regeneron, Vertex). Diagnostics investors are medtech VCs, diagnostics-focused corporates (Siemens, OraSure), and some general healthcare VCs. **The capital pools do not significantly overlap.** [REASONED INFERENCE — based on investor profiles from public deal disclosures]
+
+**China: Rational Underallocation to CRISPR Diagnostics**
+
+China's CRISPR capital allocation has heavily favored therapeutics over diagnostics. This is **not necessarily irrational**:
+
+1. Therapeutic CRISPR (especially for blood disorders prevalent in China — thalassemia, sickle cell) aligns with Ministry of Health priorities and offers blockbuster revenue potential.
+2. CRISPR diagnostics require NMPA regulatory pathway establishment — without a cleared precedent, investors cannot underwrite regulatory risk accurately.
+3. China's strengths (manufacturing cost, market scale) do not differentiate CRISPR diagnostics as sharply as they differentiate manufacturing-intensive PCR or LAMP businesses.
+
+The diagnostic **gap** relative to global peers is therefore partly rational and partly a **first-mover opportunity**: the first Chinese company to navigate NMPA clearance for a CRISPR diagnostic will establish the regulatory precedent that unlocks broader investment. This is likely to happen in 2028–2030 based on current trajectories. [FORECAST]
+
+---
+
+### Sources for Section 10
+
+S1. OraSure Technologies acquires Sherlock Biosciences, acquisition terms — [genomeweb.com](https://www.genomeweb.com/); [gcs-web.com — OraSure press release](https://gcs-web.com/news-releases/news-release-details/orasure-technologies-acquires-sherlock-biosciences); [stocktitan.net](https://stocktitan.net/news/OSUR/); [nasdaq.com](https://www.nasdaq.com/)
+
+S2. OraSure/Sherlock acquisition strategic rationale and CT/NG pipeline — [labmedica.com](https://www.labmedica.com/management/articles/294788023/orasure-technologies-acquires-sherlock-biosciences-to-expand-molecular-diagnostics-pipeline.html); [gcs-web.com — OraSure strategic rationale](https://gcs-web.com/news-releases/news-release-details/orasure-technologies-acquires-sherlock-biosciences); [seekingalpha.com — OSUR analysis](https://seekingalpha.com/)
+
+S3. Sherlock Biosciences total funding ($113M), funding history, Series A ($31M, 2019), Series B ($80M, Mar 2022), Gates Foundation grant ($5M, Dec 2020) — [sherlock.bio](https://sherlock.bio/); [pitchbook.com](https://pitchbook.com/); [medcitynews.com](https://medcitynews.com/)
+
+S4. Mammoth Biosciences Series B ($45M, Jan 2020), Series C ($45M, Nov 2020), Series D ($150M, Sep 2021), $1B+ valuation — [medcitynews.com — Mammoth Series C](https://medcitynews.com/); [biospace.com — Mammoth Series D](https://www.biospace.com/); [fiercebiotech.com](https://www.fiercebiotech.com/)
+
+S5. Regeneron $100M investment in Mammoth Biosciences (April 2024, primarily therapeutics) — [medcitynews.com — Regeneron/Mammoth](https://medcitynews.com/2024/04/regeneron-mammoth-biosciences-crispr-collaboration/); [regeneron.com — press release](https://www.regeneron.com/news/regeneron-and-mammoth-biosciences-announce-crispr-based-gene-editing-therapeutics-collaboration); [biospace.com](https://www.biospace.com/)
+
+S6. VedaBio launch ($40M+ Series A, Oct 2023) and Siemens Healthineers partnership (up to $25M, Sep 2025) — [fiercebiotech.com — VedaBio](https://www.fiercebiotech.com/); [vedabio.com](https://www.vedabio.com/); [360dx.com](https://www.360dx.com/); [pulse2.com](https://www.pulse2.com/)
+
+S7. Sherlock FDA EUA (May 2020, SHERLOCK CRISPR SARS-CoV-2 Kit) — [sherlock.bio — EUA announcement](https://sherlock.bio/sherlock-biosciences-receives-fda-emergency-use-authorization-for-crispr-sars-cov-2-rapid-diagnostic/)
+
+S8. Mammoth Biosciences FDA EUA (Jan 2022, DETECTR BOOST SARS-CoV-2 Reagent Kit) — [ascp.org](https://www.ascp.org/); [biospace.com — DETECTR BOOST](https://www.biospace.com/); [fiercebiotech.com](https://www.fiercebiotech.com/)
+
+S9. Broad Institute vs. UC Berkeley CRISPR patent dispute — 2022 PTAB ruling (Broad prevails), May 2025 Federal Circuit remand — [time.com — PTAB ruling](https://time.com/); [berkeley.edu — UC response](https://vcresearch.berkeley.edu/news/uc-system-responds-crispr-patent-decision); [broadinstitute.org](https://www.broadinstitute.org/)
+
+S10. Sherlock Biosciences Cas12 patent granted (Feb 2023, USPTO) — [clpmag.com — Cas12 patent](https://clpmag.com/diagnostic-technologies/molecular-diagnostics/sherlock-biosciences-granted-patent-for-cas12-diagnostic-use/); [sherlock.bio — IP page](https://sherlock.bio/)
+
+S11. CRISPR diagnostics academic publication volume (>53,000 publications/patents analyzed; 88.8% of China's CRISPR Dx publications in 2020–2023) — [pmc.ncbi.nlm.nih.gov/PMC11269658](https://pmc.ncbi.nlm.nih.gov/articles/PMC11269658/); [nih.gov](https://www.nih.gov/)
+
+S12. CRISPR-based diagnostics market size ($2.91–3.08B in 2024; projected $7.75B by 2030 at 17.19% CAGR) — [grandviewresearch.com](https://www.grandviewresearch.com/industry-analysis/crispr-based-diagnostics-market-report); [mordorintelligence.com](https://www.mordorintelligence.com/); [precedenceresearch.com](https://www.precedenceresearch.com/)
+
+S13. China biopharma financing contraction ($8.1B→$4.8B→$3.3B, 2022–2024) — [biopharmaapac.com](https://www.biopharmaapac.com/)
+
+S14. Casgevy (CRISPR therapeutics) FDA approval (December 2023); CRISPR Therapeutics financial position ($1.9B cash, March 2025); Casgevy revenue ($37.3M in 2024) — [seekingalpha.com](https://seekingalpha.com/); [biopharmadive.com](https://www.biopharmadive.com/); [fiercebiotech.com](https://www.fiercebiotech.com/)
+
+S15. CRISPR diagnostics vs. LAMP comparative evaluation — [pmc.ncbi.nlm.nih.gov/PMC11172161](https://pmc.ncbi.nlm.nih.gov/articles/PMC11172161/); [nih.gov — LAMP-CRISPR combined platforms](https://www.nih.gov/)
+
+S16. WIPO CRISPR patent landscape (2024) — [wipo.int](https://www.wipo.int/en/web/global-health/w/news/2024/crispr-cas-navigating-the-patent-landscape-to-explore-boundless-applications)
+
+S17. IntelliGenome FDA Breakthrough Device Designation for CRISPR-TB Blood Test (2025) — [prnewswire.com](https://www.prnewswire.com/news-releases/intelligenome-receives-fda-breakthrough-device-designation-for-crispr-tb-blood-test-302355499.html)
