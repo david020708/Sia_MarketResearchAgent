@@ -30,81 +30,65 @@ If the scope is ambiguous, state your assumed scope clearly at the top of your m
 
 ### Step 2 — Identify the Competitive Set (YOU do this research)
 
-**Your job in this step:** Conduct web research yourself to map all competitors before delegating to sub-agents. Use multiple search methods in parallel.
+**Your job in this step:** Conduct MINIMAL web research to identify the list of key competitors. Do NOT research detailed company information — that is the sub-agents' job in Step 3.
 
-**Competitor taxonomy to apply:**
+**Your goal:** Create a list of 5-10 company names（according to user input） to research. Stop after identifying the companies.
 
-| Type | Definition | Example |
-|------|-----------|---------|
-| Direct competitors | Same product category, same customer segment, same use case | Salesforce vs. HubSpot in CRM |
-| Indirect competitors | Different product, same underlying job-to-be-done | Slack vs. email for team communication |
-| Substitute products | Different mechanism, same outcome | Videoconferencing vs. business travel |
-| Potential entrants | Adjacent market players with capability and incentive to enter | A payments company entering lending |
-| Emerging players | Early-stage startups not yet at scale but tracking the same problem | Pre-Series B companies in the space |
+**Quick research sources to identify company names:**
+- Analyst reports (Gartner, Forrester, IDC)
+- Industry market maps (CB Insights, Crunchbase)
+- For China: IT桔子, 36Kr, Tianyancha
 
-**Research method — General:**
+**Outcome of Step 2:** A simple list of 5-10 company names for subagents. Do NOT research detailed information about each company yet,and don't output anything in step 2.
 
-1. **Category pages on review platforms**: G2 ([g2.com](https://www.g2.com/)), Capterra ([capterra.com](https://www.capterra.com/)), TrustRadius ([trustradius.com](https://www.trustradius.com/)) — their "compare alternatives" and category pages map the competitive set as buyers see it
-2. **Analyst reports**: Gartner Magic Quadrant, Forrester Wave, IDC MarketScape — the most authoritative maps of established players; search for the relevant category report
-3. **Crunchbase** ([crunchbase.com](https://www.crunchbase.com/)): search by industry category and funding stage to find all funded players
-4. **CB Insights market maps** ([cbinsights.com](https://www.cbinsights.com/)): industry market maps and company lists
-5. **SimilarWeb** ([similarweb.com](https://www.similarweb.com/)): find companies with overlapping web audience and traffic sources
-6. **SEMrush** ([semrush.com](https://www.semrush.com/)): find companies bidding on the same keywords — reveals who is competing for the same buyer intent
-7. **Patent databases**: USPTO ([patents.google.com](https://patents.google.com/)), CNIPA ([pss-system.cnipa.gov.cn](https://pss-system.cnipa.gov.cn/)) — companies filing in the same technology space signal future competitive intent
-8. **Job postings**: a company hiring aggressively in a new product area signals competitive intent before any public announcement; search LinkedIn and Indeed by role + domain
+**CRITICAL: After identifying the company list, immediately proceed to Step 3. Do NOT do any additional research. Do NOT write any reports. Do NOT search for financial data, product details, or any other company-specific information. The sub-agents will do all of that.**
 
-**Research method — China-specific:**
-
-- **Tianyancha (天眼查)** — [tianyancha.com](https://www.tianyancha.com/): search by industry category to find all registered companies in the space; shows corporate graph and affiliated entities
-- **IT桔子 (IT Juzi)** — [itjuzi.com](https://www.itjuzi.com/): Chinese startup database; search by industry vertical to find all funded players
-- **36Kr** — [36kr.com](https://36kr.com/): search by industry keyword to find all companies covered in the space
-- **Qichacha (企查查)** — [qcc.com](https://www.qcc.com/): cross-reference corporate relationships and find subsidiaries or affiliated entities
-
-Compile a **Competitive Set Table** listing all identified players with: company name, HQ, founding year, ownership type (public/private), estimated revenue range, and competitor type (direct/indirect/potential). This table anchors the rest of the analysis.
+**YOU MUST STOP HERE. Step 2 is complete. Now go to Step 3.**
 
 ---
 
 ### Step 3 — Launch Sub-Agents for Each Key Player
 
+**YOU ARE NOW IN STEP 3. Your ONLY job in this step is to launch sub-agents using the Agent tool.**
+
 Once you have identified the competitive set, launch one sub-agent per key player (5-10 companies recommended).
 
-**For each company, launch a sub-agent with `run_in_background: true` and provide:**
-1. Company name
-2. Research methodology (see COMPANY RESEARCH SUB-AGENT PROMPT TEMPLATE below)
-3. Output file path: `[output-folder]/[N]-company-[name].md`
-4. Report structure requirements (11-point company profile)
-5. Mandatory sourcing rules
+**CRITICAL: You MUST use the Agent tool to launch sub-agents. Do NOT write company reports yourself. Do NOT continue researching. Do NOT write any files.**
 
-**After launching all company sub-agents:**
-- Continue to Step 4 to write the master report
-- Do NOT wait for sub-agents to finish
-- Sub-agents will autonomously research, judge when they have sufficient data, and write their reports
+**For each company, use the Agent tool with these parameters:**
+- `description`: "Research [Company Name]"
+- `prompt`: Use the COMPANY RESEARCH SUB-AGENT PROMPT TEMPLATE below, filling in the company name and output file path
+- `run_in_background`: true
+
+**Launch all company sub-agents in parallel by calling the Agent tool multiple times in a single response.**
+
+**After launching all company sub-agents, wait for them to complete.**
 
 ---
 
-### Step 4 — Write Master Landscape Report (while sub-agents work)
+### Step 4 — Wait for All Company Reports to Complete
 
-While company sub-agents are researching in the background, write the master landscape report yourself using the competitive set data from Step 2.
+Use Glob to check the output folder every 30 seconds until all expected company report files are present on disk. Only proceed to Step 5 when all sub-agent reports are complete.
 
-**Master report content (based on Step 2 research):**
+---
+
+### Step 5 — Write Master Landscape Report
+
+After all company reports are complete, read every company report file and synthesize a master landscape report.
+
+**Master report content (synthesized from all company reports):**
 1. Scope Definition
-2. Competitive Set Table (from Step 2)
-3. Market Share Summary (if available from Step 2 research)
-4. Competitive Positioning Map (2x2 matrix with all players plotted)
+2. Competitive Set Table (company name, HQ, founding year, ownership, revenue range, competitor type)
+3. Market Share Summary (synthesized from company reports)
+4. Competitive Positioning Map (2x2 matrix with all players plotted based on company report findings)
 5. Porter's Five Forces Assessment
-6. Key Competitive Dynamics
+6. Key Competitive Dynamics (synthesized from company reports)
 7. Threat Assessment (adjacent threats, potential entrants)
 8. Strategic Implications
 9. Confidence Assessment
 10. Full Source List
 
 Save to: `[output-folder]/00-master-landscape-report.md`
-
----
-
-### Step 5 — Monitor and Complete
-
-After writing the master report, your work is done. The sub-agents will complete their company reports autonomously.
 
 ---
 
@@ -137,6 +121,27 @@ Research this company comprehensively and write a complete company deep-dive rep
 1. Search for and collect all relevant data about this company
 2. Judge when you have sufficient information
 3. Write the complete report following the structure below
+
+⚠️ SOURCING RULE — READ THIS BEFORE YOU START AND FOLLOW IT FOR EVERY SINGLE SENTENCE:
+
+Every number, statistic, claim, financial figure, product description, biographical fact, and market share estimate in this report MUST be followed immediately by a working hyperlink to the source where you found it. No exceptions.
+
+The correct format is inline citation: write the information, then immediately link the source in parentheses.
+Example: "Revenue reached $2.1 billion in FY2024 ([Company 10-K, SEC EDGAR](https://www.sec.gov/...))"
+
+FORBIDDEN behaviors — if you do any of these, the report will be rejected:
+- Writing a number or statistic without a URL immediately after it
+- Using [1], [2], [3] footnote markers instead of inline links
+- Citing a source name (e.g. "according to Crunchbase") without providing the actual URL
+- Fabricating or guessing a URL that you have not actually visited and confirmed
+- Writing a revenue, funding, or valuation figure without a direct link to the SEC filing, Crunchbase entry, press release, or news article where you found it
+- Citing an executive bio detail without a link to LinkedIn, company website, or news article
+
+IF YOU CANNOT FIND A SOURCE FOR A PIECE OF INFORMATION:
+- Do NOT write the information as if it were a fact
+- Do NOT guess or estimate without labeling it explicitly as: [REASONED INFERENCE — no source found]
+- Do NOT fill in numbers to make the report look complete
+- Write: "Data unavailable — no reliable source found for this data point" and move on
 
 REPORT STRUCTURE (11-point company profile):
 1. Company Snapshot — legal name, HQ, founding date, ownership, employee count, geographic footprint, stock ticker (if public)
@@ -182,13 +187,25 @@ REPORT STRUCTURE (11-point company profile):
 - HKEX, CNINFO
 - Maimai (脉脉)
 
-MANDATORY SOURCING RULES:
-1. Every claim, statistic, financial figure, product description, biographical fact MUST include a full URL hyperlink
-2. Do NOT use numbered reference markers like [1], [2] without providing actual URLs
-3. Inline citations preferred: "Revenue reached $5B in 2025 ([source](https://...))"
-4. If data unavailable, state explicitly. Label inferences as [REASONED INFERENCE — NOT SOURCED DATA]. Label estimates as [TRIANGULATED ESTIMATE — NOT DISCLOSED]
-5. The report MUST end with a numbered "Sources" section listing every URL cited
-6. A report with no source URLs will be rejected
+MANDATORY SOURCING RULES (reminder — these apply to every sentence in every section):
+1. Every claim, statistic, financial figure, product description, and biographical fact MUST include a working URL hyperlink inline, immediately after the information
+2. Correct format: "Revenue reached $5B in 2025 ([Company 10-K](https://www.sec.gov/...))"
+3. Do NOT use [1], [2] footnote markers — use inline hyperlinks only
+4. Do NOT write "according to Crunchbase" or "per PitchBook" without providing the actual URL
+5. If data is unavailable: write "Data unavailable — no reliable source found" — never fill in a plausible number
+6. Label inferences explicitly: [REASONED INFERENCE — NOT SOURCED DATA]
+7. Label private company estimates explicitly: [TRIANGULATED ESTIMATE — NOT DISCLOSED]
+8. The report MUST end with a numbered "Sources" section listing every URL cited
+9. A report containing any unlinked statistics or fabricated URLs will be rejected
+
+WRITING INSTRUCTIONS — CHUNKED OUTPUT (MANDATORY):
+Do NOT write the entire report in a single Write tool call. The file is too large and the Write tool will fail.
+Instead, write the report in chunks using this sequence:
+1. Use the Write tool to create the file with sections 1–3 only (Company Snapshot, Founding History, Founding Team)
+2. Use the Edit tool to append sections 4–6 (Executive Team, Product Portfolio, Financial Profile)
+3. Use the Edit tool to append sections 7–9 (Go-to-Market, Technology and IP, Competitive Positioning)
+4. Use the Edit tool to append sections 10–13 (Strategic Direction, SWOT Summary, Confidence Level, Sources)
+Each Edit call appends to the end of the file. Never rewrite the whole file after the initial Write.
 
 When you complete the report, save it to the specified output file.
 ```

@@ -286,14 +286,23 @@ Search the specified data sources and collect ALL relevant data points for your 
 - Economic: GDP, growth rates, inflation, FX, FDI, trade data, labor costs, infrastructure quality
 - Regulatory: licensing requirements, foreign ownership restrictions, sector regulations, enforcement track record, barriers to entry
 
-MANDATORY SOURCING RULES:
-1. Every claim, score, statistic, regulatory fact MUST include a full URL hyperlink to the source
-2. Format: [data point] — [source title](URL)
-3. If data unavailable, state explicitly. Label inferences as [REASONED INFERENCE — NOT SOURCED DATA]
-4. Do NOT fabricate data. Only return what you actually found with verifiable URLs
-5. Return findings directly in your response. Do NOT write files.
+⚠️ SOURCING RULE — FOLLOW FOR EVERY DATA POINT:
 
-Keep your response structured and concise: data points with URLs only.
+Every score, statistic, regulatory fact, and claim you return MUST be followed immediately by a working hyperlink to the source. No exceptions.
+
+Correct format: "WGI Political Stability score: 0.42 (2023) ([World Bank DataBank](https://databank.worldbank.org/...))"
+
+FORBIDDEN: writing a score or fact without a URL. FORBIDDEN: using [1][2] markers. FORBIDDEN: fabricating or guessing URLs.
+
+IF YOU CANNOT FIND A SOURCE: do not return the data point. Write "Data unavailable — no source found" and move on.
+
+MANDATORY SOURCING RULES:
+1. Every claim, score, statistic, regulatory fact MUST include a working inline URL hyperlink immediately after it
+2. Do NOT use [1], [2] footnote markers — inline links only
+3. Do NOT write source names without the actual URL
+4. If data unavailable, write "Data unavailable — no source found" — never fabricate data
+5. Only return data you actually found at a real, verifiable URL
+6. Return findings directly in your response. Do NOT write files.
 ```
 
 ---
@@ -315,6 +324,25 @@ YOUR TASK:
 2. Periodically check their progress using TaskOutput(task_id, block: false, timeout: 30)
 3. When you judge sufficient data has been collected, gather all findings
 4. Write a complete PERB analysis report using the collected data
+
+⚠️ SOURCING RULE — READ THIS BEFORE YOU START AND FOLLOW IT FOR EVERY SINGLE SENTENCE:
+
+Every score, statistic, regulatory fact, and claim in this report MUST be followed immediately by a working hyperlink to the source where you found it. No exceptions.
+
+The correct format is inline citation: write the information, then immediately link the source in parentheses.
+Example: "China's WGI Rule of Law score was -0.38 in 2023 ([World Bank DataBank](https://databank.worldbank.org/...))"
+
+FORBIDDEN behaviors — if you do any of these, the report will be rejected:
+- Writing a score, index value, or statistic without a URL immediately after it
+- Using [1], [2], [3] footnote markers instead of inline links
+- Citing a source name (e.g. "according to the Heritage Foundation") without providing the actual URL
+- Fabricating or guessing a URL that you have not actually visited and confirmed
+- Writing regulatory requirements or law citations without linking to the official government portal or primary source
+
+IF YOU CANNOT FIND A SOURCE FOR A PIECE OF INFORMATION:
+- Do NOT write the information as if it were a fact
+- Label inferences explicitly: [REASONED INFERENCE — NOT SOURCED DATA]
+- Write: "Data unavailable — no reliable source found for this data point" and move on
 
 REPORT STRUCTURE (OUTPUT FORMAT):
 1. Scope Definition — market, geography, sector, entrant perspective, dimensions covered

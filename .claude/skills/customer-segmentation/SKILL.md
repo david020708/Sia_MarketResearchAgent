@@ -314,14 +314,23 @@ Search the specified data sources and collect ALL relevant data points for custo
 - Technographics (B2B): technology stack, digital maturity
 - China-specific: tier-city data, generational cohorts, platform usage patterns
 
-MANDATORY SOURCING RULES:
-1. Every claim, statistic, demographic figure, behavioral insight MUST include a full URL hyperlink
-2. Format: [data point] — [source title](URL)
-3. If data unavailable, state explicitly. Label inferences as [REASONED INFERENCE — NOT SOURCED DATA]
-4. Do NOT fabricate data. Only return what you actually found with verifiable URLs
-5. Return findings directly in your response. Do NOT write files.
+⚠️ SOURCING RULE — FOLLOW FOR EVERY DATA POINT:
 
-Keep your response structured and concise: data points with URLs only.
+Every demographic figure, behavioral statistic, and segment size estimate you return MUST be followed immediately by a working hyperlink to the source. No exceptions.
+
+Correct format: "68% of Post-90s consumers use Douyin daily ([QuestMobile](https://www.questmobile.cn/...))"
+
+FORBIDDEN: writing a percentage or figure without a URL. FORBIDDEN: using [1][2] markers. FORBIDDEN: fabricating or guessing URLs.
+
+IF YOU CANNOT FIND A SOURCE: do not return the data point. Write "Data unavailable — no source found" and move on.
+
+MANDATORY SOURCING RULES:
+1. Every claim, statistic, demographic figure, behavioral insight MUST include a working inline URL hyperlink immediately after it
+2. Do NOT use [1], [2] footnote markers — inline links only
+3. Do NOT write source names without the actual URL
+4. If data unavailable, write "Data unavailable — no source found" — never fabricate data
+5. Only return data you actually found at a real, verifiable URL
+6. Return findings directly in your response. Do NOT write files.
 ```
 
 ---
@@ -344,6 +353,27 @@ YOUR TASK:
 2. Periodically check their progress using TaskOutput(task_id, block: false, timeout: 30)
 3. When you judge sufficient data has been collected, gather all findings
 4. Write a complete customer segmentation and buyer persona report using the collected data
+
+⚠️ SOURCING RULE — READ THIS BEFORE YOU START AND FOLLOW IT FOR EVERY SINGLE SENTENCE:
+
+Every demographic figure, behavioral statistic, segment size estimate, and persona detail in this report MUST be followed immediately by a working hyperlink to the source where you found it. No exceptions.
+
+The correct format is inline citation: write the information, then immediately link the source in parentheses.
+Example: "Post-90s consumers account for 38% of premium skincare spend in China ([CBNData](https://www.cbndata.com/...))"
+
+FORBIDDEN behaviors — if you do any of these, the report will be rejected:
+- Writing a demographic figure or percentage without a URL immediately after it
+- Using [1], [2], [3] footnote markers instead of inline links
+- Citing a source name (e.g. "according to iResearch") without providing the actual URL
+- Fabricating or guessing a URL that you have not actually visited and confirmed
+- Inventing persona details not found in the data gathering agents' results
+- Writing a segment size estimate without showing the sourced inputs and arithmetic
+
+IF YOU CANNOT FIND A SOURCE FOR A PIECE OF INFORMATION:
+- Do NOT invent persona details
+- Label inferences explicitly: [REASONED INFERENCE — NOT SOURCED DATA]
+- Label synthesized quotes: [SYNTHESIZED FROM RESEARCH, NOT VERBATIM]
+- Write: "Data unavailable — no reliable source found for this data point" and move on
 
 REPORT STRUCTURE (OUTPUT FORMAT):
 1. Scope Definition — market, geography, B2B/B2C, segmentation dimensions applied, strategic purpose

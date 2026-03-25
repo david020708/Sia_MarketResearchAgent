@@ -115,14 +115,24 @@ Search the specified data sources and collect ALL quantifiable data points relat
 - Customer/buyer counts
 - Any relevant statistics for triangulation
 
-MANDATORY SOURCING RULES:
-1. Every number, percentage, statistic MUST include a full URL hyperlink to the source
-2. Format: [data point] — [source title](URL)
-3. If data unavailable, state explicitly. Label estimates as [PROXY — REASONED ESTIMATE, NOT SOURCED DATA]
-4. Do NOT fabricate data. Only return what you actually found with verifiable URLs
-5. Return findings directly in your response. Do NOT write files.
+⚠️ SOURCING RULE — FOLLOW FOR EVERY DATA POINT:
 
-Keep your response structured and concise: data points with URLs only.
+Every number, percentage, and statistic you return MUST be followed immediately by a working hyperlink to the source. No exceptions.
+
+Correct format: "$4.2 billion global market in 2023 ([Grand View Research](https://www.grandviewresearch.com/...))"
+
+FORBIDDEN: writing a number without a URL. FORBIDDEN: using [1][2] markers. FORBIDDEN: fabricating or guessing URLs.
+
+IF YOU CANNOT FIND A SOURCE: do not return the data point. Write "Data unavailable — no source found" and move on.
+
+MANDATORY SOURCING RULES:
+1. Every number, percentage, statistic MUST include a working inline URL hyperlink immediately after it
+2. Correct format: "$X billion market — [Source Name](actual-URL)"
+3. Do NOT use [1], [2] footnote markers — inline links only
+4. Do NOT write source names without the actual URL
+5. If data unavailable, write "Data unavailable — no source found" — never fabricate a number
+6. Only return data you actually found at a real, verifiable URL
+7. Return findings directly in your response. Do NOT write files.
 ```
 
 ---
@@ -146,6 +156,25 @@ YOUR TASK:
 2. Periodically check their progress using TaskOutput(task_id, block: false, timeout: 30)
 3. When you judge sufficient data has been collected, gather all findings
 4. Write a complete market sizing report using the collected data
+
+⚠️ SOURCING RULE — READ THIS BEFORE YOU START AND FOLLOW IT FOR EVERY SINGLE SENTENCE:
+
+Every number, percentage, statistic, and claim in this report MUST be followed immediately by a working hyperlink to the source where you found it. No exceptions.
+
+The correct format is inline citation: write the information, then immediately link the source in parentheses.
+Example: "The global molecular diagnostics market was valued at $12.4 billion in 2023 ([Grand View Research](https://www.grandviewresearch.com/...))"
+
+FORBIDDEN behaviors — if you do any of these, the report will be rejected:
+- Writing a number or statistic without a URL immediately after it
+- Using [1], [2], [3] footnote markers instead of inline links
+- Citing a source name (e.g. "according to IBISWorld") without providing the actual URL
+- Fabricating or guessing a URL that you have not actually visited and confirmed
+- Writing any market size, CAGR, or segment figure that was not provided by the data gathering agents with a verified URL
+
+IF YOU CANNOT FIND A SOURCE FOR A PIECE OF INFORMATION:
+- Do NOT write the information as if it were a fact
+- Label proxy estimates explicitly: [PROXY — REASONED ESTIMATE, NOT SOURCED DATA]
+- Write: "Data unavailable — no reliable source found for this data point" and move on
 
 REPORT STRUCTURE (OUTPUT FORMAT):
 1. Scope Definition — what you are measuring, geography, time horizon, inclusions/exclusions, unit of measure
